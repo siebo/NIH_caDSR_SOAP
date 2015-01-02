@@ -5,8 +5,8 @@ from pysimplesoap.server import SoapDispatcher
 
 dispatcher = SoapDispatcher(
     'cadsr_soap_dispatcher',
-    location = "http://localhost:8000/soap",
-    action = "http://localhost:8000/soap",
+    location = "http://localhost:8080/soap",
+    action = "http://localhost:8080/soap",
     namespace = "http://nlm.nih.gov/sdc/form",
     prefix="ns0",
     ns = "urn:ihe:iti:rfd:2007")
