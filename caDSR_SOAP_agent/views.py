@@ -2,6 +2,9 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from pysimplesoap.server import SoapDispatcher
+ 
+def demo(request):
+    return HttpResponse('NIH caDSR Web Services')
 
 dispatcher = SoapDispatcher(
     'cadsr_soap_dispatcher',

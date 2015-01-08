@@ -7,5 +7,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'NIH_caDSR_SOAP.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url('^soap/', 'DjangoSoapService.soap', name='soap'),
+    
+    url(r'^$', 'caDSR_SOAP_agent.views.demo', name='demo'),
 )
 
