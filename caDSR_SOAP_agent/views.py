@@ -6,6 +6,9 @@ from pysimplesoap.server import SoapDispatcher
 def demo(request):
     return HttpResponse('NIH caDSR Web Services')
 
+def wsdl(request):
+    return HttpResponse('NIH caDSR WSDL')
+
 dispatcher = SoapDispatcher(
     'cadsr_soap_dispatcher',
     location = "http://localhost:8080/soap",

@@ -8,6 +8,10 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url('^soap/', 'DjangoSoapService.soap', name='soap'),
     
+    url(r'^wsdl/', 'caDSR_SOAP_agent.views.wsdl', name='wsdl'),
+    
     url(r'^$', 'caDSR_SOAP_agent.views.demo', name='demo'),
+    
+    
 )
 
