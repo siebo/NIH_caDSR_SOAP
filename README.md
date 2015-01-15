@@ -27,5 +27,5 @@ Move the cert.pem and key.pem into the django project subdirectory (NIH_caDSR_dj
 
 You can now start the server with the folowing command
 
-    python manage.py runsslserver --certificate cert.pem --key key.pem
+    python manage.py runsslserver --certificate cert.pem --key key.pem  0.0.0.0:8080
 
