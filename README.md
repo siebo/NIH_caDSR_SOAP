@@ -13,3 +13,19 @@ To start the Django server, use the following command:
 
     python manage.py runserver 8080
 
+## SSL Install
+
+Navigate into the virtual env and activate the project
+
+    source NIH_caDSR_django/bin/activate
+
+We need to add the django-sslserver package which can be installed by running
+
+    pip install django-sslserver
+
+Move the cert.pem and key.pem into the django project subdirectory (NIH_caDSR_django/NIH_caDSR_SOAP)
+
+You can now start the server with the folowing command
+
+    python manage.py runsslserver --certificate cert.pem --key key.pem  0.0.0.0:8080
+
