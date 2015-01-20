@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+******************************************************************************
+RFD Retrieve Form Request (ITI-34) containing an HTML based request 
+
+XML FORM NAME:  Demog_xml_request.xml
+PURPOSE:        Requesting an demographic template.
+
+REVISIONS: 
+Ver        Date        Author               Description
+1.0        12/01/2014  Varsha Parekh /      Added RFD wrapper and schema validation
+                       Richard Moldwin      
+1.1        12/11/2014  WS/SJ/VP/RM          Instance ID removed, schema location moved
+
+*******************************************************************************
+-->
+
+<RetrieveFormRequest 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd"
+   xmlns="urn:ihe:iti:rfd:2007">
+   
+   <prepopData xsi:nil="true" />
+   <workflowData> 
+      <formID>Demog_xml</formID>
+      <encodedResponse>true</encodedResponse>
+      <context xsi:nil="true"/> 
+      
+      <!-- Comment: Optionally, insert GUID/UUID to track the RFD RetrieveFormResponse transaction -->
+      <instanceID></instanceID>
+      
+   </workflowData> 
+</RetrieveFormRequest>

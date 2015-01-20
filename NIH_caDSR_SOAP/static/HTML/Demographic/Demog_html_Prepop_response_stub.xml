@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+******************************************************************************
+RFD Retrieve Form Response (ITI-34) for the Response in HTML format
+
+XML FORM NAME:  Demog_html_prepop_response.xml
+PURPOSE:        Response for an Demographic template using RFD (ITI-34) transaction.
+
+
+REVISIONS: 
+Ver        Date         Author              Description
+1.0        12/01/2014   VP/RM               Added RFD wrapper and schema validation 
+                                            Need to fix RFD schema to add <instanceID> for SDC           
+1.1        12/11/2014   WS/SJ/VP/RM         Instance ID removed, schema location moved
+******************************************************************************/
+-->
+   
+   <RetrieveFormResponse 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd"
+      xmlns="urn:ihe:iti:rfd:2007"
+      xmlns:sdc="http://nlm.nih.gov/sdc/form">
+   
+   <form>
+      <Structured>         
+         <sdc:sdc_html_package>
+            <sdc:supplemental_data>
+               <!-- Contains supplemental data related to the form instance e.g., generation date, pre-pop data, special instructions, etc. -->
+            </sdc:supplemental_data>
+            <sdc:form_info>
+               <!-- Contains mapping, and administrative info; this is the same content as from the form design package -->
+            </sdc:form_info>
+            <sdc:sdc_html_form>
+               <!-- USHIK will provide actual HTML content using automated transformation utility -->
+            </sdc:sdc_html_form>
+         </sdc:sdc_html_package>
+      </Structured>      
+      <!-- Comment: Optionally, insert GUID/UUID to track the RFD RetrieveFormResponse transaction -->
+      <instanceID></instanceID>
+   </form>
+   
+   <contentType>HTML</contentType>
+   <responseCode>Request succeeded</responseCode> <!-- Value is not required for the responseCode but will be useful  -->
+
+</RetrieveFormResponse>

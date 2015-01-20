@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+******************************************************************************
+NAME:       Error_html_request.xml
+PURPOSE:    error example
+VERSION:    1.000.000
+
+REVISIONS: 
+Ver        Date            Author               Description
+1.0        12/01/2014      Varsha Parekh	    Error Template Request (ALL the URL will be given to use by 31/12/2014 based on Wendy S.)
+1.1        12/11/2014      WS/SJ/VP/RM          InstanceID fixed, schema location moved, bad URL added, sdc namespace declaration removed
+******************************************************************************/
+-->
+
+<RetrieveFormRequest 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../Schemas/RFD.xsd"
+    xmlns="urn:ihe:iti:rfd:2007">
+    
+    <prepopData xsi:nil="true" />
+    <workflowData>
+        <formID>http://Bad_URL_HereE</formID>
+        
+        <encodedResponse>false</encodedResponse>   <!-- a URL is requested, not XML or HTML -->     
+        <context xsi:nil="true"/>
+        
+        <!-- Comment: Optionally, insert GUID/UUID to track the RFD RetrieveFormResponse transaction -->
+        <instanceID></instanceID>
+        
+    </workflowData>
+</RetrieveFormRequest>

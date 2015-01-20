@@ -1,0 +1,1484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+******************************************************************************
+RFD Retrieve Form Request (ITI-34) containing an HTML based request 
+
+XML FORM NAME:  Demog_html_Prepop_request_stub.xml
+PURPOSE:        Requesting an Demographic template in the HTML format using prepop data.
+
+REVISIONS: 
+Ver        Date        Author             Description
+1.0        12/01/2014  VP/RM              Added RFD wrapper and schema validation
+1.1        12/11/2014  WS/SJ/VP/RM        InstanceID removed, schema location moved        
+******************************************************************************/
+-->
+
+<RetrieveFormRequest 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd"
+   xmlns="urn:ihe:iti:rfd:2007" 
+   xmlns:sdc="http://nlm.nih.gov/sdc/form">
+      
+   <prepopData>
+
+      <ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns:sdtc="urn:hl7-org:sdtc"
+         xsi:schemaLocation="urn:hl7-org:v3 file://cdc.gov/private/L307/wfb6/IHE%20&amp;%20HIMSS/2012%20Connectathon%20and%20HIMSS/XML%20and%20Xpath/CDA_SCHEMAS/CDA_SCHEMAS/CDA.xsd">
+         <!--
+         ********************************************************
+           CDA Header
+         ********************************************************
+         -->
+         <realmCode code="US"/>
+         <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
+         <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+         <templateId root="2.16.840.1.113883.10.20.3"/>
+         <templateId root="1.3.6.1.4.1.19376.1.7.3.1.1.14.1"/>
+         <id extension="Complete Sample" root="2.16.840.1.113883.19"/>
+         <code code="72134-0" codeSystem="2.16.840.1.113883.6.1" displayName="Cancer Event Report" codeSystemName="LOINC"/>
+         <title>Ambulatory Healthcare Provider Cancer Event Report</title>
+         <effectiveTime value="20120705"/>
+         <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"
+            codeSystemName="Confidentiality"/>
+         <languageCode code="en-US"/>
+         <recordTarget>
+            <patientRole>
+               <id extension="112334-7" root="2.16.840.1.113883.19"/>
+               <!--Patient's Medical Record Number-->
+               <id root="2.16.840.1.113883.4.1" extension="123-45-6789"/>
+               <!--Patient's Social Security Number-->
+               <addr>
+                  <streetAddressLine>4732 Sacramento Blvd</streetAddressLine>
+                  <city>Madison</city>
+                  <state>WI</state>
+                  <postalCode>53705</postalCode>
+                  <country>USA</country>
+                  <useablePeriod xsi:type="IVL_TS">
+                     <low value="20010401"/>
+                     <high value="20120625"/>
+                  </useablePeriod>
+               </addr>
+               <addr>
+                  <streetAddressLine>14979 North Ave</streetAddressLine>
+                  <city>Menomonie</city>
+                  <state>WI</state>
+                  <postalCode>54751</postalCode>
+                  <country>USA</country>
+                  <useablePeriod xsi:type="IVL_TS">
+                     <low value="20120625"/>
+                     <high value="20120705"/>
+                  </useablePeriod>
+               </addr>
+               <telecom value="tel:(763)5608033"/>
+               <patient>
+                  <name>
+                     <family>Cooper</family>
+                     <given>Sheldon</given>
+                     <given>Jacob</given>
+                     <suffix>Ph.D.</suffix>
+                     <family qualifier="CL">Dr. Bazinga</family>
+                  </name>
+                  <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1"
+                     codeSystemName="HL7 Administrative Gender" displayName="Male"/>
+                  <birthTime value="19520613"/>
+                  <maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2"
+                     codeSystemName="PH_MaritalStatus_HL7_V3" displayName="Married"/>
+                  <raceCode code="2058-6" codeSystem="2.16.840.1.113883.6.238"
+                     codeSystemName="Race and Ethnicity - CDC" displayName="African American"/>
+                  <sdtc:raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238"
+                     codeSystemName="Race and Ethnicity - CDC" displayName="White"/>
+                  <sdtc:raceCode code="2048-7" codeSystem="2.16.840.1.113883.6.238"
+                     codeSystemName="Race and Ethnicity - CDC" displayName="Iwo Jiman"/>
+                  <sdtc:raceCode code="2049-5" codeSystem="2.16.840.1.113883.6.238"
+                     codeSystemName="Race and Ethnicity - CDC" displayName="Maldivian"/>
+                  <sdtc:raceCode code="2062-8" codeSystem="2.16.840.1.113883.6.238"
+                     codeSystemName="Race and Ethnicity - CDC" displayName="Ethiopian"/>
+                  <ethnicGroupCode code="2186-5" codeSystem="2.16.840.1.113883.6.238"
+                     codeSystemName="Race and Ethnicity - CDC" displayName="Not Hispanic or Latino"/>
+                  <birthplace>
+                     <place>
+                        <addr>
+                           <state>WI</state>
+                           <country>USA</country>
+                        </addr>
+                     </place>
+                  </birthplace>
+               </patient>
+            </patientRole>
+         </recordTarget>
+         <author>
+            <time value="20120705"/>
+            <assignedAuthor>
+               <id root="2.16.840.1.113883.4.6" extension="1407821212"/>
+               <addr>
+                  <streetAddressLine>1000 GAMBLE DR</streetAddressLine>
+                  <city>ST. LOUIS PARK</city>
+                  <state>MN</state>
+                  <postalCode>55416</postalCode>
+               </addr>
+               <telecom value="tel:(952)8836789"/>
+               <assignedPerson>
+                  <name>
+                     <family>Brown</family>
+                     <given>Charles</given>
+                     <suffix>MD</suffix>
+                  </name>
+               </assignedPerson>
+            </assignedAuthor>
+         </author>
+         <custodian>
+            <assignedCustodian>
+               <representedCustodianOrganization>
+                  <id root="2.16.840.1.113883.4.6" extension="1194881234"/>
+                  <name>Oncology Center</name>
+                  <telecom value="tel:(952)8831212"/>
+                  <addr>
+                     <streetAddressLine>3932 33RD AVE S</streetAddressLine>
+                     <city>BLOOMINGTON</city>
+                     <state>MN</state>
+                     <country>USA</country>
+                     <postalCode>55425</postalCode>
+                  </addr>
+               </representedCustodianOrganization>
+            </assignedCustodian>
+         </custodian>
+         <documentationOf>
+            <serviceEvent classCode="PCPR">
+               <effectiveTime>
+                  <!--records the time over which care provision activities are recorded in the document.-->
+                  <low value="20120705"/>
+                  <high value="20120705"/>
+               </effectiveTime>
+               <performer typeCode="PRF">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.3"/>
+                  <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88"/>
+                  <time>
+                     <low value="20120705"/>
+                     <high value="20120705"/>
+                  </time>
+                  <assignedEntity>
+                     <id extension="5469873211" root="2.16.840.1.113883.4.6"/>
+                     <code code="207RH0003X" codeSystem="2.16.840.1.113883.6.101"
+                        codeSystemName="NUCC Health Care Provider Taxonomy"
+                        displayName="Hematology and Oncology"/>
+                     <addr>
+                        <streetAddressLine>1000 GAMBLE DR</streetAddressLine>
+                        <city>ST. LOUIS PARK</city>
+                        <state>MN</state>
+                        <postalCode>55416</postalCode>
+                     </addr>
+                     <telecom value="tel:(952)8836789"/>
+                     <assignedPerson>
+                        <name>
+                           <family>Smith</family>
+                           <given>Jason</given>
+                           <suffix>MD</suffix>
+                        </name>
+                     </assignedPerson>
+                     <representedOrganization>
+                        <id extension="1194881234" root="2.16.840.1.113883.4.6"/>
+                        <name>Oncology Center</name>
+                        <telecom value="tel:(952)8831212"/>
+                        <addr>
+                           <streetAddressLine>3932 33RD AVE S</streetAddressLine>
+                           <city>BLOOMINGTON</city>
+                           <state>MN</state>
+                           <country>USA</country>
+                           <postalCode>55425</postalCode>
+                        </addr>
+                     </representedOrganization>
+                  </assignedEntity>
+               </performer>
+            </serviceEvent>
+         </documentationOf>
+         <componentOf>
+            <encompassingEncounter>
+               <effectiveTime value="20120705"/>
+               <responsibleParty>
+                  <!--Responsible Physician-->
+                  <assignedEntity>
+                     <id root="2.16.840.1.113883.4.6" extension="1871569939"/>
+                     <code code="207Q00000X" codeSystem="2.16.840.1.113883.6.101"
+                        codeSystemName="NUCC Health Care Provider Taxonomy"
+                        displayName="Family Medicine"/>
+                     <addr>
+                        <streetAddressLine>1000 GAMBLE DR</streetAddressLine>
+                        <city>ST. LOUIS PARK</city>
+                        <state>MN</state>
+                        <postalCode>55416</postalCode>
+                     </addr>
+                     <telecom value="tel:(952)8836789"/>
+                     <assignedPerson>
+                        <name>
+                           <family>Hofstadter</family>
+                           <given>Leonard</given>
+                           <suffix>MD</suffix>
+                        </name>
+                     </assignedPerson>
+                     <representedOrganization>
+                        <id extension="5544332211" root="2.16.840.1.113883.4.6"/>
+                        <name>Oncology Center</name>
+                        <telecom value="tel:(608)2657550"/>
+                        <addr>
+                           <streetAddressLine>621 Science Drive</streetAddressLine>
+                           <city>Madison</city>
+                           <state>WI</state>
+                           <country>USA</country>
+                           <postalCode>53711</postalCode>
+                        </addr>
+                     </representedOrganization>
+                  </assignedEntity>
+               </responsibleParty>
+               <!--Referring Physician-->
+               <encounterParticipant typeCode="REF">
+                  <assignedEntity>
+                     <id root="2.16.840.1.113883.4.6" extension="4010821212"/>
+                     <code code="207Q00000X" codeSystem="2.16.840.1.113883.6.101"
+                        codeSystemName="NUCC Health Care Provider Taxonomy"
+                        displayName="Family Medicine"/>
+                     <addr>
+                        <streetAddressLine>7974 UW Health CT</streetAddressLine>
+                        <city>MIDDLETON</city>
+                        <state>WI</state>
+                        <postalCode>56562</postalCode>
+                        <country>USA</country>
+                     </addr>
+                     <telecom value="tel:(952)8836789"/>
+                     <assignedPerson>
+                        <name>CattGarfieldMD</name>
+                     </assignedPerson>
+                     <representedOrganization>
+                        <id root="2.16.840.1.113883.4.6" extension="4020335599"/>
+                        <addr>
+                           <streetAddressLine>7974 UW Health CT</streetAddressLine>
+                           <city>MIDDLETON</city>
+                           <state>WI</state>
+                           <postalCode>56562</postalCode>
+                           <country>USA</country>
+                        </addr>
+                     </representedOrganization>
+                  </assignedEntity>
+               </encounterParticipant>
+            </encompassingEncounter>
+         </componentOf>
+         <!--********************************************************
+     CDA Body
+ ******************************************************** -->
+         <component>
+            <structuredBody>
+               <!--Coded Social History Section -->
+               <component>
+                  <section>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.16"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.16.1"/>
+                     <id root="dkd10293"/>
+                     <code code="29762-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Social History"/>
+                     <title>Coded Social History Section</title>
+                     <text>
+                        <paragraph>Patient has never smoked. He practices criminal law with Wells
+                           Legal, LLC</paragraph>
+                        <table>
+                           <thead>
+                              <tr>
+                                 <th ID="SocialHistoryType_1">Occupation</th>
+                                 <th ID="SocialHistoryType_2">Industry</th>
+                                 <th ID="SocialHistoryType_3">Smoking Status</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td ID="Occupation_1">Lawyer</td>
+                                 <td ID="Industry_1">Law Firm</td>
+                                 <td ID="SmokingStatus_1">Never Smoker</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </text>
+                     <entry>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.33"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.4"/>
+                           <id root="xxx" extension="xxx"/>
+                           <code code="21843-8" codeSystem="2.16.840.1.113883.6.1"
+                              codeSystemName="LOINC" displayName="Usual Occupation Hx"/>
+                           <text>
+                              <reference value="#SocialHistoryType_1"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime value="20120705"/>
+                           <value xsi:type="CD" code="2100" codeSystem="2.16.840.1.113883.6.240"
+                              codeSystemName="U.S. Census Occupation Code" displayName="Lawyer">
+                              <originalText>
+                                 <reference value="#Occupation_1"/>
+                              </originalText>
+                           </value>
+                        </observation>
+                     </entry>
+                     <entry>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.33"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.4"/>
+                           <id root="xxx" extension="xxx"/>
+                           <code code="21844-6" codeSystem="2.16.840.1.113883.6.1"
+                              codeSystemName="LOINC" displayName="Usual Industry Hx"/>
+                           <text>
+                              <reference value="#SocialHistoryType_2"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime value="20120705"/>
+                           <value xsi:type="CD" code="7270" codeSystem="2.16.840.1.113883.6.310"
+                              codeSystemName="U.S. Census Industry Code"
+                              displayName="Legal services">
+                              <originalText>
+                                 <reference value="#Industry_1"/>
+                              </originalText>
+                           </value>
+                        </observation>
+                     </entry>
+                     <entry>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.33"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13.4"/>
+                           <id root="xxx" extension="xxx"/>
+                           <code codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                              code="72166-2" displayName="Smoking Status"/>
+                           <text>
+                              <reference value="#SocialHistoryType_3"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime value="20120705"/>
+                           <value xsi:type="CD" codeSystem="2.16.840.1.113883.6.96"
+                              codeSystemName="SNOMEDCT" code="266919005" displayName="Never Smoker">
+                              <originalText>
+                                 <reference value="#SmokingStatus_1"/>
+                              </originalText>
+                           </value>
+                        </observation>
+                     </entry>
+                  </section>
+               </component>
+               <!--Payers Section -->
+               <component>
+                  <section>
+                     <templateId root="2.16.840.1.113883.10.20.1.9"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.5.3.7"/>
+                     <id root="lsdfi923854"/>
+                     <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Payers"/>
+                     <title>Payers Section</title>
+                     <text>
+                        <list>
+                           <item ID="PayerType_1">BC Managed Care – HMO</item>
+                        </list>
+                     </text>
+                     <entry>
+                        <act classCode="ACT" moodCode="DEF">
+                           <templateId root="2.16.840.1.113883.10.20.1.20"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.17"/>
+                           <id root="845cf552-f549-43b9-b140-352d77cf1ec5"/>
+                           <code code="35525-4" codeSystem="2.16.840.1.113883.6.1"
+                              codeSystemName="LOINC" displayName="Financing and Insurance"/>
+                           <statusCode code="completed"/>
+                           <entryRelationship typeCode="COMP">
+                              <act classCode="ACT" moodCode="EVN">
+                                 <templateId root="2.16.840.1.113883.10.20.1.26"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.18"/>
+                                 <id root="xxx" extension="yyy"/>
+                                 <code code="611" codeSystem="2.16.840.1.113883.221.5"
+                                    codeSystemName="Source of Payment Typology (PHDSC)"
+                                    displayName="BC Managed Care – HMO"/>
+                                 <text>
+                                    <reference value="#PayerType_1"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <performer typeCode="PRF">
+                                    <assignedEntity classCode="ASSIGNED">
+                                       <id root="xxx" extension="yyy"/>
+                                       <code code="PAYOR" codeSystemName="RoleClass"
+                                          codeSystem="2.16.840.1.113883.5.110"/>
+                                       <addr>
+                                          <streetName>9876 Broad Street</streetName>
+                                          <city>Chicago</city>
+                                          <state>IL</state>
+                                          <postalCode>60630</postalCode>
+                                          <country>USA</country>
+                                       </addr>
+                                       <telecom value="tel:(952)5551212"/>
+                                       <representedOrganization classCode="ORG">
+                                          <name>ABC Insurance</name>
+                                          <telecom value="tel:(952)5551212"/>
+                                          <addr>
+                                             <streetName>9876 Broad Street</streetName>
+                                             <city>Chicago</city>
+                                             <state>IL</state>
+                                             <postalCode>60630</postalCode>
+                                             <country>USA</country>
+                                          </addr>
+                                       </representedOrganization>
+                                    </assignedEntity>
+                                 </performer>
+                                 <participant typeCode="COV">
+                                    <participantRole classCode="PAT">
+                                       <id root="xxx" extension="yyy"/>
+                                       <code code="SELF" displayName="self"
+                                          codeSystem="2.16.840.1.113883.5.111"
+                                          codeSystemName="RoleCode"/>
+                                    </participantRole>
+                                 </participant>
+                              </act>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                  </section>
+               </component>
+               <!--Cancer Diagnosis Section-->
+               <component>
+                  <section>
+                     <templateId root="2.16.840.1.113883.10.20.1.11"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.7.3.1.3.14.1"/>
+                     <id root="abc123"/>
+                     <code code="11450-4" displayName="Problem List"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                     <title>Cancer Diagnosis</title>
+                     <text>
+                        <content ID="Diagnosis_1">Malignant neoplasm of prostate</content>
+                        <table>
+                           <thead>
+                              <tr>
+                                 <th>Diagnosis Date</th>
+                                 <th>Primary Site</th>
+                                 <th>Laterality</th>
+                                 <th>Histology</th>
+                                 <th>Behavior</th>
+                                 <th>Diagnostic Confirmation</th>
+                                 <th>Stage</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>4/15/2012</td>
+                                 <td ID="PrimarySite_1">Malignant neoplasm of prostate</td>
+                                 <td ID="Laterality_1">Not a paired site</td>
+                                 <td ID="Histology_1">Adenocarcinoma, NOS</td>
+                                 <td ID="Behavior_1">Malignant, Primary</td>
+                                 <td ID="Confirmation_1">Positive Histology</td>
+                                 <td ID="StageGroup_1">IV</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </text>
+                     <entry typeCode="DRIV">
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="def456"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120415"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.7.3.1.4.14.1"/>
+                                 <id root="ghi789"/>
+                                 <code code="282291009" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Diagnosis"/>
+                                 <text>
+                                    <reference value="#Diagnosis_1"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120415"/>
+                                    <high nullFlavor="NA"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="8140"
+                                    codeSystem="2.16.840.1.113883.6.43.1" codeSystemName="ICD-O-3"
+                                    displayName="Adenocarcinoma, NOS">
+                                    <originalText>
+                                       <reference value="#Histology_1"/>
+                                    </originalText>
+                                    <qualifier>
+                                       <name code="31206-6" codeSystem="2.16.840.1.113883.6.1"
+                                          codeSystemName="LOINC"
+                                          displayName="Behavior ICD-O-3 Cancer"/>
+                                       <value xsi:type="CD" code="3"
+                                          codeSystem="2.16.840.1.113883.3.520.3.14"
+                                          codeSystemName="NAACCR Behavior Code"
+                                          displayName="Malignant, Primary">
+                                          <originalText>
+                                             <reference value="#Behavior_1"/>
+                                          </originalText>
+                                       </value>
+                                    </qualifier>
+                                    <qualifier>
+                                       <name code="21861-0" codeSystem="2.16.840.1.113883.6.1"
+                                          codeSystemName="LOINC" displayName="Dx Confirmed By"/>
+                                       <value xsi:type="CD" code="1"
+                                          codeSystem="2.16.840.1.113883.3.520.3.3"
+                                          codeSystemName="NAACCR Diagnostic Confirmation"
+                                          displayName="Positive Histology">
+                                          <originalText>
+                                             <reference value="#Confirmation_1"/>
+                                          </originalText>
+                                       </value>
+                                    </qualifier>
+                                 </value>
+                                 <targetSiteCode xsi:type="CD" code="185"
+                                    codeSystem="2.16.840.1.113883.6.103"
+                                    codeSystemName="ICD-9CM (diagnoses)"
+                                    displayName="Malignant neoplasm of prostate">
+                                    <originalText>
+                                       <reference value="#PrimarySite_1"/>
+                                    </originalText>
+                                    <qualifier>
+                                       <name code="20228-3" codeSystem="2.16.840.1.113883.6.1"
+                                          codeSystemName="LOINC"
+                                          displayName="Anatomic part Laterality"/>
+                                       <value code="0" codeSystem="2.16.840.1.113883.3.520.3.1"
+                                          codeSystemName="NAACCR Laterality at Diagnosis"
+                                          displayName="Not a paired site">
+                                          <originalText>
+                                             <reference value="#Laterality_1"/>
+                                          </originalText>
+                                       </value>
+                                    </qualifier>
+                                 </targetSiteCode>
+                                 <entryRelationship typeCode="SUBJ" inversionInd="true">
+                                    <observation classCode="OBS" moodCode="EVN">
+                                       <templateId root="1.3.6.1.4.1.19376.1.7.3.1.4.14.2"/>
+                                       <code code="106248000"
+                                          displayName="TNM classification of malignant tumor before any treatment"
+                                          codeSystem="2.16.840.1.113883.6.96"
+                                          codeSystemName="SNOMEDCT"/>
+                                       <text>Stage 4</text>
+                                       <statusCode code="completed"/>
+                                       <value xsi:type="CD" code="IV"
+                                          codeSystem="2.16.840.1.113883.15.6"
+                                          codeSystemName="TNM 7th Edition">
+                                          <originalText>
+                                             <reference value="#StageGroup_1"/>
+                                          </originalText>
+                                          <qualifier>
+                                             <name code="21909-7"
+                                                displayName="Descriptor.clinical Cancer"
+                                                codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                             <value code="0"
+                                                codeSystem="2.16.840.1.113883.3.520.3.10"
+                                                codeSystemName="NAACCR TNM Clinical Stage Descriptor"
+                                                displayName="None"/>
+                                          </qualifier>
+                                          <qualifier>
+                                             <name code="21917-0"
+                                                displayName="Version TNM Classification"
+                                                codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                             <value code="7"
+                                                codeSystem="2.16.840.1.113883.3.520.3.5"
+                                                codeSystemName="NAACCR TNM Edition Number"
+                                                displayName="AJCC Staging Manual, 7th Edition"/>
+                                          </qualifier>
+                                       </value>
+                                       <participant typeCode="PPRF">
+                                          <participantRole>
+                                             <code code="21910-5" codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"
+                                                displayName="Stager.clinical Cancer"/>
+                                             <playingEntity>
+                                                <code code="3"
+                                                  codeSystem="2.16.840.1.113883.3.520.3.4"
+                                                  codeSystemName="NAACCR TNM Clinical Staged By"
+                                                  displayName="Pathologist and managing physician"/>
+                                             </playingEntity>
+                                          </participantRole>
+                                       </participant>
+                                       <entryRelationship typeCode="COMP" inversionInd="false">
+                                          <!--TNM Clinical Tumor Observation-->
+                                          <observation classCode="OBS" moodCode="EVN">
+                                             <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                                             <id root="ghi555"/>
+                                             <code code="21905-5" displayName="TNM Clinical T"
+                                                codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                             <text>
+                                                <reference value="#TNMClinicalT_1"/>
+                                             </text>
+                                             <statusCode code="completed"/>
+                                             <effectiveTime value="20120415"/>
+                                             <value xsi:type="CD" code="4"
+                                                codeSystem="2.16.840.1.113883.3.520.3.6"
+                                                codeSystemName="NAACCR TNM Clinical Tumor"/>
+                                          </observation>
+                                       </entryRelationship>
+                                       <!--TNM Clinical Nodes Observation-->
+                                       <entryRelationship typeCode="COMP" inversionInd="false">
+                                          <observation classCode="OBS" moodCode="EVN">
+                                             <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                                             <id root="ghi556"/>
+                                             <code code="21906-3" displayName="TNM Clinical N"
+                                                codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                             <text>
+                                                <reference value="#TNMClinicalN_1"/>
+                                             </text>
+                                             <statusCode code="completed"/>
+                                             <effectiveTime value="20120415"/>
+                                             <value xsi:type="CD" code="1"
+                                                codeSystem="2.16.840.1.113883.3.520.3.7"
+                                                codeSystemName="NAACCR TNM Clinical Node"/>
+                                          </observation>
+                                       </entryRelationship>
+                                       <!--TNM Clinical Metastasis Observation-->
+                                       <entryRelationship typeCode="COMP" inversionInd="false">
+                                          <observation classCode="OBS" moodCode="EVN">
+                                             <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                                             <id root="ghi557"/>
+                                             <code code="21907-1" displayName="TNM Clinical M"
+                                                codeSystem="2.16.840.1.113883.6.1"
+                                                codeSystemName="LOINC"/>
+                                             <text>
+                                                <reference value="#TNMClinicalM_1"/>
+                                             </text>
+                                             <statusCode code="completed"/>
+                                             <effectiveTime value="20120415"/>
+                                             <value xsi:type="CD" code="1"
+                                                codeSystem="2.16.840.1.113883.3.520.3.8"
+                                                codeSystemName="NAACCR TNM Clinical Metastasis"/>
+                                          </observation>
+                                       </entryRelationship>
+                                    </observation>
+                                 </entryRelationship>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                  </section>
+               </component>
+               <!--Active Problems Section-->
+               <!-- There are 12 problems listed (none are personal Hx of Cancer): I10, C619, H10409, L259, A515, M790, D649, F39, E065, E040, I279, K287. eMaRC should ignored the cancer:C61 and the twelfth code K287, and populate Secondary Diagnosis 1-10 with I10, H10409, L259, A515, M790, D649, F39, E065, E040, I279 -->
+               <component>
+                  <section>
+                     <templateId root="2.16.840.1.113883.10.20.1.11"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+                     <id root="fwefse0f9834"/>
+                     <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Problem List"/>
+                     <title>Active Problems Section</title>
+                     <text>Lots of problems</text>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20110305"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text>
+                                    <reference value="#Problem_1"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20110305"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="I10" codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Essential (primary) hypertension">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120415"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text>
+                                    <reference value="#Problem_2"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120415"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="C61" codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Malignant neoplasm of prostate">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120402"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text/>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120402"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="H10409"
+                                    codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Unspecified chronic conjunctivitis, unspecified eye"
+                                 > </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120402"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text/>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120402"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="L259"
+                                    codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Unspecified contact dermatitis, unspecified cause">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120402"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text/>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120402"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="A515"
+                                    codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Early syphilis latent">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120402"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text/>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120402"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="M790"
+                                    codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Rheumatism, unspecified">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120402"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text/>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120402"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="D649"
+                                    codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Anemia, unspecified">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120402"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text>
+                                    <reference value="#Problem_8"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120402"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="F39" codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Unspecified mood [effecxtive] disorder">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120402"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text>
+                                    <reference value="#Problem_9"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120402"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="E065"
+                                    codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Other chronic thyroiditis">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120402"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text>
+                                    <reference value="#Problem_10"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120402"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="E040"
+                                    codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Nontoxic diffuse goiter">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120402"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text>
+                                    <reference value="#Problem_11"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120402"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="I279"
+                                    codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Pulmonary heart disease, unspecified">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                     <entry>
+                        <act classCode="ACT" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.27"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                           <id root="xxx" extension="yyy"/>
+                           <code nullFlavor="NA"/>
+                           <statusCode code="active"/>
+                           <effectiveTime>
+                              <low value="20120402"/>
+                           </effectiveTime>
+                           <entryRelationship typeCode="SUBJ" inversionInd="false">
+                              <observation classCode="OBS" moodCode="EVN" negationInd="false">
+                                 <templateId root="2.16.840.1.113883.10.20.1.28"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+                                 <id root="xxx" extension="xxx"/>
+                                 <code code="55607006" codeSystem="2.16.840.1.113883.6.96"
+                                    codeSystemName="SNOMED CT" displayName="Problem"/>
+                                 <text>
+                                    <reference value="#Problem_13"/>
+                                 </text>
+                                 <statusCode code="completed"/>
+                                 <effectiveTime>
+                                    <low value="20120402"/>
+                                 </effectiveTime>
+                                 <value xsi:type="CD" code="K287"
+                                    codeSystem="2.16.840.1.113883.6.90"
+                                    codeSystemName="ICD-10-CM (diagnoses)"
+                                    displayName="Chronic gastrojejunal ulcer without hemorrhage or perforation">
+                                    <originalText/>
+                                 </value>
+                              </observation>
+                           </entryRelationship>
+                        </act>
+                     </entry>
+                  </section>
+               </component>
+               <!--Progress Note Section-->
+               <component>
+                  <section>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.13.2.7"/>
+                     <id root="sdflw3ir-234"/>
+                     <code code="18733-6"
+                        displayName="SUBSEQUENT EVALUATION NOTE (ATTENDING PHYSICIAN)"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                     <title>Progress Notes Section</title>
+                     <text>Patient received chemotherapy today. Referring patient to Dr. Kern for
+                        psychosocial evaluation</text>
+                  </section>
+               </component>
+               <!--Coded Results Section-->
+               <component>
+                  <section>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.28"/>
+                     <id root="iwe834u534"/>
+                     <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="Relevant diagnostic tests/laboratory data"/>
+                     <title>Coded Results Section</title>
+                     <text>
+                        <table>
+                           <thead>
+                              <tr>
+                                 <th>Procedure</th>
+                                 <th>Test Name</th>
+                                 <th>Test Result</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td ID="ProcedureCode_1">Collection of blood specimen for
+                                    laboratory (procedure)</td>
+                                 <td ID="ObservationTestCode_1">Prostate specific Ag [Mass/volume]
+                                    in Serum or Plasma (PSA)</td>
+                                 <td>7ng/mL</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </text>
+                     <entry>
+                        <procedure classCode="PROC" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.19"/>
+                           <id root="xxx" extension="xxx"/>
+                           <code code="82078001" codeSystem="2.16.840.1.113883.6.96"
+                              codeSystemName="SNOMEDCT"
+                              displayName="Collection of blood specimen for laboratory (procedure)"/>
+                           <text>
+                              <reference value="#ProcedureCode_1"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime>
+                              <low value="20120415"/>
+                           </effectiveTime>
+                        </procedure>
+                     </entry>
+                     <entry>
+                        <observation classCode="OBS" moodCode="EVN">
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.13"/>
+                           <id root="xxx" extension="xxx"/>
+                           <code code="2857-1" codeSystem="2.16.840.1.113883.6.1"
+                              codeSystemName="LOINC"
+                              displayName="Prostate specific Ag [Mass/volume] in Serum or Plasma"/>
+                           <text>
+                              <reference value="#ObservationTestCode_1"/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime value="20120415"/>
+                           <value xsi:type="PQ" value="7" unit="ng/mL"/>
+                           <author typeCode="AUT">
+                              <time value="20120402"/>
+                              <assignedAuthor classCode="ASSIGNED">
+                                 <id extension="1194881234" root="2.16.840.1.113883.4.6"/>
+                                 <addr>
+                                    <streetAddressLine>3932 33RD AVE S</streetAddressLine>
+                                    <city>BLOOMINGTON</city>
+                                    <state>MN</state>
+                                    <country>USA</country>
+                                    <postalCode>55425</postalCode>
+                                 </addr>
+                                 <telecom value="tel:(952)8831212"/>
+                                 <representedOrganization>
+                                    <name>Primary Doc Clinic</name>
+                                    <telecom value="tel:(952)8831212"/>
+                                    <addr>
+                                       <streetAddressLine>3932 33RD AVE S</streetAddressLine>
+                                       <city>BLOOMINGTON</city>
+                                       <state>MN</state>
+                                       <country>USA</country>
+                                       <postalCode>55425</postalCode>
+                                    </addr>
+                                 </representedOrganization>
+                              </assignedAuthor>
+                           </author>
+                        </observation>
+                     </entry>
+                  </section>
+               </component>
+
+               <!--Procedures Section-->
+               <component>
+                  <section>
+                     <templateId root="2.16.840.1.113883.10.20.1.12"/>
+                     <id root="adfaf3q4-vser"/>
+                     <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="History of Procedures"/>
+                     <title>Procedures Section</title>
+                     <text>
+                        <table>
+                           <thead>
+                              <tr>
+                                 <th>Procedure Name</th>
+                                 <th>Procedure Code</th>
+                                 <th>Procedure Date</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td ID="ProcedureName_1">PROSTATECTOMY</td>
+                                 <td ID="Procedure_1">52601</td>
+                                 <td>5/21/2012</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </text>
+                     <entry>
+                        <procedure classCode="PROC " moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.29"/>
+                           <id root="xxx" extension="xxx"/>
+                           <code code="52601" codeSystem="2.16.840.1.113883.6.12"
+                              codeSystemName="CPT-4" displayName="PROSTATECTOMY (TURP)"/>
+                           <text>
+                              <reference value="#ProcedureName_1"/>
+                           </text>
+                           <statusCode code="Completed"/>
+                           <effectiveTime value="20120521"/>
+                           <performer>
+                              <time nullFlavor="UNK"/>
+                              <assignedEntity>
+                                 <id root="2.16.840.1.113883.4.6" extension="1871569939"/>
+                                 <addr>
+                                    <streetAddressLine>1122 BLAGIE BLVD</streetAddressLine>
+                                    <city>MIDDLETON</city>
+                                    <state>WI</state>
+                                    <postalCode>56562-5531</postalCode>
+                                    <country>USA</country>
+                                 </addr>
+                                 <telecom value="tel:(608)8295485"/>
+                                 <assignedPerson>
+                                    <name>
+                                       <family>Hofstadter</family>
+                                       <given>Leonard</given>
+                                       <suffix>MD</suffix>
+                                    </name>
+                                 </assignedPerson>
+                                 <representedOrganization>
+                                    <id root="2.16.840.1.113883.4.6" extension="5544332211"/>
+                                    <name>Oncology Center</name>
+                                    <telecom nullFlavor="UNK"/>
+                                    <addr nullFlavor="UNK"/>
+                                 </representedOrganization>
+                              </assignedEntity>
+                           </performer>
+                        </procedure>
+
+                     </entry>
+                  </section>
+               </component>
+
+               <!--Medications Section-->
+               <component>
+                  <section>
+                     <templateId root="2.16.840.1.113883.10.20.1.8"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.19"/>
+                     <id root="sdr-3459s"/>
+                     <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"
+                        displayName="History of Medication Use"/>
+                     <title>Medications Section</title>
+                     <text>
+                        <paragraph ID="Medications_1">Current Meds: Doxorubicin</paragraph>
+                        <table border="1" width="100%">
+                           <thead>
+                              <tr>
+                                 <th>Medication</th>
+                                 <th>Start Date</th>
+                                 <th>Stop Date</th>
+                                 <th>Dose</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td ID="MedicationName_1">Doxorubicin</td>
+                                 <td>20120705</td>
+                                 <td>None</td>
+                                 <td ID="MedicationDose_1">2mg/mL</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </text>
+                     <entry typeCode="DRIV">
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                           <id root="4edd8de0-66e3-4ca6-b287-f0736022f2b3"/>
+                           <text>
+                              <reference value="#Medications_1 "/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime xsi:type="IVL_TS">
+                              <low value="20120705"/>
+                              <high nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <routeCode code="C38276" codeSystem="2.16.840.1.113883.3.26.1.1"
+                              codeSystemName="Medication Route FDA Value Set"
+                              displayName="Intravenous"/>
+                           <approachSiteCode code="LA" codeSystem="2.16.840.1.113883.12.163"
+                              codeSystemName="Administrative Site" displayName="Left Arm"/>
+                           <consumable>
+                              <manufacturedProduct>
+                                 <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                 <manufacturedMaterial>
+                                    <code code="310024"
+                                       displayName="Doxorubicin 2 MG/ML Injectable Solution"
+                                       codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm">
+                                       <originalText>
+                                          <reference value="#MedicationName_1"/>
+                                       </originalText>
+                                    </code>
+                                    <name>Doxorubicin</name>
+                                 </manufacturedMaterial>
+                              </manufacturedProduct>
+                           </consumable>
+                        </substanceAdministration>
+                     </entry>
+                  </section>
+               </component>
+
+               <!--Medications Administered Section-->
+               <component>
+                  <section>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.21"/>
+                     <id root="xxx" extension="xxx"/>
+                     <code code="18610-6" displayName="MEDICATION ADMINISTERED"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                     <title>Medications Administered Section</title>
+                     <text>
+                        <paragraph ID="MedicationsAdmin_1">Patient received injection of
+                           doxorubicin</paragraph>
+                        <table border="1" width="100%">
+                           <thead>
+                              <tr>
+                                 <th>Medication</th>
+                                 <th>Start Date</th>
+                                 <th>Stop Date</th>
+                                 <th>Dose</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td ID="MedicationAdminName_1">Doxorubicin</td>
+                                 <td>20120705</td>
+                                 <td>None</td>
+                                 <td ID="MedicationAdminDose_1">2mg/mL</td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </text>
+                     <entry typeCode="DRIV">
+                        <substanceAdministration classCode="SBADM" moodCode="EVN">
+                           <templateId root="2.16.840.1.113883.10.20.1.24"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.1"/>
+                           <id root="4edd8de0-66e3-4ca6-b287-f0736022f2b3"/>
+                           <text>
+                              <reference value="#MedicationsAdmin_1 "/>
+                           </text>
+                           <statusCode code="completed"/>
+                           <effectiveTime xsi:type="IVL_TS">
+                              <low value="20120705"/>
+                              <high nullFlavor="UNK"/>
+                           </effectiveTime>
+                           <routeCode code="C38276" codeSystem="2.16.840.1.113883.3.26.1.1"
+                              codeSystemName="Medication Route FDA Value Set"
+                              displayName="Intravenous"/>
+                           <approachSiteCode code="LA" codeSystem="2.16.840.1.113883.12.163"
+                              codeSystemName="Administrative Site" displayName="Left Arm"/>
+                           <doseQuantity>
+                              <low value="2" unit="MG/ML">
+                                 <translation>
+                                    <originalText>
+                                       <reference value="#MedicationAdminDose_1"/>
+                                    </originalText>
+                                 </translation>
+                              </low>
+                              <high value="2" unit="MG/ML">
+                                 <translation>
+                                    <originalText>
+                                       <reference value="#MedicationAdminDose_1"/>
+                                    </originalText>
+                                 </translation>
+                              </high>
+                           </doseQuantity>
+                           <consumable>
+                              <manufacturedProduct>
+                                 <templateId root="2.16.840.1.113883.10.20.1.53"/>
+                                 <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2"/>
+                                 <manufacturedMaterial>
+                                    <code code="310024"
+                                       displayName="Doxorubicin 2 MG/ML Injectable Solution"
+                                       codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm">
+                                       <originalText>
+                                          <reference value="#MedicationAdminName_1"/>
+                                       </originalText>
+                                    </code>
+                                    <name>Doxorubicin</name>
+                                 </manufacturedMaterial>
+                              </manufacturedProduct>
+                           </consumable>
+                        </substanceAdministration>
+                     </entry>
+                  </section>
+               </component>
+
+               <!--Procedures– Narrative Radiation Oncology Section-->
+               <component>
+                  <section>
+                     <templateId root="1.3.6.1.4.1.19376.1.7.3.1.3.14.2"/>
+                     <id root="xxx" extension=" yyy"/>
+                     <code code="34832-6"
+                        displayName="RADIATION ONCOLOGY EVALUATION AND MANAGEMENT NOTE"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                     <title>Procedures-Narrative Radiation Oncology Section</title>
+                     <text> No radiation therapy information. </text>
+                  </section>
+               </component>
+               <!--Care Plan Section-->
+               <component>
+                  <section>
+                     <templateId root="2.16.840.1.113883.10.20.1.10"/>
+                     <templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.31"/>
+                     <id root="xxx" extension="xxx"/>
+                     <code code="18776-5" displayName="Plan of Treatment"
+                        codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC"/>
+                     <title>Care Plan Section</title>
+                     <text ID="Referral">Patient is being referred to Dr. Abraham Kern for
+                        psychosocial evaluation</text>
+                     <entry>
+                        <encounter classCode="ENC" moodCode="APT">
+                           <templateId root="2.16.840.1.113883.10.20.1.25"/>
+                           <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.14"/>
+                           <id root="xxx" extension="xxx"/>
+                           <code code="AMB" codeSystem="2.16.840.1.113883.5.4"
+                              codeSystemName="ActEncounterCode"/>
+                           <text>
+                              <reference value="#Referral"/>
+                           </text>
+                           <performer typeCode="PRF">
+                              <assignedEntity>
+                                 <id root="2.16.840.1.113883.4.6" extension="1891815555"/>
+                                 <addr>
+                                    <streetAddressLine>3723 Main Street</streetAddressLine>
+                                    <city>Anoka</city>
+                                    <state>MN</state>
+                                    <postalCode>55303</postalCode>
+                                    <country>USA</country>
+                                 </addr>
+                                 <telecom value="tel:(763)2455233"/>
+                                 <assignedPerson>
+                                    <name>
+                                       <family>Kern</family>
+                                       <given>Abraham</given>
+                                       <suffix>MD</suffix>
+                                    </name>
+                                 </assignedPerson>
+                              </assignedEntity>
+                           </performer>
+                        </encounter>
+                     </entry>
+                  </section>
+               </component>
+            </structuredBody>
+         </component>
+      </ClinicalDocument>
+
+   </prepopData>
+   
+   <workflowData>
+      <formID>Demog_prepop_html</formID>
+      <encodedResponse>true</encodedResponse>
+      <context xsi:nil="true"/>
+      
+      <!-- Comment: Optionally, insert GUID/UUID to track the RFD RetrieveFormResponse transaction -->
+      <instanceID></instanceID>
+      
+   </workflowData>
+</RetrieveFormRequest>

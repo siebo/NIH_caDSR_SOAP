@@ -1,0 +1,1956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+******************************************************************************
+RFD Retrieve Form Response (ITI-34) containing an XML Form Design Temaplate Response
+
+NAME:       Demog_xml_response.xml
+PURPOSE:    Demographic Template XML Stub.
+VERSION:    V1.1
+
+REVISIONS: 
+Ver        Date        Author               Description
+1.0        12/01/2014  Varsha Parekh /      SDC Demographic Template Stubs
+                       Richard Moldwin
+1.1        12/11/2014  WS/SJ/VP/RM          Instance ID removed, schema location moved
+******************************************************************************/
+-->
+
+<RetrieveFormResponse 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd"
+   xmlns="urn:ihe:iti:rfd:2007" 
+   xmlns:sdc="http://nlm.nih.gov/sdc/form">
+   
+   <form>
+      <Structured>
+         <sdc:sdc_xml_package>
+            <sdc:supplemental_data>
+               <!-- Contains supplemental data related to the form instance e.g., form generation date, specific instruction, pre-pop data, etc. -->
+            </sdc:supplemental_data>
+            <!--            
+               <sdc:form_package> 
+                     <!-\- —Contains Administrative, stylesheet, mapping, and form definition; 
+                     all of the required info for form definition -\-> 
+                     <sdc:mapping_package> 
+                        <!-\-Mapping information e.g., DEX mapping, goes here-\-> 
+                     </sdc:mapping_package> 
+                     <sdc:administrative_package>
+                        <!-\- Administrative information goes here -\-> 
+                     </sdc:administrative_package> 
+                     <sdc:stylesheet> 
+                        <!-\-include any style sheet information here -\-> 
+                     </sdc:stylesheet> 
+                     <sdc:form_design> 
+                        <!-\-Contains the form design, (e.g., question-answer sets, skip logic, etc.) -\-> 
+                     </sdc:form_design> 
+                  </sdc:form_package> 
+               -->
+
+            <sdc:form_package xmlns="http://www.iso.org/19763/13/2013"
+               xmlns:sdc="http://nlm.nih.gov/sdc/form"
+               xmlns:mfi13="http://www.iso.org/19763/13/2013"
+               xmlns:mdr3="http://www.iso.org/11179/3/2013"
+               xmlns:mfi6="http://www.iso.org/19763/6/2013"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="SDCForm.xsd"
+               form_package_identifier="EHR_Demog_xml_response.xml">
+
+               <!--This section is in draft mode  -->
+               <mapping_package xmlns="http://nlm.nih.gov/sdc/form"
+                  mapping_package_identifier="Demog_xml_map" form_design_identifier="Demog_xml_form">
+                  <mdr_mapping mdr_mapping_identifier="Demog_xml_cde_map">
+                     <question_element_data_element_association>
+                        <mfi13:data_element_scoped_identifier><![CDATA[https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=2179589&version=2.0]]></mfi13:data_element_scoped_identifier>
+                        <!-- Given Name -->
+                        <mfi13:association_type>same_as</mfi13:association_type>
+                        <mfi13:question_element_identifier>2036874</mfi13:question_element_identifier>
+                        <!-- Patient's First Name -->
+                     </question_element_data_element_association>
+
+                     <question_element_data_element_association>
+                        <mfi13:data_element_scoped_identifier><![CDATA[https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=2179591&version=2.0]]></mfi13:data_element_scoped_identifier>
+                        <!-- Family Name -->
+                        <mfi13:association_type>same_as</mfi13:association_type>
+                        <mfi13:question_element_identifier>2036875</mfi13:question_element_identifier>
+                        <!-- Patient's Last Name -->
+                     </question_element_data_element_association>
+
+                     <question_element_data_element_association>
+                        <mfi13:data_element_scoped_identifier><![CDATA[https://cdebrowser.nci.nih.gov/CDEBrowser/search?elementDetails=9&FirstTimer=0&PageId=ElementDetailsGroup&publicId=2200604&version=3.0]]></mfi13:data_element_scoped_identifier>
+                        <!-- Gender of a Person-->
+                        <mfi13:association_type>same_as</mfi13:association_type>
+                        <mfi13:question_element_identifier>29088</mfi13:question_element_identifier>
+                        <!-- Gender -->
+                     </question_element_data_element_association>
+
+                  </mdr_mapping>
+               </mapping_package>
+
+               <!--This section is in draft mode  -->
+               <administrative_package>
+                  <submission_rule form_design_identifier="EHR_Demog_xml_form">
+                     <destination>
+                        <description>This is intended to be a set of one or more submission rules
+                           that pertain to this version of the form.</description>
+                     </destination>
+                  </submission_rule>
+                  <compliance_rule/>
+                  <originating_registry_summary xmlns="http://nlm.nih.gov/sdc/form">
+                     <mfi6:registry_organization>
+                        <mdr3:name>Forms Registry</mdr3:name>
+                        <mdr3:uri>AuthorityIdentifier</mdr3:uri>
+                     </mfi6:registry_organization>
+                     <mfi6:reference_standard_identifier>ISO/IEC
+                        19763-13</mfi6:reference_standard_identifier>
+                     <mfi6:purpose_for_registry>
+                        <mdr3:title>Forms for Demographics</mdr3:title>
+                     </mfi6:purpose_for_registry>
+                     <mfi6:manual_for_registry>
+                        <mdr3:title>SDC Forms IG</mdr3:title>
+                     </mfi6:manual_for_registry>
+                  </originating_registry_summary>
+                  <form_language>
+                     <mfi13:style_language>
+                        <mdr3:identifier>http://www.w3.org/TR/CSS3/</mdr3:identifier>
+                        <mdr3:document_type>
+                           <mdr3:description>a description of the style language used in the form
+                              design</mdr3:description>
+                        </mdr3:document_type>
+                     </mfi13:style_language>
+                     <mfi13:logic_language>
+                        <mdr3:identifier>http://some.document.describing.the.logicLangauge.document</mdr3:identifier>
+                        <mdr3:document_type>
+                           <mdr3:description>a description of the logic document</mdr3:description>
+                        </mdr3:document_type>
+                     </mfi13:logic_language>
+                     <mfi13:format_language>
+                        <mdr3:identifier>http://regEx</mdr3:identifier>
+                        <mdr3:document_type>
+                           <mdr3:description>a description of the format document</mdr3:description>
+                        </mdr3:document_type>
+                     </mfi13:format_language>
+                     <textual_language>eng</textual_language>
+                  </form_language>
+                  <contacts>
+                     <contact xmlns="http://nlm.nih.gov/sdc/form">
+                        <individual>
+                           <mdr3:name>Varsha Parekh</mdr3:name>
+                           <mdr3:title>Ms.</mdr3:title>
+                           <mdr3:email_address>vparekh@cap.org</mdr3:email_address>
+                        </individual>
+                        <organization>
+                           <name>College of American Pathologist (CAP)</name>
+                           <fhir_mail_address>
+                              <use/>
+                              <line>500 Lake Cook Rd - Suite 355</line>
+                              <city>Deerfield</city>
+                              <state>IL</state>
+                              <zip>60015</zip>
+                              <country>USA</country>
+                           </fhir_mail_address>
+                        </organization>
+                        <role>
+                           <mdr3:title>Author</mdr3:title>
+                        </role>
+                     </contact>
+                  </contacts>
+                  <registration xmlns="http://nlm.nih.gov/sdc/form">
+                     <state>
+                        <mdr3:registration_status/>
+                        <mdr3:effective_date>2013-10-01</mdr3:effective_date>
+                        <mdr3:until_date/>
+                        <mdr3:administrative_note/>
+                        <mdr3:administrative_status/>
+                     </state>
+                     <submission_record>
+                        <organization>
+                           <name>CAP</name>
+                        </organization>
+                        <contact>
+                           <organization>
+                              <name>CAP</name>
+                              <phone_number>800-323-4040</phone_number>
+                              <fhir_mail_address>
+                                 <use/>
+                                 <text/>
+                                 <line>500 Lake Cook Rd - Suite 355</line>
+                                 <city>Deerfield</city>
+                                 <state>IL</state>
+                                 <zip>60015</zip>
+                                 <country>USA</country>
+                              </fhir_mail_address>
+                           </organization>
+                           <role>
+                              <mdr3:title>author</mdr3:title>
+                           </role>
+                        </contact>
+                     </submission_record>
+                     <registration_status_date/>
+                     <stewardship_record>
+                        <organization>
+                           <name>Agency for Healthcare Research and Quality (AHRQ)</name>
+                           <fhir_mail_address>
+                              <use/>
+                              <text/>
+                              <line/>
+                              <line/>
+                              <city/>
+                              <state/>
+                              <zip/>
+                              <country/>
+                           </fhir_mail_address>
+                        </organization>
+                     </stewardship_record>
+                     <creation_date>2013-10-01</creation_date>
+                     <origin>NCI , PRPH</origin>
+                  </registration>
+               </administrative_package>
+
+               <stylesheet/>
+
+
+               <!-- Form Content BEGINS  -->
+               <form_design form_design_identifier="EHR_Demog_xml_form">
+
+                  <!-- Template Name -->
+                  <designation>
+                     <context>Physician Reporting to a Public Health Repository – Cancer Registry
+                        (PRPH-Ca)</context>
+                     <sign acceptability="preferred">Administration and Demographic Data for Public
+                        Health Reporting</sign>
+                  </designation>
+                  <security_and_privacy/>
+
+                  <!-- Patient's Identification (Header) Section BEGINS-->
+                  <header initial_state="enabled">
+                     <section_title>
+                        <mfi13:label>Patient's Identification</mfi13:label>
+                        <mfi13:style>title</mfi13:style>
+                     </section_title>
+                     <section_order>100</section_order>
+
+                     <!--Rule: If Cardinality is not specified for Header / Section / Question then default value becomes 1 hence it becomes required elements-->
+
+                     <!-- Date/Time of Report -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Date/Time of Report</mfi13:label>
+                           <mfi13:style>autoGenerated</mfi13:style>
+                           <!-- Direction for computer to compute the value and display in the screen -->
+                        </question_prompt>
+                        <additional_instruction type="tooltip">
+                           <mfi13:label>Value should be generated by computer</mfi13:label>
+                        </additional_instruction>
+                        <text_field>
+                           <!--<mfi13:default_value_read_only>true</mfi13:default_value_read_only>-->
+                           <!-- Value is read-only -->
+                           <datatype>
+                              <string_date>
+                                 <pattern>YYYYMMDDHHMMSS.UUUU[+|-ZZzz]</pattern>
+                              </string_date>
+                           </datatype>
+                        </text_field>
+                        <question_order>200</question_order>
+                        <question_identifier>2036873</question_identifier>
+                     </question>
+
+                     <!-- Patient's First Name -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's First Name</mfi13:label>
+                           <mfi13:style>boldQuestion</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string>
+                                 <maximum_characters>40</maximum_characters>
+                              </string>
+                           </datatype>
+                        </text_field>
+                        <question_order>300</question_order>
+                        <question_identifier>2036874</question_identifier>
+                     </question>
+
+                     <!-- Patient's Last Name -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's Last Name</mfi13:label>
+                           <mfi13:style>boldQuestion</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string>
+                                 <maximum_characters>40</maximum_characters>
+                              </string>
+                           </datatype>
+                        </text_field>
+                        <question_order>400</question_order>
+                        <question_identifier>2036875</question_identifier>
+                     </question>
+
+                     <!-- Patient's Middle Name -->
+                     <question initial_state="enabled">
+                        <mfi13:cardinality>
+                           <mfi13:maximum>1</mfi13:maximum>
+                           <mfi13:minimum>0</mfi13:minimum>
+                        </mfi13:cardinality>
+                        <question_prompt>
+                           <mfi13:label>Patient's Middle Name</mfi13:label>
+                           <mfi13:style>boldQuestion</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string>
+                                 <maximum_characters>40</maximum_characters>
+                              </string>
+                           </datatype>
+                        </text_field>
+                        <question_order>500</question_order>
+                        <question_identifier>2036876</question_identifier>
+                     </question>
+
+                     <!-- Patient's Gender Code -->
+                     <question>
+                        <question_prompt>
+                           <mfi13:label>Patient's Gender Code</mfi13:label>
+                        </question_prompt>
+                        <!-- 
+                             Coded Value (CV)
+                             Code System Name: Administrative Gender 
+                             Code System OID: 2.16.840.1.113883.5.1 
+                             Value Set Name: Administrative Gender (HL7 V3)
+                             Value Set OID: 2.16.840.1.113883.1.11.1
+                             http://phinvads.cdc.gov/vads/ViewValueSet.action?id=8DE75E17-176B-DE11-9B52-0015173D1785
+                             -->
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <datatype>
+                              <string/>
+                           </datatype>
+                           <list_item>
+                              <mfi13:value>F</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Female</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>700</list_item_order>
+                              <list_item_identifier>27839</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>M</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Male</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>800</list_item_order>
+                              <list_item_identifier>27844</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>UN</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Undifferentiated</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>900</list_item_order>
+                              <list_item_identifier>27845</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>600</question_order>
+                        <question_identifier>2036901</question_identifier>
+                     </question>
+
+                     <!-- Gender from NCI Template -->
+                     <question initial_state="enabled"
+                        data_element_scoped_identifier="http://nci.nih.gov/xml/owl/cadsr/data_element_scoped_identifier#2200604v2200604">
+                        <mfi13:cardinality>
+                           <mfi13:minimum>1</mfi13:minimum>
+                           <mfi13:maximum>1</mfi13:maximum>
+                        </mfi13:cardinality>
+                        <question_prompt>
+                           <mfi13:label>Gender</mfi13:label>
+                        </question_prompt>
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <datatype>
+                              <string>
+                                 <minimum_characters>4</minimum_characters>
+                                 <maximum_characters>13</maximum_characters>
+                              </string>
+                           </datatype>
+                           <list_item>
+                              <mfi13:value>Female</mfi13:value>
+                              <mfi13:item_number>
+                                 <mfi13:label>1</mfi13:label>
+                              </mfi13:item_number>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Female Gender</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>An individual who reports belonging to the cultural
+                                    gender role distinction of female.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <mfi13:fill_in>false</mfi13:fill_in>
+                              <value_meaning_terminology_code>None</value_meaning_terminology_code>
+                              <value_meaning_terminology_code_name>Female
+                                 Gender</value_meaning_terminology_code_name>
+                              <value_meaning_terminology_code_system_name>NCI
+                                 Thesaurus</value_meaning_terminology_code_system_name>
+                              <value_meaning_terminology_code_system_identifier>2.16.840.1.113883.3.26.1</value_meaning_terminology_code_system_identifier>
+                              <value_meaning_terminology_code_system_version>13.11d</value_meaning_terminology_code_system_version>
+                              <list_item_order>1</list_item_order>
+                              <list_item_identifier>http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/#list_item_identifier/2575551/1.0</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>Male</mfi13:value>
+                              <mfi13:item_number>
+                                 <mfi13:label>2</mfi13:label>
+                              </mfi13:item_number>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Male Gender</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>An individual who reports belonging to the cultural
+                                    gender role distinction of male.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <mfi13:fill_in>false</mfi13:fill_in>
+                              <value_meaning_terminology_code>None</value_meaning_terminology_code>
+                              <value_meaning_terminology_code_name>Male
+                                 Gender</value_meaning_terminology_code_name>
+                              <value_meaning_terminology_code_system_name>NCI
+                                 Thesaurus</value_meaning_terminology_code_system_name>
+                              <value_meaning_terminology_code_system_identifier>2.16.840.1.113883.3.26.1</value_meaning_terminology_code_system_identifier>
+                              <value_meaning_terminology_code_system_version>13.11d</value_meaning_terminology_code_system_version>
+                              <list_item_order>2</list_item_order>
+                              <list_item_identifier>http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/#list_item_identifier/2575550/1.0</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>Unknown</mfi13:value>
+                              <mfi13:item_number>
+                                 <mfi13:label>3</mfi13:label>
+                              </mfi13:item_number>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Unknown</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>Not known, not observed, not recorded, or
+                                    refused.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <mfi13:fill_in>false</mfi13:fill_in>
+                              <value_meaning_terminology_code>None</value_meaning_terminology_code>
+                              <value_meaning_terminology_code_name>Unknown</value_meaning_terminology_code_name>
+                              <value_meaning_terminology_code_system_name>NCI
+                                 Thesaurus</value_meaning_terminology_code_system_name>
+                              <value_meaning_terminology_code_system_identifier>2.16.840.1.113883.3.26.1</value_meaning_terminology_code_system_identifier>
+                              <value_meaning_terminology_code_system_version>13.11d</value_meaning_terminology_code_system_version>
+                              <list_item_order>3</list_item_order>
+                              <list_item_identifier>http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/#list_item_identifier/2575365/1.0</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>Unspecified</mfi13:value>
+                              <mfi13:item_number>
+                                 <mfi13:label>4</mfi13:label>
+                              </mfi13:item_number>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Unspecified</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>Not stated explicitly or in detail.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <mfi13:fill_in>false</mfi13:fill_in>
+                              <value_meaning_terminology_code>None</value_meaning_terminology_code>
+                              <value_meaning_terminology_code_name>Unspecified</value_meaning_terminology_code_name>
+                              <value_meaning_terminology_code_system_name>NCI
+                                 Thesaurus</value_meaning_terminology_code_system_name>
+                              <value_meaning_terminology_code_system_identifier>2.16.840.1.113883.3.26.1</value_meaning_terminology_code_system_identifier>
+                              <value_meaning_terminology_code_system_version>13.11d</value_meaning_terminology_code_system_version>
+                              <list_item_order>4</list_item_order>
+                              <list_item_identifier>http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/#list_item_identifier/2573360/1.0</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>1</question_order>
+                        <question_identifier>http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/question_identifier#3702892v4.0</question_identifier>
+                     </question>
+
+                     <!-- Patient's Date of Birth -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's Date of Birth</mfi13:label>
+                           <mfi13:style>dateQuestion</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string_date>
+                                 <pattern>YYYYMMDD</pattern>
+                                 <!-- ISO 8601: YYYYMMDD  -->
+                              </string_date>
+                           </datatype>
+                        </text_field>
+                        <question_order>1500</question_order>
+                        <question_identifier>2036877</question_identifier>
+                     </question>
+
+                     <!-- Patient's Social Security Number -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's Social Security Number</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string>
+                                 <reg_ex>^\d{3}-\d{2}-\d{4}$</reg_ex>
+                              </string>
+                           </datatype>
+                        </text_field>
+                        <question_order>1600</question_order>
+                        <question_identifier>27841</question_identifier>
+                     </question>
+
+                     <!-- Patient's Medical Record Number -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's Medical Record Number</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string/>
+                           </datatype>
+                        </text_field>
+                        <question_order>1700</question_order>
+                        <question_identifier>2036878</question_identifier>
+                     </question>
+                     <section_identifier>2036872</section_identifier>
+                  </header>
+                  <!-- Patient's Identification (Header) Section ENDS -->
+
+
+                  <!-- Patient's Contact Information Section BEGINS-->
+                  <section initial_state="disabled">
+                     <section_title>
+                        <mfi13:label>Patient's Contact Information</mfi13:label>
+                        <mfi13:style>patientAddress</mfi13:style>
+                     </section_title>
+                     <ordered>true</ordered>
+                     <section_order>1800</section_order>
+
+                     <!-- Patient's Street Address-->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's Street Address</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <!--"String (V3 Data Type: Address Part (ADXP) STR) street name"  -->
+                        <text_field>
+                           <datatype>
+                              <string/>
+                           </datatype>
+                        </text_field>
+                        <question_order>1900</question_order>
+                        <question_identifier>2036880</question_identifier>
+                     </question>
+
+                     <!-- Patient's City-->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's City</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <!--
+                          "String/Coded value (V3 Data Type: Address Part (ADXP) STR)" 
+                          CTY	municipality	The name of the city, town, village, or other community or delivery center
+                          "Code System Name: U.S. Board on Geographic Names (USGS - GNIS)
+                          Code System OID: 2.16.840.1.113883.6.245
+                          Value Set Name: City 
+                          Value Set OID: 2.16.840.1.114222.4.11.973
+                          https://phinvads.cdc.gov/vads/ViewValueSet.action?id=19D34BBC-617F-DD11-B38D-00188B398520 
+                         -->
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <list_item>
+                              <mfi13:value>351615</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Atlanta, GA, Fulton</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>2100</list_item_order>
+                              <list_item_identifier>2036882</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>655030</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Minneapolis, MN, Hennepin</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>2300</list_item_order>
+                              <list_item_identifier>2036883</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>423587</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Chicago, IL, Cook</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>2036884</list_item_order>
+                              <list_item_identifier>2200</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>2000</question_order>
+                        <question_identifier>2036881</question_identifier>
+                     </question>
+
+                     <!-- Patient's State-->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's State</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <!--
+                           "Coded value 
+                           "Code System Name: FIPS 5-2 (State)
+                           Code System OID: 2.16.840.1.113883.6.92
+                           Value Set Name: FIPS 5-2 Value Set OID: 2.16.840.1.114222.4.11.830
+                           https://phinvads.cdc.gov/vads/ViewValueSet.action?id=80D34BBC-617F-DD11-B38D-00188B398520
+                        -->
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <list_item>
+                              <mfi13:value>13</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Georgia</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>GA</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>2500</list_item_order>
+                              <list_item_identifier>2036886</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>27</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Minnesota</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>MN</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>2700</list_item_order>
+                              <list_item_identifier>2036887</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>17</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Illinois</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>IL</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>2600</list_item_order>
+                              <list_item_identifier>2036888</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>2400</question_order>
+                        <question_identifier>2036885</question_identifier>
+                     </question>
+
+                     <!-- Patient's Zip Code -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's Zip Code</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <!--
+                           "Coded value 
+                           Code System Name: US Postal Codes  
+                           Code System OID: 2.16.840.1.113883.6.231
+                           Value Set Name:  PostalCode 
+                           Value Set OID: 2.16.840.1.113883.3.88.12.80.2
+                           Value Set Source: http://ushik.ahrq.gov/ViewItemDetails?system=mdr&itemKey=86671000
+                        -->
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <!-- We should default to false (0) , not present currently -->
+                           <list_item>
+                              <mfi13:value>30301</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>30301</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>2900</list_item_order>
+                              <list_item_identifier>2036891</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>60609</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>60609</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>3000</list_item_order>
+                              <list_item_identifier>2036892</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>55401</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>55401</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>3100</list_item_order>
+                              <list_item_identifier>2036893</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>2800</question_order>
+                        <question_identifier>2036890</question_identifier>
+                     </question>
+
+                     <!-- Patient's Country -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's Country</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <!--
+                           "Coded value 
+                           Code System Name:   ISO 3166-1     
+                           Code System OID: 1.0.3166.1
+                           Value Set Name: Country 
+                           Value Set OID: 2.16.840.1.114222.4.11.828
+                           https://phinvads.cdc.gov/vads/ViewValueSet.action?id=1FD34BBC-617F-DD11-B38D-00188B398520
+                        -->
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <list_item>
+                              <mfi13:value>USA</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>United States</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>3300</list_item_order>
+                              <list_item_identifier>2036896</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>CAN</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>CANADA</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>3400</list_item_order>
+                              <list_item_identifier>2036897</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>MEX</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>MEXICO</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>3500</list_item_order>
+                              <list_item_identifier>2036898</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>3200</question_order>
+                        <question_identifier>2036895</question_identifier>
+                     </question>
+
+                     <!-- Patient's Phone Number -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's Phone Number</mfi13:label>
+                           <mfi13:style>phoneStyle</mfi13:style>
+                        </question_prompt>
+                        <!--V3 Telecom Data Type   Numeric  usual format: tel:\+?[-0-9().]+ 
+                        Telecommunication Address (TEL) specializes URL:
+                        Definition:  A telephone number (voice or fax), e-mail address, or other locator for a resource mediated by telecommunication equipment. 
+                        The address is specified as a Universal Resource Locator (URL) qualified by time specification and use codes that help in deciding which address to use for a given time and purpose. 
+                        -->
+                        <text_field>
+                           <datatype>
+                              <string>
+                                 <reg_ex>\+?[-0-9().]+</reg_ex>
+                              </string>
+                              <!-- What to do with the tel: -->
+                           </datatype>
+                        </text_field>
+                        <question_order>3600</question_order>
+                        <question_identifier>2036900</question_identifier>
+                     </question>
+                     <section_identifier>2036879</section_identifier>
+                  </section>
+                  <!-- Patient's Contact Information Section ENDS-->
+
+
+                  <!-- Other Patient Information Section BEGINS-->
+                  <section initial_state="disabled">
+                     <section_title>
+                        <mfi13:label>Other Patient Information</mfi13:label>
+                        <mfi13:style>otherPatientInfo</mfi13:style>
+                     </section_title>
+                     <section_order>3700</section_order>
+
+                     <!-- Patient's Race Code-->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Patient's Race Code</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <!-- 
+                           Coded Value (CV)
+                          "Code System Name: Race & Ethnicity - CDC 
+                           Code System OID: 2.16.840.1.113883.6.238
+                           Value Set Name: PHVS_Race_CDC 
+                           Value Set OID: 2.16.840.1.114222.4.11.876
+                           http://phinvads.cdc.gov/vads/ViewValueSet.action?id=66D34BBC-617F-DD11-B38D-00188B398520
+                        -->
+                        <list_field>
+                           <mfi13:multiselect>true</mfi13:multiselect>
+                           <!-- Person can have more than one race code -->
+                           <list_item>
+                              <mfi13:value>1002-5</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>American Indian or Alaska Native</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>A person having origins in any of the original peoples
+                                    of North and South America (including Central America), and who
+                                    maintains tribal affiliation or community
+                                    attachment.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>3900</list_item_order>
+                              <list_item_identifier>27842</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>2028-9</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Asian</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>A person having origins in any of the original peoples
+                                    of the Far East, Southeast Asia, or the Indian subcontinent
+                                    including, for example, Cambodia, China, India, Japan, Korea,
+                                    Malaysia, Pakistan, the Philippine Islands, Thailand, and
+                                    Vietnam. </mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>4000</list_item_order>
+                              <list_item_identifier>27843</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>2054-5</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Black or African American</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label> A person having origins in any of the black racial
+                                    groups of Africa. Terms such as "Haitian" or "Negro" can be used
+                                    in addition to "Black or African American. </mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>4100</list_item_order>
+                              <list_item_identifier>27846</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>2076-8</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Native Hawaiian or other Pacific
+                                    Islander</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>4200</list_item_order>
+                              <list_item_identifier>27847</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>2106-3</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>White</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>4300</list_item_order>
+                              <list_item_identifier>29035</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>3800</question_order>
+                        <question_identifier>26487</question_identifier>
+                     </question>
+
+                     <!-- Patient's Ethnicity Code-->
+                     <question initial_state="enabled">
+                        <!-- Optional Field -->
+                        <mfi13:cardinality>
+                           <mfi13:minimum>0</mfi13:minimum>
+                           <mfi13:maximum>1</mfi13:maximum>
+                        </mfi13:cardinality>
+                        <question_prompt>
+                           <mfi13:label>Patient's Ethnicity Code</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <!-- Coded Value (CV)
+                          "Code System Name: Race & Ethnicity – CDC 
+                           Code System OID: 2.16.840.1.113883.6.238
+                           Value Set Name: PHVS_EthnicityGroup_CDC 
+                           Value Set OID: 2.16.840.1.114222.4.11.837)
+                           http://phinvads.cdc.gov/vads/ViewValueSet.action?id=35D34BBC-617F-DD11-B38D-00188B398520
+                        -->
+                        <list_field>
+                           <mfi13:multiselect>true</mfi13:multiselect>
+                           <!-- Person can have more than one Ethnicity -->
+                           <list_item>
+                              <mfi13:value>2135-2</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Hispanic or Latino</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>4500</list_item_order>
+                              <list_item_identifier>29036</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>2186-5</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Not Hispanic or Latino (specify)</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <mfi13:fill_in>true</mfi13:fill_in>
+                              <list_item_order>4600</list_item_order>
+                              <list_item_identifier>29037</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>4400</question_order>
+                        <question_identifier>27762</question_identifier>
+                     </question>
+
+                     <!-- Highest Education Level-->
+                     <question initial_state="enabled">
+                        <!-- Optional field-->
+                        <mfi13:cardinality>
+                           <mfi13:minimum>0</mfi13:minimum>
+                           <mfi13:maximum>1</mfi13:maximum>
+                        </mfi13:cardinality>
+                        <question_prompt>
+                           <mfi13:label>Highest Education Level</mfi13:label>
+                        </question_prompt>
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <datatype>
+                              <string>
+                                 <maximum_characters>44</maximum_characters>
+                              </string>
+                           </datatype>
+                           <list_item>
+                              <mfi13:value>Bachelor's Degree</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Bachelor's Degree</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>Bachelor's degree is an award (baccalaureate or
+                                    equivalent degree, as determined by the Secretary of the U.S.
+                                    Department of Education) conferred by a college, university, or
+                                    other postsecondary education institution as official
+                                    recognition for the successful completion of a program of
+                                    studies, that normally requires at least four years of full-time
+                                    equivalent college-level work. This includes bachelor's degrees
+                                    conferred in a five-year cooperative program.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>4800</list_item_order>
+                              <list_item_identifier>29056</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>Doctoral degree or professional degree</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Professional Doctorate or Doctorate
+                                    Degree</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>A doctorate awarded in certain fields where most
+                                    holders of the degree are not engaged primarily in scholarly
+                                    research and academic activities, but rather in a profession,
+                                    such as law, medicine, music, or ministry.: Or; used to connect
+                                    words, phrases, or clauses representing alternatives; used to
+                                    connect alternative terms for the same thing; used in
+                                    correlation; used to correct or rephrase what was previously
+                                    said; otherwise.: The Doctor's Degree is the highest award a
+                                    student can earn for graduate study. The doctor's degree
+                                    classification includes such degrees in any field.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>4900</list_item_order>
+                              <list_item_identifier>29061</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>Grade School</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Grade School</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>A school for young children; usually the first 6 or 8
+                                    grades.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>5000</list_item_order>
+                              <list_item_identifier>29057</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>Graduate or professional degree</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Graduation Or Professional Degree</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>Conferral or receipt of an academic degree or diploma
+                                    marking the completion of a defined set of coursework.: Or; used
+                                    to connect words, phrases, or clauses representing alternatives;
+                                    used to connect alternative terms for the same thing; used in
+                                    correlation; used to correct or rephrase what was previously
+                                    said; otherwise.: An occupation requiring special education,
+                                    especially in the liberal arts or sciences.: An academic degree
+                                    is an award conferred by a college, university, or other
+                                    postsecondary education institution as official recognition for
+                                    the successful completion of a program of studies.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>5100</list_item_order>
+                              <list_item_identifier>29058</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>High school graduate (including
+                                 equivalency)</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>High School Completion or General Equivalency Diploma
+                                    (GED) Completion</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>Indicates that a person has attended high school and
+                                    has received a high school diploma.: Or; used to connect words,
+                                    phrases, or clauses representing alternatives; used to connect
+                                    alternative terms for the same thing; used in correlation; used
+                                    to correct or rephrase what was previously said; otherwise.:
+                                    Indicates that a person has received a General Equivalency
+                                    Diploma in lieu of a high school diploma.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>5200</list_item_order>
+                              <list_item_identifier>29059</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>Master's Degree</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Master's Degree</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>The Master's Degree is an award that requires the
+                                    successful completion of a program of study of at least the
+                                    full-time equivalent of 1 but not more than two academic years
+                                    of work beyond the bachelor's degree.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>5300</list_item_order>
+                              <list_item_identifier>29062</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>No formal education</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>No Formal Schooling</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>Indicates that a person has never attended an
+                                    educational program or formal schooling.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>5400</list_item_order>
+                              <list_item_identifier>29063</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>Not high school graduate</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Not High School Graduate</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>Indicates a person has attended high school but did
+                                    not complete high school and did not receive a high school
+                                    diploma.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>5500</list_item_order>
+                              <list_item_identifier>29064</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>Some college or associate degree</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Some College or Associates Degree</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>An institution of higher education created to educate
+                                    and grant degrees; often a part of a university.: At least a
+                                    small amount or number of.: Or; used to connect words, phrases,
+                                    or clauses representing alternatives; used to connect
+                                    alternative terms for the same thing; used in correlation; used
+                                    to correct or rephrase what was previously said; otherwise.: A
+                                    degree granted by a two-year college on successful completion of
+                                    the undergraduates course of studies.</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>5600</list_item_order>
+                              <list_item_identifier>29065</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>4700</question_order>
+                        <question_identifier>27763</question_identifier>
+                     </question>
+                     <section_identifier>26486</section_identifier>
+                  </section>
+                  <!-- Other Patient Information Section ENDS -->
+
+
+                  <!-- Provider Information Section BEGINS-->
+                  <section initial_state="disabled">
+                     <section_title>
+                        <mfi13:label>Provider Information</mfi13:label>
+                        <mfi13:style>providerSection</mfi13:style>
+                     </section_title>
+
+                     <!-- contained_section for Provider Address BEGINS (Provider can have multiple offices)-->
+                     <contained_section initial_state="enabled">
+                        <!-- This section can repeat for more than once  -->
+                        <mfi13:cardinality>
+                           <mfi13:minimum>1</mfi13:minimum>
+                           <mfi13:maximum>3</mfi13:maximum>
+                        </mfi13:cardinality>
+                        <section_title>
+                           <mfi13:label>Provider Address</mfi13:label>
+                           <mfi13:style>addressRepeatingSection</mfi13:style>
+                        </section_title>
+                        <additional_instruction>
+                           <mfi13:label>repeat section more than once for various address
+                              type</mfi13:label>
+                        </additional_instruction>
+                        <section_order>6200</section_order>
+
+                        <!-- Provider Address Type (Home / Office1 / Office2) -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:cardinality>
+                                 <mfi13:minimum>1</mfi13:minimum>
+                                 <mfi13:maximum>3</mfi13:maximum>
+                              </mfi13:cardinality>
+                              <mfi13:label>Provider Address Type</mfi13:label>
+                           </question_prompt>
+                           <list_field>
+                              <mfi13:multiselect>true</mfi13:multiselect>
+                              <!-- Implement skip logic for the below selection (i.e go to  -->
+                              <list_item>
+                                 <mfi13:value>Home</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Home Address</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>6400</list_item_order>
+                                 <list_item_identifier>29033</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>Office1</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Office1 Address</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>6500</list_item_order>
+                                 <list_item_identifier>29034</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>Office2</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Office2 Address</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>6600</list_item_order>
+                                 <list_item_identifier>29076</list_item_identifier>
+                              </list_item>
+                           </list_field>
+                           <question_order>6300</question_order>
+                           <question_identifier>27813</question_identifier>
+                        </question>
+
+                        <!-- Provider Street Address -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Street Address</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <!--"String (V3 Data Type: Address Part (ADXP) STR) street name"  -->
+                           <text_field>
+                              <datatype>
+                                 <string/>
+                              </datatype>
+                           </text_field>
+                           <question_order>6700</question_order>
+                           <question_identifier>27814</question_identifier>
+                        </question>
+
+                        <!-- Provider City -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider City</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <list_field>
+                              <mfi13:multiselect>false</mfi13:multiselect>
+                              <list_item>
+                                 <mfi13:value>351615</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Atlanta, GA, Fulton</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>6900</list_item_order>
+                                 <list_item_identifier>29038</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>655030</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Minneapolis, MN, Hennepin</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>7000</list_item_order>
+                                 <list_item_identifier>29039</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>423587</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Chicago, IL, Cook</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>7100</list_item_order>
+                                 <list_item_identifier>29040</list_item_identifier>
+                              </list_item>
+                           </list_field>
+                           <question_order>6800</question_order>
+                           <question_identifier>27815</question_identifier>
+                        </question>
+
+                        <!-- Provider State -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider State</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <list_field>
+                              <mfi13:multiselect>false</mfi13:multiselect>
+                              <list_item>
+                                 <mfi13:value>13</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Georgia</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning>
+                                    <mfi13:label>GA</mfi13:label>
+                                 </mfi13:value_meaning>
+                                 <list_item_order>7300</list_item_order>
+                                 <list_item_identifier>29041</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>17</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Illinois</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning>
+                                    <mfi13:label>IL</mfi13:label>
+                                 </mfi13:value_meaning>
+                                 <list_item_order>7500</list_item_order>
+                                 <list_item_identifier>29043</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>27</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Minnesota</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning>
+                                    <mfi13:label>MN</mfi13:label>
+                                 </mfi13:value_meaning>
+                                 <list_item_order>7400</list_item_order>
+                                 <list_item_identifier>29042</list_item_identifier>
+                              </list_item>
+                           </list_field>
+                           <question_order>7200</question_order>
+                           <question_identifier>27818</question_identifier>
+                        </question>
+
+                        <!-- Provider Zip Code -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Zip Code</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <list_field>
+                              <mfi13:multiselect>false</mfi13:multiselect>
+                              <list_item>
+                                 <mfi13:value>30301</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>30301</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>7700</list_item_order>
+                                 <list_item_identifier>29044</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>60609</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>60609</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>7900</list_item_order>
+                                 <list_item_identifier>29046</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>55401</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>55401</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>7800</list_item_order>
+                                 <list_item_identifier>29045</list_item_identifier>
+                              </list_item>
+                           </list_field>
+                           <question_order>7600</question_order>
+                           <question_identifier>27819</question_identifier>
+                        </question>
+
+                        <!-- Provider Country -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Country</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <list_field>
+                              <mfi13:multiselect>false</mfi13:multiselect>
+                              <list_item>
+                                 <mfi13:value>USA</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>United States</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>8100</list_item_order>
+                                 <list_item_identifier>29047</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>CAN</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>CANADA</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>8200</list_item_order>
+                                 <list_item_identifier>29048</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>MEX</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>MEXICO</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>8300</list_item_order>
+                                 <list_item_identifier>29049</list_item_identifier>
+                              </list_item>
+                           </list_field>
+                           <question_order>8000</question_order>
+                           <question_identifier>27820</question_identifier>
+                        </question>
+
+                        <!-- Provider Telephone # -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Telephone #</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <text_field>
+                              <datatype>
+                                 <string>
+                                    <reg_ex>\+?[-0-9().]+</reg_ex>
+                                 </string>
+                              </datatype>
+                           </text_field>
+                           <question_order>8400</question_order>
+                           <question_identifier>27821</question_identifier>
+                        </question>
+                        <section_identifier>27812</section_identifier>
+                     </contained_section>
+                     <!-- Nested Provider Address ENDS -->
+
+                     <!-- Second contained_section for Provider Organization  BEGINS -->
+                     <contained_section initial_state="enabled">
+                        <section_title>
+                           <mfi13:label>Provider Organization</mfi13:label>
+                           <mfi13:style>providerOrg</mfi13:style>
+                        </section_title>
+                        <section_order>8500</section_order>
+
+                        <!-- Provider Organization NPI -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Organization NPI</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <additional_instruction>
+                              <mfi13:label>This number should be a 10 digit integer</mfi13:label>
+                              <mfi13:style>visibleInstruction</mfi13:style>
+                           </additional_instruction>
+                           <text_field>
+                              <datatype>
+                                 <integer>
+                                    <minimum_value>1000000000</minimum_value>
+                                    <maximum_value>9999999999</maximum_value>
+                                 </integer>
+                              </datatype>
+                           </text_field>
+                           <question_order>8600</question_order>
+                           <question_identifier>27822</question_identifier>
+                        </question>
+
+                        <!-- Provider Organization Name -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Organization Name</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <text_field>
+                              <datatype>
+                                 <string/>
+                              </datatype>
+                           </text_field>
+                           <question_order>8700</question_order>
+                           <question_identifier>27824</question_identifier>
+                        </question>
+
+                        <!-- Provider Organization Street Address -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Organization Street Address</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <text_field>
+                              <datatype>
+                                 <string/>
+                              </datatype>
+                           </text_field>
+                           <question_order>8800</question_order>
+                           <question_identifier>27825</question_identifier>
+                        </question>
+
+                        <!-- Provider Organization City -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Organization City</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <list_field>
+                              <mfi13:multiselect>false</mfi13:multiselect>
+                              <list_item>
+                                 <mfi13:value>351615</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Atlanta, GA, Fulton</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>9000</list_item_order>
+                                 <list_item_identifier>29066</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>655030</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Minneapolis, MN, Hennepin</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>9200</list_item_order>
+                                 <list_item_identifier>29067</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>423587</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Chicago, IL, Cook</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>9100</list_item_order>
+                                 <list_item_identifier>29068</list_item_identifier>
+                              </list_item>
+                           </list_field>
+                           <question_order>8900</question_order>
+                           <question_identifier>27828</question_identifier>
+                        </question>
+
+                        <!-- Provider Organization State -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Organization State</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <list_field>
+                              <mfi13:multiselect>false</mfi13:multiselect>
+                              <list_item>
+                                 <mfi13:value>13</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Georgia</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning>
+                                    <mfi13:label>GA</mfi13:label>
+                                 </mfi13:value_meaning>
+                                 <list_item_order>9400</list_item_order>
+                                 <list_item_identifier>29069</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>17</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Illinois</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning>
+                                    <mfi13:label>IL</mfi13:label>
+                                 </mfi13:value_meaning>
+                                 <list_item_order>9500</list_item_order>
+                                 <list_item_identifier>29071</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>27</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>Minnesota</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning>
+                                    <mfi13:label>MN</mfi13:label>
+                                 </mfi13:value_meaning>
+                                 <list_item_order>9600</list_item_order>
+                                 <list_item_identifier>29070</list_item_identifier>
+                              </list_item>
+                           </list_field>
+                           <question_order>9300</question_order>
+                           <question_identifier>27829</question_identifier>
+                        </question>
+
+                        <!-- Provider Organization Zip Code -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Organization Zip Code</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <list_field>
+                              <mfi13:multiselect>false</mfi13:multiselect>
+                              <list_item>
+                                 <mfi13:value>30301</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>30301</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>9800</list_item_order>
+                                 <list_item_identifier>29072</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>60609</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>60609</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>9900</list_item_order>
+                                 <list_item_identifier>29073</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>55401</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>55401</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>10000</list_item_order>
+                                 <list_item_identifier>29074</list_item_identifier>
+                              </list_item>
+                           </list_field>
+                           <question_order>9700</question_order>
+                           <question_identifier>27830</question_identifier>
+                        </question>
+
+                        <!-- Provider Organization Country -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Organization Country</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <list_field>
+                              <mfi13:multiselect>false</mfi13:multiselect>
+                              <list_item>
+                                 <mfi13:value>USA</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>United States</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>10200</list_item_order>
+                                 <list_item_identifier>29050</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>CAN</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>CANADA</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>10300</list_item_order>
+                                 <list_item_identifier>29054</list_item_identifier>
+                              </list_item>
+                              <list_item>
+                                 <mfi13:value>MEX</mfi13:value>
+                                 <mfi13:item_prompt>
+                                    <mfi13:label>MEXICO</mfi13:label>
+                                 </mfi13:item_prompt>
+                                 <mfi13:value_meaning/>
+                                 <list_item_order>10400</list_item_order>
+                                 <list_item_identifier>29055</list_item_identifier>
+                              </list_item>
+                           </list_field>
+                           <question_order>10100</question_order>
+                           <question_identifier>27832</question_identifier>
+                        </question>
+
+                        <!-- Provider Organization Telephone # -->
+                        <question initial_state="enabled">
+                           <question_prompt>
+                              <mfi13:label>Provider Organization Telephone #</mfi13:label>
+                              <mfi13:style>question</mfi13:style>
+                           </question_prompt>
+                           <text_field>
+                              <datatype>
+                                 <string>
+                                    <reg_ex>\+?[-0-9().]+</reg_ex>
+                                 </string>
+                              </datatype>
+                           </text_field>
+                           <question_order>10500</question_order>
+                           <question_identifier>27831</question_identifier>
+                        </question>
+
+                        <section_identifier>27816</section_identifier>
+                     </contained_section>
+                     <!-- Nested Provider Organization Section ENDS -->
+
+                     <section_order>5700</section_order>
+
+                     <!-- Provider NPI -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Provider NPI</mfi13:label>
+                           <!-- National Provider Identifier  -->
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <additional_instruction>
+                           <mfi13:label>This number should be a 10 digit integer</mfi13:label>
+                           <mfi13:style>visibleInstruction</mfi13:style>
+                        </additional_instruction>
+                        <text_field>
+                           <datatype>
+                              <integer>
+                                 <minimum_value>1000000000</minimum_value>
+                                 <maximum_value>9999999999</maximum_value>
+                              </integer>
+                           </datatype>
+                        </text_field>
+                        <question_order>5800</question_order>
+                        <question_identifier>27799</question_identifier>
+                     </question>
+
+                     <!-- Provider First Name -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Provider First Name</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string/>
+                           </datatype>
+                        </text_field>
+                        <question_order>5900</question_order>
+                        <question_identifier>27808</question_identifier>
+                     </question>
+
+                     <!-- Provider Last Name -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Provider Last Name</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string/>
+                           </datatype>
+                        </text_field>
+                        <question_order>6000</question_order>
+                        <question_identifier>27809</question_identifier>
+                     </question>
+
+                     <!-- Provider Name Suffix -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Provider Name Suffix</mfi13:label>
+                           <!-- Should we have dropdown list to pick up? -->
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string/>
+                           </datatype>
+                        </text_field>
+                        <question_order>6100</question_order>
+                        <question_identifier>27811</question_identifier>
+                     </question>
+
+                     <section_identifier>27798</section_identifier>
+                  </section>
+                  <!-- Provider Information Section ENDS-->
+
+
+                  <!-- Custodian Organization Section BEGINS -->
+                  <section initial_state="disabled">
+                     <section_title>
+                        <mfi13:label>Custodian Organization</mfi13:label>
+                        <mfi13:style>custodianOrgSection</mfi13:style>
+                     </section_title>
+                     <section_order>10600</section_order>
+
+                     <!-- Reporting Organization Name (Custodian) -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Reporting Organization Name (Custodian)</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string/>
+                           </datatype>
+                        </text_field>
+                        <question_order>10700</question_order>
+                        <question_identifier>27823</question_identifier>
+                     </question>
+
+                     <!-- Reporting Organization NPI (Custodian) -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Reporting Organization NPI (Custodian)</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <additional_instruction>
+                           <mfi13:label>This number should be a 10 digit integer</mfi13:label>
+                           <mfi13:style>visibleInstruction</mfi13:style>
+                        </additional_instruction>
+                        <text_field>
+                           <datatype>
+                              <integer>
+                                 <minimum_value>1000000000</minimum_value>
+                                 <maximum_value>9999999999</maximum_value>
+                              </integer>
+                           </datatype>
+                        </text_field>
+                        <question_order>10800</question_order>
+                        <question_identifier>27840</question_identifier>
+                     </question>
+
+                     <!-- Reporting Organization Street Address (Custodian) -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Reporting Organization Street Address
+                              (Custodian)</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string/>
+                           </datatype>
+                           <!--"String (V3 Data Type: Address Part (ADXP) STR) street name"  -->
+                        </text_field>
+                        <question_order>10900</question_order>
+                        <question_identifier>27833</question_identifier>
+                     </question>
+
+                     <!-- Reporting Organization City (Custodian) -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Reporting Organization City (Custodian)</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <list_item>
+                              <mfi13:value>351615</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Atlanta, GA, Fulton</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>11100</list_item_order>
+                              <list_item_identifier>29075</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>655030</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Minneapolis, MN, Hennepin</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>11300</list_item_order>
+                              <list_item_identifier>29077</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>423587</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Chicago, IL, Cook</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>11200</list_item_order>
+                              <list_item_identifier>29078</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>11000</question_order>
+                        <question_identifier>27834</question_identifier>
+                     </question>
+
+                     <!-- Reporting Organization State (Custodian) -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Reporting Organization State (Custodian)</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <list_item>
+                              <mfi13:value>13</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Georgia</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>GA</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>11500</list_item_order>
+                              <list_item_identifier>29079</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>17</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Illinois</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>IL</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>11600</list_item_order>
+                              <list_item_identifier>29081</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>27</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>Minnesota</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning>
+                                 <mfi13:label>MN</mfi13:label>
+                              </mfi13:value_meaning>
+                              <list_item_order>11700</list_item_order>
+                              <list_item_identifier>29080</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>11400</question_order>
+                        <question_identifier>27835</question_identifier>
+                     </question>
+
+                     <!-- Reporting Organization Zip Code (Custodian) -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Reporting Organization Zip Code (Custodian)</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <list_item>
+                              <mfi13:value>30301</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>30301</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>11900</list_item_order>
+                              <list_item_identifier>29082</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>60609</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>60609</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>12000</list_item_order>
+                              <list_item_identifier>29083</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>55401</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>55401</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>12100</list_item_order>
+                              <list_item_identifier>29084</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>11800</question_order>
+                        <question_identifier>27836</question_identifier>
+                     </question>
+
+                     <!-- Reporting Organization Country (Custodian) -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Reporting Organization Country (Custodian)</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <list_field>
+                           <mfi13:multiselect>false</mfi13:multiselect>
+                           <list_item>
+                              <mfi13:value>USA</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>United States</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>12300</list_item_order>
+                              <list_item_identifier>29085</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>CAN</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>CANADA</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>12400</list_item_order>
+                              <list_item_identifier>29086</list_item_identifier>
+                           </list_item>
+                           <list_item>
+                              <mfi13:value>MEX</mfi13:value>
+                              <mfi13:item_prompt>
+                                 <mfi13:label>MEXICO</mfi13:label>
+                              </mfi13:item_prompt>
+                              <mfi13:value_meaning/>
+                              <list_item_order>12500</list_item_order>
+                              <list_item_identifier>29087</list_item_identifier>
+                           </list_item>
+                        </list_field>
+                        <question_order>12200</question_order>
+                        <question_identifier>27837</question_identifier>
+                     </question>
+
+                     <!-- Reporting Organization Telephone # (Custodian) -->
+                     <question initial_state="enabled">
+                        <question_prompt>
+                           <mfi13:label>Reporting Organization Telephone # (Custodian)</mfi13:label>
+                           <mfi13:style>question</mfi13:style>
+                        </question_prompt>
+                        <text_field>
+                           <datatype>
+                              <string>
+                                 <reg_ex>\+?[-0-9().]+</reg_ex>
+                              </string>
+                           </datatype>
+                        </text_field>
+                        <question_order>12600</question_order>
+                        <question_identifier>27838</question_identifier>
+                     </question>
+
+                     <section_identifier>27817</section_identifier>
+                  </section>
+                  <!-- Custodian Organization Section ENDS -->
+
+                  <footer initial_state="enabled">
+                     <section_instruction>
+                        <mfi13:label>IHE Connectathon: Structure Data Capture</mfi13:label>
+                     </section_instruction>
+                     <media>
+                        <image>
+                           <uri>http://www.ihe.net/images/logo.png</uri>
+                        </image>
+                     </media>
+                     <section_identifier>99999</section_identifier>
+                  </footer>
+               </form_design>
+            </sdc:form_package>
+         </sdc:sdc_xml_package>
+      </Structured>
+      <!-- Comment: Optionally, insert GUID/UUID to track the RFD RetrieveFormResponse transaction -->
+      <instanceID/>
+   </form>
+   <contentType>XML</contentType>
+   <!--Please note the use of constrained value “XML” above-->
+   
+   <responseCode>Request succeeded</responseCode> <!-- Value is not required for the responseCode but will be useful  -->
+   
+
+   
+</RetrieveFormResponse>

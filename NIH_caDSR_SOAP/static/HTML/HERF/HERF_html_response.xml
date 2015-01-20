@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+******************************************************************************
+RFD Retrieve Form Response (ITI-34) containing an HTML Response 
+
+FORM NAME:      Healthcare Event Reporting Form (HERF) Hospital Version 1.2
+PURPOSE:        Response for HERF form using RFD (ITI-34) transaction in SDC sample HTML format.
+
+REVISIONS: 
+Ver        Date         Author              Description
+1.0        12/01/2014   Varsha Parekh/      Added RFD wrapper and schema validation 
+                        Richard Moldwin     fixed RFD schema to add <instanceID> support
+                        
+1.1        12/03/2014   Denise Warzel       Populated the sdc_html_form section containing html content 
+1.2        12/11/2014   DW/WS/SJ/VP/RM      InstanceID removed, schema location moved
+******************************************************************************/
+-->
+
+<RetrieveFormResponse 
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd" 
+   xmlns="urn:ihe:iti:rfd:2007"
+   xmlns:sdc="http://nlm.nih.gov/sdc/form"
+   xmlns:mfi13="http://www.iso.org/19763/13/2013"
+   xmlns:dex="urn:ihe:qrph:dex:2013"
+   xmlns:mfi6="http://www.iso.org/19763/6/2013"
+   xmlns:mdr3="http://www.iso.org/11179/3/2013"
+   >
+
+   <form>
+       <Structured>
+         <sdc:sdc_html_package>
+            <sdc:supplemental_data>
+               <!-- Contains supplemental data related to the form instance e.g., generation date, pre-pop data, special instructions, etc. -->
+                </sdc:supplemental_data>
+            <sdc:form_info>
+               <!-- Contains mapping, and administrative info; this is the same content as from the form design package -->
+               <sdc:mapping_package xmlns="http://nlm.nih.gov/sdc/form"
+                  mapping_package_identifier="http://nci.nih.gov/xml/cadsr/form/mapping_package#1111v1_0"
+                  form_design_identifier="http://AHRQ.org/form_design_identifier#HERFv1_2">
+                  <mdr_mapping
+                     mdr_mapping_identifier="http://nci.nih.gov/xml/owl/cadsr#mapping_package/8888/1.0/form_design_identifier#HERFv1_2" >
+                     <question_element_data_element_association>
+                        <mfi13:data_element_identifier>2.16.840.1.113883.3.263.1.12/DE3</mfi13:data_element_identifier>
+                        <mfi13:association_type>same_as</mfi13:association_type>
+                        <mfi13:question_element_identifier>http://AHRQ.org/form/question_identifier/HERF/1.2/DE3</mfi13:question_element_identifier>
+                     </question_element_data_element_association>
+                     <question_element_data_element_association>
+                        <mfi13:data_element_identifier>2.16.840.1.113883.5.1008/DE9</mfi13:data_element_identifier>
+                        <mfi13:association_type>related</mfi13:association_type>
+                        <mfi13:question_element_identifier>http://AHRQ.org/form/question_identifier/HERF/1.2/DE9</mfi13:question_element_identifier>
+                     </question_element_data_element_association>
+                     <question_element_data_element_association>
+                        <mfi13:data_element_identifier>2.16.840.1.113883.3.263.1.12/DE321</mfi13:data_element_identifier>
+                        <mfi13:association_type>related</mfi13:association_type>
+                        <mfi13:question_element_identifier>http://AHRQ.org/form/question_identifier/HERF/1.2/DE321</mfi13:question_element_identifier>
+                     </question_element_data_element_association>
+                     <question_element_data_element_association>
+                        <mfi13:data_element_identifier>2.16.840.1.113883.3.263.1.12/DE03</mfi13:data_element_identifier>
+                        <mfi13:association_type>related</mfi13:association_type>
+                        <mfi13:question_element_identifier>http://AHRQ.org/form/question_identifier/HERF/1.2/DE03</mfi13:question_element_identifier>
+                     </question_element_data_element_association>
+                     <question_element_data_element_association>
+                        <mfi13:data_element_identifier>2.16.840.1.113883.5.1/DE42 or
+                           2.16.840.1.113883.5.1008/DE42</mfi13:data_element_identifier>
+                        <mfi13:association_type>related</mfi13:association_type>
+                        <mfi13:question_element_identifier>http://AHRQ.org/form/question_identifier/HERF/1.2/DE42</mfi13:question_element_identifier>
+                        <sdc:dex_mapping_specification>
+                           <dex:contentModel>
+                              <dex:id>2.16.840.1.113883.10.20.1</dex:id>
+                              <dex:name>HL7 CCD</dex:name>
+                           </dex:contentModel>
+                           <dex:type>XPATH</dex:type>
+                           <dex:mappingScript>/cda:ClinicalDocument/cda:recordTarget/cda:patientRole/cda:patient/cda:administrativeGenderCode/@code</dex:mappingScript>
+                        </sdc:dex_mapping_specification>
+                     </question_element_data_element_association>
+                     <question_element_data_element_association>
+                        <mfi13:data_element_identifier>2.16.840.1.113883.5.1 or
+                           2.16.840.1.113883.5.1008</mfi13:data_element_identifier>
+                        <mfi13:association_type>related</mfi13:association_type>
+                        <mfi13:question_element_identifier>http://AHRQ.org/form/question_identifier/HERF/1.2/DE43</mfi13:question_element_identifier>
+                     </question_element_data_element_association>
+                     <question_element_data_element_association>
+                        <mfi13:data_element_identifier>2.16.840.1.113883.3.263.1.12</mfi13:data_element_identifier>
+                        <mfi13:association_type>related</mfi13:association_type>
+                        <mfi13:question_element_identifier>http://AHRQ.org/form/question_identifier/HERF/1.2/DE33</mfi13:question_element_identifier>
+                     </question_element_data_element_association>
+                     <!--  element mappings abbreviated... -->
+                  </mdr_mapping>
+               </sdc:mapping_package>
+               
+               <sdc:administrative_package>
+                  <submission_rule rule_identifier="1v1"
+                     form_identifier="http://AHRQ.org/form_design_identifier#HERFv1_2"
+                     xmlns="http://nlm.nih.gov/sdc/form">
+                     <destination>
+                        <sdc:endpoint>http://cdc.gov</sdc:endpoint>
+                        <sdc:description>This is intended to be a set of one or more submission
+                           rules that pertain to this version of the form. e.g. "This is an FDA form
+                           and it must be sent to FDA when completed</sdc:description>
+                     </destination>
+                  </submission_rule>
+                  <sdc:compliance_rule/>
+                  <originating_registry_summary xmlns="http://nlm.nih.gov/sdc/form">
+                     <!-- This element is an ISO element describing where this particular instance of the form came from -->
+                     <mfi6:registry_organization>
+                        <mdr3:name>NLM Forms Registry</mdr3:name>
+                        <mdr3:uri>NLMRegistrationAuthorityIdentifier</mdr3:uri>
+                     </mfi6:registry_organization>
+                     <mfi6:reference_standard_identifier>ISO/IEC
+                        19763-13</mfi6:reference_standard_identifier>
+                     <mfi6:purpose_for_registry>
+                        <mdr3:title>Forms for Meaningful Use</mdr3:title>
+                     </mfi6:purpose_for_registry>
+                     <mfi6:manual_for_registry>
+                        <mdr3:title>SDC Forms IG</mdr3:title>
+                     </mfi6:manual_for_registry>
+                  </originating_registry_summary>
+                  <sdc:form_language>
+                     <style_language>
+                        <!-- Optional, single reference document describing the
+                                style language used to place Form_Design_Element instances in place
+                                on the form
+                                e.g.: http://www.w3.org/TR/CSS3/ 
+         SDC could consider providing a default style sheet? -->
+                        <mdr3:identifier>http://www.w3.org/TR/CSS3/</mdr3:identifier>
+                        <mdr3:document_type>
+                           <mdr3:description>a description of the style language used in the form
+                              design</mdr3:description>
+                        </mdr3:document_type>
+                     </style_language>
+                     <logic_language>
+                        <!-- one logic language for all SDC forms should be established -->
+                        <mdr3:identifier>http://some.document.describing.the.logicLangauge.document</mdr3:identifier>
+                        <mdr3:document_type>
+                           <mdr3:description>a description of the logic document</mdr3:description>
+                        </mdr3:document_type>
+                     </logic_language>
+                     <format_language>
+                        <!-- SDC may want to determine whether one or more formatting languages will be supported.
+            Forms group is leaning towards html4, but the SDC group needs to dsicuss which will be supported in SDC -->
+                        <mdr3:identifier>http://regEx</mdr3:identifier>
+                        <mdr3:document_type>
+                           <mdr3:description>a description of the format document</mdr3:description>
+                        </mdr3:document_type>
+                     </format_language>
+                     <textual_language>eng</textual_language>
+                     <!-- The language used in the description of this form 
+       is consistent with meaningful and is based on LANGUAGE CODE 639-2 (3 digit) -->
+                  </sdc:form_language>
+                  <sdc:contacts>
+                     <contact xmlns="http://nlm.nih.gov/sdc/form">
+                        <!-- SDC Template Contact: optional one or more, complex element allowing for different roles  [ Steward, Owning Authority, etc ] -->
+                        <individual>
+                           <mdr3:name>Amy Helwig</mdr3:name>
+                           <mdr3:title>Ms.</mdr3:title>
+                           <mdr3:email_address/>
+                        </individual>
+                        <organization>
+                           <name>Agency for Healthcare Research and Quality (AHRQ)</name>
+                           <fhir_mail_address>
+                              <use/>
+                              <text/>
+                              <line/>
+                              <line/>
+                              <city/>
+                              <state/>
+                              <zip/>
+                              <country/>
+                           </fhir_mail_address>
+                        </organization>
+                        <role>
+                           <mdr3:title>Creator</mdr3:title>
+                        </role>
+                     </contact>
+                     
+                     <contact xmlns="http://nlm.nih.gov/sdc/form">
+                        <!-- SDC Template Contact: optional one or more, complex element allowing for different roles  [ Steward, Owning Authority, etc ] -->
+                        <individual>
+                           <mdr3:name>Susan Terrillion</mdr3:name>
+                           <mdr3:title>Ms.</mdr3:title>
+                           <mdr3:email_address/>
+                        </individual>
+                        <organization>
+                           <name>Agency for Healthcare Research and Quality (AHRQ)</name>
+                           <fhir_mail_address>
+                              <use/>
+                              <text/>
+                              <line/>
+                              <line/>
+                              <city>Bethesda</city>
+                              <state>MD</state>
+                              <zip/>
+                              <country>USA</country>
+                           </fhir_mail_address>
+                        </organization>
+                        <role>
+                           <mdr3:title>Data Steward</mdr3:title>
+                        </role>
+                     </contact>
+                  </sdc:contacts>
+                  <registration xmlns="http://nlm.nih.gov/sdc/form">
+                     <!-- if this is not inside the form, then we need an element to point to the form it applies to -->
+                     <state>
+                        <mdr3:registration_status/>
+                        <mdr3:effective_date/>
+                        <mdr3:until_date/>
+                        <mdr3:administrative_note/>
+                        <mdr3:administrative_status/>
+                     </state>
+                     <submission_record>
+                        <organization>
+                           <name>Agency for Healthcare Research and Quality (AHRQ)</name>
+                           <fhir_mail_address>
+                              <use/>
+                              <text/>
+                              <line/>
+                              <line/>
+                              <city/>
+                              <state/>
+                              <zip/>
+                              <country/>
+                           </fhir_mail_address>
+                        </organization>
+                        <contact>
+                           <organization>
+                              <name>CAP</name>
+                              <fhir_mail_address>
+                                 <use/>
+                                 <text/>
+                                 <line/>
+                                 <line/>
+                                 <city/>
+                                 <state/>
+                                 <zip/>
+                                 <country/>
+                              </fhir_mail_address>
+                              <phone_number>800-323-4040</phone_number>
+                           </organization>
+                           <role>
+                              <mdr3:title>author</mdr3:title>
+                           </role>
+                        </contact>
+                     </submission_record>
+                     <registration_status_date/>
+                     <stewardship_record>
+                        <organization>
+                           <name>Agency for Healthcare Research and Quality (AHRQ)</name>
+                           <fhir_mail_address>
+                              <use/>
+                              <text/>
+                              <line/>
+                              <line/>
+                              <city/>
+                              <state/>
+                              <zip/>
+                              <country/>
+                           </fhir_mail_address>
+                        </organization>
+                     </stewardship_record>
+                     <creation_date/>
+                  </registration>
+               </sdc:administrative_package>
+               <stylesheet xmlns="http://nlm.nih.gov/sdc/form"/>
+            </sdc:form_info>
+             <sdc:sdc_html_form><![CDATA[
+                <html>
+                   <head>
+                      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                         <title>Healthcare Event Reporting Form (HERF) Hospital Version 1.2</title><style>
+                            body {
+                            color:          #333;
+                            font-family:    "Helvetica Neue, Helvetica, Arial, sans-serif";
+                            font-size:      14px;
+                            line-height:   1.42857;
+                            }
+                            .panel-section {
+                            margin:     3px;
+                            padding:    0px;
+                            border-radius:  4px;
+                            border:   1px solid black;
+                            }
+                            .panel-question {
+                            padding:    2px 0 2px 5px;
+                            margin:     5px;
+                            border:     1px solid #428bca;
+                            border-radius:  4px;
+                            
+                            }
+                            .form-header-instruction{
+                            font-size:18px;
+                            }
+                            .section-header{
+                            margin:0;
+                            padding:5px 0 5px 5px;
+                            border-radius:4px 4px 0 0;
+                            background-color:#d4d8d1;
+                            }
+                            .form-cdeId{
+                            font-size:12px;
+                            }
+                            .guarded-element-question{
+                            text-indent:60px;
+                            }
+                            h4{
+                            margin:2px 0 2px 0;
+                            }</style></head>
+                   <body id="form">
+                      <form method="post" action="">
+                         <div id="form-heading-section">
+                            <h1 style="padding: 0 5px 0 5px"><span class="text-center"><strong>Healthcare Event Reporting Form (HERF) Hospital Version 1.2</strong></span><br></h1>
+                         </div>
+                         <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE2" class="question-prompt" style="display: block; font-weight: bold;"> Event ID</label><input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE2" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE2" size="30"><span class="form-cdeId">
+                            <p>CDE USHIK:DE2</p></span></div>
+                         <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE30" class="question-prompt" style="display: block; font-weight: bold;"> Initial Report Date</label> (MM/DD/YYYY) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE30" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE30" size="30"><span class="form-cdeId">
+                            <p>CDE USHIK:DE30</p></span></div>
+                         <div class="form-section panel-section">
+                            <h2 class="section-header"> </h2>
+                            <p style="margin-left: 3px"></p>
+                            <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE30" class="question-prompt" style="display: block; font-weight: bold;">1. Report Date</label> (MM/DD/YYYY) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE30" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE30" size="30"><span class="form-cdeId">
+                               <p>CDE USHIK:DE30</p></span></div>
+                            <div class="panel-question">
+                               <h4 class="question-prompt">2. What is being reported?</h4>
+                               <p style="margin: 0;">
+                                  CHECK ONE:
+                                  
+                                  
+                               </p>
+                               <ul style="list-style-type: none; margin: 2px 0 0 0">
+                                  <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE3" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE3/A3" value="A3">Incident</label><div class="guarded-element-question">
+                                     <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9a" class="question-prompt" style="display: block; font-weight: bold;">3. Event Discovery Date</label> (MM/DD/YYYY) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9a" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9a" size="30"><span class="form-cdeId">
+                                        <p>CDE USHIK:DE9a</p></span></div>
+                                     <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9b" class="question-prompt" style="display: block; font-weight: bold;">4. Event Discovery Time</label> (Default = Unknown) (HHMM) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9b" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9b" size="30"><span class="form-cdeId">
+                                        <p>CDE USHIK:DE9b</p></span><span style="margin-left: 1px">
+                                           <p>(MILITARY TIME)</p></span></div>
+                                  </div>
+                                     <div class="guarded-element-question">
+                                        <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE46" class="question-prompt" style="display: block; font-weight: bold;">8. Patient's Name</label> (FIRST, MIDDLE, LAST) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE46" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE46" size="30"><span class="form-cdeId">
+                                           <p>CDE USHIK:DE46</p></span></div>
+                                        <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE47" class="question-prompt" style="display: block; font-weight: bold;">9. Patient's Date of Birth</label> (MM/DD/YYYY) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE47" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE47" size="30"><span class="form-cdeId">
+                                           <p>CDE USHIK:DE47</p></span></div>
+                                        <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE49" class="question-prompt" style="display: block; font-weight: bold;">10. Patient's Medical Record #</label><input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE49" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE49" size="30"><span class="form-cdeId">
+                                           <p>CDE USHIK:DE49</p></span></div>
+                                        <div class="panel-question">
+                                           <h4 class="question-prompt">11. Patient's Gender</h4>
+                                           <p style="margin: 0;">
+                                              CHECK ONE:
+                                              
+                                              
+                                           </p>
+                                           <ul style="list-style-type: none; margin: 2px 0 0 0">
+                                              <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE42" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE42/M" value="M">Male</label></li>
+                                              <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE42" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE42/F" value="F">Female</label></li>
+                                              <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE42" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE42/UNK" value="UNK">Unknown</label></li>
+                                           </ul><span class="form-cdeId">
+                                              <p>CDE USHIK:DE42</p></span></div>
+                                     </div>
+                                  </li>
+                                  <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE3" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE3/A6" value="A6">Near Miss</label><div class="guarded-element-question">
+                                     <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9a" class="question-prompt" style="display: block; font-weight: bold;">3. Event Discovery Date</label> (MM/DD/YYYY) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9a" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9a" size="30"><span class="form-cdeId">
+                                        <p>CDE USHIK:DE9a</p></span></div>
+                                     <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9b" class="question-prompt" style="display: block; font-weight: bold;">4. Event Discovery Time</label> (Default = Unknown) (HHMM) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9b" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE9b" size="30"><span class="form-cdeId">
+                                        <p>CDE USHIK:DE9b</p></span><span style="margin-left: 1px">
+                                           <p>(MILITARY TIME)</p></span></div>
+                                  </div>
+                                  </li>
+                                  <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE3" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE3/A9" value="A9">Unsafe Condition</label></li>
+                               </ul><span class="form-cdeId">
+                                  <p>CDE USHIK:DE3</p></span></div>
+                            <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE15" class="question-prompt" style="display: block; font-weight: bold;">5. Briefly describe the event that occurred or unsafe condition</label><input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE15" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE15" size="30"><span class="form-cdeId">
+                               <p>CDE USHIK:DE15</p></span></div>
+                            <div class="panel-question"><label for="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE18" class="question-prompt" style="display: block; font-weight: bold;">6. Briefly describe the location where the event occurred or where the unsafe condition
+                               exists</label><input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE18" id="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE18" size="30"><span class="form-cdeId">
+                                  <p>CDE USHIK:DE18</p></span></div>
+                            <div class="panel-question">
+                               <h4 class="question-prompt">7. Which of the following categories are associated with the event or unsafe
+                                  condition?
+                               </h4>
+                               <p style="margin: 0;">
+                                  FOR EACH CATEGORY SELECTED BELOW, EXCEPT “OTHER”, PLEASE COMPLETE THE
+                                  CORRESPONDING CATEGORY-SPECIFIC FORM. ALL CATEGORIES INCLUDE REPORTING OF
+                                  INCIDENTS. ANY CATEGORY WITH + ALSO INCLUDES REPORTING OF NEAR MISSES. ANY
+                                  CATEGORY WITH asterick ALSO INCLUDES REPORTING OF UNSAFE CONDITIONS.
+                                  
+                               </p>
+                               <div style="font-style: italic;">
+                                  <p style="margin: 0;"> CHECK ALL THAT APPLY</p>
+                                  <p style="margin: 0;"> For Incidents, use all of the answers. For Near Miss, use only answers: a, b,
+                                     e, h, j. For Unsafe Conditions, use only answers: a, b, e, j.
+                                  </p>
+                               </div>
+                               <ul style="list-style-type: none; margin: 2px 0 0 0">
+                                  <li><label><input type="checkbox" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE21" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE21/A42" value="A42">Blood or Blood Product</label></li>
+                                  <li><label><input type="checkbox" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE21" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE21/A44" value="A44">Device or Medical/Surgical Supply, including Health Information
+                                     Technology (HIT)</label></li>
+                                  <li><label><input type="checkbox" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE21" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE21/A48" value="A48">Fall</label></li>
+                                  <li><label><input type="checkbox" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE21" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE21/A51" value="A51">Healthcare-associated Infection</label></li>
+                                  <li><label><input type="checkbox" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE21" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE21/A54" value="A54">Medication or Other Substance</label></li>
+                                  <li><label><input type="checkbox" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE21" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE21/A57" value="A57">Perinatal</label></li>
+                                  <li><label><input type="checkbox" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE21" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE21/A460" value="A60">Pressure Ulcer</label></li>
+                                  <li><label><input type="checkbox" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE21" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE21/A63" value="A63">Surgery or Anesthesia (includes invasive procedure)</label></li>
+                                  <li><label><input type="checkbox" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE21" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE21/A64" value="A64">Venous Thromboembolism</label></li>
+                                  <li><label><input type="checkbox" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE21" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE21/A66" value="A66">Other: PLEASE SPECIFY</label>____________________
+                                  </li>
+                               </ul><span class="form-cdeId">
+                                  <p>CDE USHIK:DE21</p></span></div>
+                         </div>
+                         <div class="form-section panel-section">
+                            <h2 class="section-header"> Neonatal Patient Information:</h2>
+                            <p style="margin-left: 3px">COMPLETE ONLY FOR NEONATE AFFECTED BY PERINATAL INCIDENT</p>
+                            <div class="panel-question">
+                               <h4 class="question-prompt"> Is this event a perinatal incident that affected a neonate?</h4>
+                               <p style="margin: 0;">
+                                  CHECK ONE:
+                                  
+                                  
+                               </p>
+                               <ul style="list-style-type: none; margin: 2px 0 0 0">
+                                  <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#Hidden1" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE34/A15" value="A15">Yes</label><div class="guarded-element-question"><b>12. Neonate's Name</b> (FIRST, MIDDLE, LAST) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE34" size="30"><span class="form-cdeId">
+                                     <p>CDE USHIK:DE34</p></span></div>
+                                     <div class="guarded-element-question"><b>13. Neonate's Date of Birth</b> (MM/DD/YYYY) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE37" size="30"><span class="form-cdeId">
+                                        <p>CDE USHIK:DE37</p></span></div>
+                                     <div class="guarded-element-question"><b>14. Neonate's Medical Record #</b><input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE40" size="30"><span class="form-cdeId">
+                                        <p>CDE USHIK:DE40</p></span></div>
+                                     <div class="guarded-element-question"><b>15. Neonate's Gender</b>
+                                        CHECK ONE:
+                                        
+                                        
+                                        <ul style="list-style-type: none; margin: 2px 0 0 0">
+                                           <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE43" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE43/M" value="M">Male</label></li>
+                                           <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE43" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE43/F" value="F">Female</label></li>
+                                           <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE43" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE43/UNK" value="UNK">Unknown</label></li>
+                                        </ul><span class="form-cdeId">
+                                           <p>CDE USHIK:D43</p></span></div>
+                                  </li>
+                                  <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#Hidden1" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE34/A18" value="A18">No</label></li>
+                               </ul><span class="form-cdeId">
+                                  <p>CDE USHIK:Hidden1</p></span></div>
+                         </div>
+                         <div class="form-section panel-section">
+                            <h2 class="section-header"> REPORT AND EVENT REPORTER INFORMATION</h2>
+                            <p style="margin-left: 3px"></p>
+                            <div class="panel-question">
+                               <h4 class="question-prompt">16. Anonymous Reporter</h4>
+                               <ul style="list-style-type: none; margin: 2px 0 0 0">
+                                  <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE33" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE33/A15" value="A15">Yes</label> (DONE)
+                                  </li>
+                                  <li><label><input type="radio" style="margin-right: 5px" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE33" id="http://AHRQ.org/form_design_identifier/HERFv1.2/list_item_identifier#HERF/DE33/A18" value="A18">No</label><div class="guarded-element-question"><b>17. Reporter's Name</b> (FIRST, MIDDLE, LAST) <input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE50" size="30"><span class="form-cdeId">
+                                     <p>CDE USHIK:DE50</p></span></div>
+                                     <div class="guarded-element-question"><b>18. Telephone Number</b><input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE52" size="30"><span class="form-cdeId">
+                                        <p>CDE USHIK:DE52</p></span></div>
+                                     <div class="guarded-element-question"><b>19. Email Address</b><input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE53" size="30"><span class="form-cdeId">
+                                        <p>CDE USHIK:DE53</p></span></div>
+                                     <div class="guarded-element-question"><b>20. Reporter's Job or Position</b><input type="text" name="http://AHRQ.org/form_design_identifier/HERFv1.2/question_identifier#DE36" size="30"><span class="form-cdeId">
+                                        <p>CDE USHIK:D36</p></span></div>
+                                  </li>
+                               </ul><span class="form-cdeId">
+                                  <p>CDE USHIK:D33</p></span></div>
+                         </div>
+                         <div class="form-section panel-section">
+                            <h2 class="section-header"> Thank you for completing these questions.</h2>
+                            <p style="margin-left: 3px">OMB No. 0935-0143 Exp. Date 10/31/2014 Public reporting burden for the collection
+                               of information is estimated to average 10 minutes per response. An agency may not
+                               conduct or sponsor, and a person is not required to respond to, a collection of
+                               information unless it displays a currently valid OMB control number. Send comments
+                               regarding this burden estimate or any other aspect of this collection of information,
+                               including suggestions for reducing this burden, to: AHRQ Reports Clearance Officer,
+                               Attention: PRA, Paperwork Reduction Project (0935-0143), AHRQ, 540 Gaither Road, Room
+                               #5036, Rockville, MD 20850.
+                            </p>
+                         </div>AHRQ Common Formats - Hospital Version 1.2 - 2012 Medication or Other Substance<input type="submit" value="Send Info"><input type="reset"></form>
+                   </body>
+                </html>
+            ]]>
+             </sdc:sdc_html_form>
+         </sdc:sdc_html_package>
+      </Structured>
+
+      <!-- Comment: Optionally, insert GUID/UUID to track the RFD RetrieveFormResponse transaction -->
+      <instanceID/>
+
+   </form>
+
+   <contentType>HTML</contentType>
+   <responseCode>Request succeeded</responseCode>
+   <!-- Value is not required for the responseCode but will be useful -->
+
+</RetrieveFormResponse>

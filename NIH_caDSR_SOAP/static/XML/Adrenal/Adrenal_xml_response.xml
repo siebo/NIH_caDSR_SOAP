@@ -1,0 +1,2403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+******************************************************************************
+RFD Retrieve Form Response (ITI-34) containing an XML Form Design Temaplate Response
+
+XML FORM NAME:  Adrenal_xml_response.xml
+PURPOSE:        Responding with an ADRENAL template (eCC based Cancer related form).
+
+REVISIONS: 
+Ver        Date        Author               Description
+1.0        12/01/2014  Varsha Parekh /      Added RFD wrapper and schema validation
+                       Richard Moldwin       
+1.1        12/11/2014  WS/SJ/VP/RM          Instance ID removed, schema location moved
+******************************************************************************/
+-->
+
+
+<RetrieveFormResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd" xmlns="urn:ihe:iti:rfd:2007"
+ xmlns:sdc="http://nlm.nih.gov/sdc/form">
+  
+   <form>
+      <Structured>
+         <sdc:sdc_xml_package>
+            <sdc:supplemental_data>
+               <!-- Contains supplemental data related to the form instance e.g., form generation date, specific instruction, pre-pop data, etc. -->
+            </sdc:supplemental_data>
+               
+            <!--            
+               <sdc:form_package> 
+                     <!-\- —Contains Administrative, stylesheet, mapping, and form definition; 
+                     all of the required info for form definition -\-> 
+                     <sdc:mapping_package> 
+                        <!-\-Mapping information e.g., DEX mapping, goes here-\-> 
+                     </sdc:mapping_package> 
+                     <sdc:administrative_package>
+                        <!-\- Administrative information goes here -\-> 
+                     </sdc:administrative_package> 
+                     <sdc:stylesheet> 
+                        <!-\-include any style sheet information here -\-> 
+                     </sdc:stylesheet> 
+                     <sdc:form_design> 
+                        <!-\-Contains the form design, (e.g., question-answer sets, skip logic, etc.) -\-> 
+                     </sdc:form_design> 
+                  </sdc:form_package> 
+               -->
+            
+            <sdc:form_package xmlns="http://www.iso.org/19763/13/2013"
+               xmlns:sdc="http://nlm.nih.gov/sdc/form"
+               xmlns:mfi13="http://www.iso.org/19763/13/2013"
+               xmlns:mdr3="http://www.iso.org/11179/3/2013"
+               xmlns:mfi6="http://www.iso.org/19763/6/2013"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="SDCForm.xsd" form_package_identifier="Adrenal_xml">
+
+               <sdc:mapping_package/> <!-- no CDE map in this response -->
+               <sdc:administrative_package>
+                  <submission_rule form_identifier="Adrenal_xml_form"
+                     xmlns="http://nlm.nih.gov/sdc/form">
+                     <destination>
+                        <sdc:description>This is intended to be a set of one or more submission
+                           rules that pertain to this version of the form.</sdc:description>
+                     </destination>
+                  </submission_rule>
+                  <sdc:compliance_rule/>
+                  <originating_registry_summary xmlns="http://nlm.nih.gov/sdc/form">
+                     <!-- This element is an ISO element describing where this particular instance of the form cames from -->
+                     <mfi6:registry_organization>
+                        <mdr3:name>CAP Forms Registry</mdr3:name>
+                        <mdr3:uri>CAPRegistrationAuthorityIdentifier</mdr3:uri>
+                        <!-- Shall we construct specific uri? -->
+                     </mfi6:registry_organization>
+                     <mfi6:reference_standard_identifier>ISO/IEC
+                        19763-13</mfi6:reference_standard_identifier>
+                     <mfi6:purpose_for_registry>
+                        <mdr3:title>Forms for Meaningful Use</mdr3:title>
+                     </mfi6:purpose_for_registry>
+                     <mfi6:manual_for_registry>
+                        <mdr3:title>SDC Forms IG</mdr3:title>
+                     </mfi6:manual_for_registry>
+                  </originating_registry_summary>
+                  <sdc:form_language>
+                     <style_language>
+                        <!-- Optional, single reference document describing the style language used to place Form_Design_Element instances in place
+                        on the form e.g.: http://www.w3.org/TR/CSS3/ 
+                        New proposal:SDC should consider providing a default style sheet?
+                        -->
+                        <mdr3:identifier>http://www.w3.org/TR/CSS3/</mdr3:identifier>
+                        <mdr3:document_type>
+                           <mdr3:description>a description of the style language used in the form
+                              design</mdr3:description>
+                        </mdr3:document_type>
+                     </style_language>
+                     <logic_language>
+                        <!-- one logic language for all SDC forms should be established -->
+                        <mdr3:identifier>http://some.document.describing.the.logicLangauge.document</mdr3:identifier>
+                        <mdr3:document_type>
+                           <mdr3:description>a description of the logic document</mdr3:description>
+                        </mdr3:document_type>
+                     </logic_language>
+                     <format_language>
+                        <!-- 
+                        SDC may want to determine whether one or more formatting languages will be supported.
+                        Forms group is leaning towards html4, but the SDC group needs to dsicuss which will be supported in SDC 
+                        -->
+                        <mdr3:identifier>http://regEx</mdr3:identifier>
+                        <mdr3:document_type>
+                           <mdr3:description>a description of the format document</mdr3:description>
+                        </mdr3:document_type>
+                     </format_language>
+                     <textual_language>eng</textual_language>
+                     <!-- The language used in the description of this form is consistent with meaningful and is based on LANGUAGE CODE 639-2 (3 digit) -->
+                  </sdc:form_language>
+                  <sdc:contacts>
+                     <contact xmlns="http://nlm.nih.gov/sdc/form">
+                        <!-- SDC Template Contact: optional one or more, complex element allowing for different roles  [ Steward, Owning Authority, etc ] -->
+                        <individual>
+                           <mdr3:name>Varsha Parekh</mdr3:name>
+                           <mdr3:title>Ms.</mdr3:title>
+                           <mdr3:email_address>vparekh@cap.org</mdr3:email_address>
+                        </individual>
+                        <organization>
+                           <name>College of American Pathologist (CAP)</name>
+                           <fhir_mail_address>
+                              <use/>
+                              <line>500 Lake Cook Rd - Suite 355</line>
+                              <city>Deerfield</city>
+                              <state>IL</state>
+                              <zip>60015</zip>
+                              <country>USA</country>
+                           </fhir_mail_address>
+                        </organization>
+                        <role>
+                           <mdr3:title>Author</mdr3:title>
+                        </role>
+                     </contact>
+                  </sdc:contacts>
+                  <registration xmlns="http://nlm.nih.gov/sdc/form">
+                     <!-- if this is not inside the form, then we need an element to point to the form it applies to -->
+                     <state>
+                        <mdr3:registration_status/>
+                        <mdr3:effective_date>2013-10-01</mdr3:effective_date>
+                        <mdr3:until_date/>
+                        <mdr3:administrative_note/>
+                        <mdr3:administrative_status/>
+                     </state>
+                     <submission_record>
+                        <organization>
+                           <name>XYZ</name>
+                        </organization>
+                        <contact>
+                           <organization>
+                              <name>CAP</name>
+                              <phone_number>800-323-4040</phone_number>
+                              <fhir_mail_address>
+                                 <use/>
+                                 <text/>
+                                 <line>500 Lake Cook Rd - Suite 355</line>
+                                 <city>Deerfield</city>
+                                 <state>IL</state>
+                                 <zip>60015</zip>
+                                 <country>USA</country>
+                              </fhir_mail_address>
+                           </organization>
+                           <role>
+                              <mdr3:title>author</mdr3:title>
+                           </role>
+                        </contact>
+                     </submission_record>
+                     <registration_status_date/>
+                     <stewardship_record>
+                        <organization>
+                           <name>Agency for Healthcare Research and Quality (AHRQ)</name>
+                           <fhir_mail_address>
+                              <use/>
+                              <text/>
+                              <line/>
+                              <line/>
+                              <city/>
+                              <state/>
+                              <zip/>
+                              <country/>
+                           </fhir_mail_address>
+                        </organization>
+                     </stewardship_record>
+                     <creation_date>2013-10-01</creation_date>
+                     <origin> AJCC_UICC , FIGO and CS</origin>
+                  </registration>
+               </sdc:administrative_package>
+               <stylesheet/>
+
+               <!-- the language used in the stylesheet is defined by the form_langauage/style_language -->
+               <!-- This is the actual questioner form contents  -->
+               <form_design form_design_identifier="Adrenal_xml_form"
+                  xmlns:cap="http://www.cap.org/eCC/SDC" xmlns="http://nlm.nih.gov/sdc/form">
+
+                  <!-- URL + TemplateName + SDC Template ID + Version: It is not intended to be dereferencible. 
+      The identification code of the requested form/template (the globally unique identifer for this form, never changes)  -->
+
+                  <!-- Template Name -->
+                  <designation>
+                     <context>http://cap.org/eCC</context>
+                     <sign acceptability="preferred">ADRENAL GLAND: Biopsy (Core Needle, Incisional,
+                        Excisional); Resection</sign>
+                  </designation>
+
+                  <security_and_privacy/>
+
+                  <!-- Template Header -->
+                  <header initial_state="enabled">
+                     <section_title>
+                        <mfi13:label>ADRENAL GLAND: Biopsy (Core Needle, Incisional, Excisional);
+                           Resection</mfi13:label>
+                        <mfi13:style>title</mfi13:style>
+                     </section_title>
+
+
+                     <section_instruction>
+                        <mfi13:label>Surgical Pathology Cancer Case Summary
+                           (Checklist)</mfi13:label>
+                        <mfi13:style>subtitle</mfi13:style>
+                     </section_instruction>
+
+                     <additional_instruction>
+                        <mfi13:label>ADRENAL GLAND</mfi13:label>
+                        <mfi13:style>leftTop</mfi13:style>
+                     </additional_instruction>
+
+                     <additional_instruction>
+                        <mfi13:label>CAP Approved </mfi13:label>
+                        <mfi13:style>rightTop</mfi13:style>
+                     </additional_instruction>
+
+                     <additional_instruction>
+                        <mfi13:label>Protocol web posting date: 2013-10-01</mfi13:label>
+                        <mfi13:style>webPostingDate</mfi13:style>
+                     </additional_instruction>
+
+                     <additional_instruction>
+                        <mfi13:label>Protocol applies to adrenal cortical carcinoma only. Cortical
+                           adenomas, pheochromocytoma, neuroblastic tumors, and adrenal tumors of
+                           childhood are not included.</mfi13:label>
+                        <mfi13:style>restriction</mfi13:style>
+                     </additional_instruction>
+
+                     <additional_instruction>
+                        <mfi13:label>Based on AJCC/UICC TNM, 7th Edition</mfi13:label>
+                        <mfi13:style>basedOn</mfi13:style>
+                     </additional_instruction>
+                     <section_identifier/>
+                  </header>
+
+                  <!-- This is a locked section meaning that form user's won't have to take any action (information is already pre-selected) -->
+                  <sdc:section initial_state="disabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <sdc:section_title>
+                        <label>Locked Section</label>
+                        <style>lockedSection</style>
+                     </sdc:section_title>
+
+                     <sdc:section_order>100</sdc:section_order>
+                     <sdc:question>
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Tumor Site</label>
+                           <style>lockedQuestion</style>
+                        </sdc:question_prompt>
+
+                        <sdc:additional_instruction type="tooltip">
+                           <label>This question is not editable</label>
+                        </sdc:additional_instruction>
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <default_value>2119</default_value>
+                           <default_value_read_only>true</default_value_read_only>
+                           <!-- This means that value is locked -->
+                           <sdc:datatype>
+                              <sdc:string/>
+                           </sdc:datatype>
+                           <sdc:ordered>true</sdc:ordered>
+                           <!-- for eCC implementation default value is true otherwise we will explicitly state false -->
+                           <sdc:list_item>
+                              <value>2119</value>
+                              <!-- Same as list_item_identifier in eCC -->
+                              <item_prompt>
+                                 <label>Adrenal structure</label>
+                                 <style>lockedAnswer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>300</sdc:list_item_order>
+                              <sdc:list_item_identifier>2119</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>200</sdc:question_order>
+                        <sdc:question_identifier>2118</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>4257</sdc:section_identifier>
+                  </sdc:section>
+
+
+                  <sdc:section initial_state="enabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <sdc:section_title>
+                        <label>CLINICAL</label>
+                     </sdc:section_title>
+                     <sdc:section_order>400</sdc:section_order>
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Non-Pathology Findings</label>
+                        </sdc:question_prompt>
+                        <!-- All the notes should have referencing capabilities so that actual Note descriptions can be displayed -->
+                        <sdc:additional_instruction>
+                           <label>Note J</label>
+                        </sdc:additional_instruction>
+                        <sdc:additional_instruction>
+                           <label>Note K</label>
+                        </sdc:additional_instruction>
+                        <sdc:list_field>
+                           <multiselect>true</multiselect>
+                           <sdc:list_item>
+                              <value>20900</value>
+                              <item_prompt>
+                                 <label>Urinary 17-ketosteroids increased </label>
+                              </item_prompt>
+                              <additional_instruction>
+                                 <label>10 mg / g creatinine / 24 hours</label>
+                              </additional_instruction>
+                              <value_meaning/>
+                              <sdc:list_item_order>600</sdc:list_item_order>
+                              <sdc:list_item_identifier>20900</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value>20901</value>
+                              <item_prompt>
+                                 <label>Hormone production</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:guard>
+                                 <sdc:value>show</sdc:value>
+                                 <sdc:guarded_element>
+                                    <sdc:question initial_state="disabled">
+                                       <cardinality>
+                                          <maximum>1</maximum>
+                                          <minimum>0</minimum>
+                                       </cardinality>
+                                       <sdc:additional_instruction type="tooltip">
+                                          <label>Non-Pathology Findings</label>
+                                          <style>hiddenQuestion</style>
+                                       </sdc:additional_instruction>
+                                       <sdc:additional_instruction type="tooltip">
+                                          <label>Note J</label>
+                                       </sdc:additional_instruction>
+                                       <sdc:additional_instruction type="tooltip">
+                                          <label>Note K</label>
+                                       </sdc:additional_instruction>
+                                       <sdc:list_field>
+                                          <multiselect>true</multiselect>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Cushing syndrome</label>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>900</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20902</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Conn syndrome</label>
+                                             </item_prompt>
+
+                                             <value_meaning/>
+                                             <sdc:list_item_order>1000</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20904</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Virilization / feminization</label>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>1100</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20905</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                       </sdc:list_field>
+                                       <sdc:question_order>800</sdc:question_order>
+                                       <sdc:question_identifier>24853</sdc:question_identifier>
+                                    </sdc:question>
+                                 </sdc:guarded_element>
+                              </sdc:guard>
+                              <sdc:list_item_order>700</sdc:list_item_order>
+                              <sdc:list_item_identifier>20901</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Weight loss</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>1200</sdc:list_item_order>
+                              <sdc:list_item_identifier>20906</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Other (specify)</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>1200</sdc:list_item_order>
+                              <sdc:list_item_identifier>20906</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <!-- lengh 0 needs fix-->
+                        </sdc:list_field>
+                        <sdc:question_order>500</sdc:question_order>
+                        <sdc:question_identifier>20899</sdc:question_identifier>
+                     </sdc:question>
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Neoadjuvant Therapy</label>
+                        </sdc:question_prompt>
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Yes (specify type)</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>1500</sdc:list_item_order>
+                              <sdc:list_item_identifier>24854</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>No</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>1600</sdc:list_item_order>
+                              <sdc:list_item_identifier>20914</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Indeterminate</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>1700</sdc:list_item_order>
+                              <sdc:list_item_identifier>20915</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>1400</sdc:question_order>
+                        <sdc:question_identifier>20911</sdc:question_identifier>
+                     </sdc:question>
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Other (specify)</label>
+                        </sdc:question_prompt>
+                        <sdc:text_field>
+                           <sdc:datatype>
+                              <sdc:string>
+                                 <sdc:minimum_characters>0</sdc:minimum_characters>
+                                 <sdc:maximum_characters>4000</sdc:maximum_characters>
+                              </sdc:string>
+                           </sdc:datatype>
+                        </sdc:text_field>
+                        <sdc:question_order>1800</sdc:question_order>
+                        <sdc:question_identifier>4156</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>17537</sdc:section_identifier>
+                  </sdc:section>
+
+                  <sdc:section initial_state="enabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <cardinality>
+                        <!-- SPECIMEN Section is required -->
+                        <maximum>1</maximum>
+                        <minimum>1</minimum>
+                     </cardinality>
+                     <sdc:section_title>
+                        <label>SPECIMEN</label>
+                     </sdc:section_title>
+
+                     <sdc:contained_section initial_state="enabled"
+                        xmlns="http://www.iso.org/19763/13/2013">
+                        <cardinality>
+                           <!-- This Specimen Size is an nested required section within SPECIMEN -->
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:section_title>
+                           <label>Specimen Size</label>
+                           <style>subSection</style>
+                        </sdc:section_title>
+
+                        <sdc:contained_section initial_state="enabled"
+                           xmlns="http://www.iso.org/19763/13/2013">
+                           <!-- New proposal: minOccurs or maxOccurs should be attributes to sections / questions (proposal)-->
+                           <cardinality>
+                              <!-- This section can repeat for more than one part  -->
+                              <maximum>10</maximum>
+                              <minimum>1</minimum>
+                           </cardinality>
+                           <sdc:section_title>
+                              <label>Additional dimensions</label>
+                              <style>noteSection</style>
+                           </sdc:section_title>
+                           <!-- Need to get rid of pre appended words additional  from  additional_instruction & Why they have cardinality associated? -->
+                           <sdc:additional_instruction>
+                              <label>repeat section if more than one part</label>
+                           </sdc:additional_instruction>
+
+                           <sdc:section_order>3700</sdc:section_order>
+                           <sdc:question initial_state="enabled">
+                              <sdc:question_prompt>
+                                 <!-- We need required for display (default value should be true) -->
+                                 <cardinality>
+                                    <minimum>0</minimum>
+                                    <maximum>5</maximum>
+                                 </cardinality>
+                                 <label>Additional Dimension</label>
+                              </sdc:question_prompt>
+                              <sdc:text_field>
+                                 <unit_of_measure/>
+                                 <!-- how to handle units?-->
+                                 <sdc:datatype>
+                                    <sdc:decimal/>
+                                 </sdc:datatype>
+                              </sdc:text_field>
+                              <sdc:text_after_question>
+                                 <label>cm</label>
+                              </sdc:text_after_question>
+                              <sdc:question_order>3800</sdc:question_order>
+                              <sdc:question_identifier>24069</sdc:question_identifier>
+                           </sdc:question>
+                           <sdc:question initial_state="enabled">
+                              <sdc:question_prompt>
+                                 <label>Additional Dimension</label>
+                              </sdc:question_prompt>
+                              <sdc:text_field>
+                                 <unit_of_measure/>
+                                 <sdc:datatype>
+                                    <sdc:decimal/>
+                                 </sdc:datatype>
+                              </sdc:text_field>
+                              <sdc:text_after_question>
+                                 <label>cm</label>
+                              </sdc:text_after_question>
+                              <sdc:question_order>4000</sdc:question_order>
+                              <sdc:question_identifier>20912</sdc:question_identifier>
+                           </sdc:question>
+                           <sdc:question initial_state="enabled">
+                              <sdc:question_prompt>
+                                 <label>Additional Dimension</label>
+                              </sdc:question_prompt>
+                              <sdc:text_field>
+                                 <unit_of_measure/>
+                                 <sdc:datatype>
+                                    <sdc:decimal/>
+                                 </sdc:datatype>
+                              </sdc:text_field>
+                              <sdc:text_after_question>
+                                 <label>cm</label>
+                              </sdc:text_after_question>
+                              <sdc:question_order>3600</sdc:question_order>
+                              <sdc:question_identifier>24857</sdc:question_identifier>
+                           </sdc:question>
+                           <sdc:section_identifier>24855</sdc:section_identifier>
+                        </sdc:contained_section>
+
+                        <sdc:section_order>3300</sdc:section_order>
+                        <sdc:question initial_state="enabled">
+                           <cardinality>
+                              <maximum>1</maximum>
+                              <minimum>1</minimum>
+                           </cardinality>
+                           <sdc:question_prompt>
+                              <label>Greatest Dimension</label>
+                           </sdc:question_prompt>
+                           <sdc:text_field>
+                              <unit_of_measure/>
+                              <!-- how to handle units?-->
+                              <sdc:datatype>
+                                 <sdc:decimal/>
+                              </sdc:datatype>
+                           </sdc:text_field>
+                           <sdc:text_after_question>
+                              <label>cm</label>
+                           </sdc:text_after_question>
+                           <sdc:question_order>3400</sdc:question_order>
+                           <sdc:question_identifier>24068</sdc:question_identifier>
+                        </sdc:question>
+
+                        <sdc:question initial_state="enabled">
+                           <cardinality>
+                              <maximum>1</maximum>
+                              <minimum>1</minimum>
+                           </cardinality>
+                           <sdc:question_prompt>
+                              <label>Additional Dimension</label>
+                           </sdc:question_prompt>
+                           <sdc:text_field>
+                              <unit_of_measure/>
+                              <sdc:datatype>
+                                 <sdc:decimal/>
+                              </sdc:datatype>
+                           </sdc:text_field>
+                           <sdc:text_after_question>
+                              <label>cm</label>
+                           </sdc:text_after_question>
+                           <sdc:question_order>3500</sdc:question_order>
+                           <sdc:question_identifier>24856</sdc:question_identifier>
+                        </sdc:question>
+
+                        <sdc:question initial_state="enabled">
+                           <cardinality>
+                              <maximum>1</maximum>
+                              <minimum>1</minimum>
+                           </cardinality>
+                           <sdc:question_prompt>
+                              <label>Additional Dimension</label>
+                           </sdc:question_prompt>
+                           <sdc:text_field>
+                              <unit_of_measure/>
+                              <sdc:datatype>
+                                 <sdc:decimal/>
+                              </sdc:datatype>
+                           </sdc:text_field>
+                           <sdc:text_after_question>
+                              <label>cm</label>
+                           </sdc:text_after_question>
+                           <sdc:question_order>3600</sdc:question_order>
+                           <sdc:question_identifier>24857</sdc:question_identifier>
+                        </sdc:question>
+                        <sdc:section_identifier>20860</sdc:section_identifier>
+                     </sdc:contained_section>
+
+                     <sdc:section_order>1900</sdc:section_order>
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Adrenal Gland Received</label>
+                        </sdc:question_prompt>
+
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Fresh</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>2100</sdc:list_item_order>
+                              <sdc:list_item_identifier>20848</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>In formalin</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>2200</sdc:list_item_order>
+                              <sdc:list_item_identifier>20849</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Other (specify)</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>2300</sdc:list_item_order>
+                              <sdc:list_item_identifier>20855</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>2000</sdc:question_order>
+                        <sdc:question_identifier>20850</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Procedure</label>
+                        </sdc:question_prompt>
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Needle biopsy (radiographically guided)</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>2500</sdc:list_item_order>
+                              <sdc:list_item_identifier>20856</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Adrenalectomy, total</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>2600</sdc:list_item_order>
+                              <sdc:list_item_identifier>2122</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Adrenalectomy, partial</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>2700</sdc:list_item_order>
+                              <sdc:list_item_identifier>2121</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Other (specify)</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>2800</sdc:list_item_order>
+                              <sdc:list_item_identifier>2123</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Not specified</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>2900</sdc:list_item_order>
+                              <sdc:list_item_identifier>2124</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>2400</sdc:question_order>
+                        <sdc:question_identifier>2120</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Specimen Integrity</label>
+                        </sdc:question_prompt>
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Intact</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>3100</sdc:list_item_order>
+                              <sdc:list_item_identifier>20857</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Fragmented</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>3200</sdc:list_item_order>
+                              <sdc:list_item_identifier>20859</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>3000</sdc:question_order>
+                        <sdc:question_identifier>20858</sdc:question_identifier>
+                     </sdc:question>
+
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Specimen Laterality</label>
+                        </sdc:question_prompt>
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Right</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>4200</sdc:list_item_order>
+                              <sdc:list_item_identifier>2126</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Left</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>4300</sdc:list_item_order>
+                              <sdc:list_item_identifier>2127</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Not specified</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>4400</sdc:list_item_order>
+                              <sdc:list_item_identifier>2128</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Other (specify)</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>4500</sdc:list_item_order>
+                              <sdc:list_item_identifier>20866</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>4100</sdc:question_order>
+                        <sdc:question_identifier>2125</sdc:question_identifier>
+                     </sdc:question>
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Tumor Size</label>
+                        </sdc:question_prompt>
+                        <sdc:additional_instruction type="tooltip">
+                           <label>Note A</label>
+                        </sdc:additional_instruction>
+
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <datatype>decimal</datatype>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Greatest dimension</label>
+                              </item_prompt>
+                              <additional_instruction>
+                                 <label>cm</label>
+                              </additional_instruction>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:guard>
+                                 <sdc:value>show</sdc:value>
+                                 <sdc:guarded_element>
+                                    <sdc:question initial_state="enabled">
+                                       <cardinality>
+                                          <maximum>1</maximum>
+                                          <minimum>0</minimum>
+                                       </cardinality>
+                                       <sdc:question_prompt>
+                                          <label>Additional Dimension (cm)</label>
+                                       </sdc:question_prompt>
+                                       <sdc:text_field>
+                                          <unit_of_measure/>
+                                          <sdc:datatype>
+                                             <sdc:decimal/>
+                                          </sdc:datatype>
+                                       </sdc:text_field>
+                                       <sdc:text_after_question>
+                                          <label>cm</label>
+                                       </sdc:text_after_question>
+                                       <sdc:question_order>4800</sdc:question_order>
+                                       <sdc:question_identifier>2133</sdc:question_identifier>
+                                    </sdc:question>
+
+                                    <sdc:question initial_state="enabled">
+                                       <cardinality>
+                                          <maximum>1</maximum>
+                                          <minimum>0</minimum>
+                                       </cardinality>
+                                       <sdc:question_prompt>
+                                          <label>Additional Dimension (cm)</label>
+                                       </sdc:question_prompt>
+                                       <sdc:text_field>
+                                          <unit_of_measure/>
+                                          <sdc:datatype>
+                                             <sdc:decimal/>
+                                          </sdc:datatype>
+                                       </sdc:text_field>
+                                       <sdc:question_order>4900</sdc:question_order>
+                                       <sdc:question_identifier>2132</sdc:question_identifier>
+                                    </sdc:question>
+                                 </sdc:guarded_element>
+                              </sdc:guard>
+                              <sdc:list_item_order>4800</sdc:list_item_order>
+                              <sdc:list_item_identifier>2133</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Cannot be determined (fragmented specimen)</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>4500</sdc:list_item_order>
+                              <sdc:list_item_identifier>20866</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>5000</sdc:question_order>
+                        <sdc:question_identifier>2130</sdc:question_identifier>
+                     </sdc:question>
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Tumor Gland Weight (Note B)</label>
+                        </sdc:question_prompt>
+
+                        <sdc:list_field>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Not applicable</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:guard>
+                                 <sdc:value>show</sdc:value>
+                                 <sdc:guarded_element>
+                                    <sdc:question initial_state="enabled">
+                                       <cardinality>
+                                          <maximum>1</maximum>
+                                          <minimum>0</minimum>
+                                       </cardinality>
+                                       <sdc:question_prompt>
+                                          <label>Specify Weight </label>
+                                       </sdc:question_prompt>
+
+                                       <sdc:text_field>
+                                          <unit_of_measure schema_name="UCOM"/>
+                                          <sdc:datatype>
+                                             <sdc:decimal/>
+                                          </sdc:datatype>
+                                       </sdc:text_field>
+                                       <sdc:text_after_question>
+                                          <label>gram</label>
+                                       </sdc:text_after_question>
+                                       <sdc:question_order>5300</sdc:question_order>
+                                       <sdc:question_identifier>2134</sdc:question_identifier>
+                                    </sdc:question>
+                                 </sdc:guarded_element>
+                              </sdc:guard>
+                              <sdc:list_item_order>5200</sdc:list_item_order>
+                              <sdc:list_item_identifier>26237</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>5100</sdc:question_order>
+                        <sdc:question_identifier>26236</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>17875</sdc:section_identifier>
+                  </sdc:section>
+
+
+                  <sdc:section initial_state="disabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <cardinality>
+                        <!-- TUMOR is an optional section  -->
+                        <maximum>0</maximum>
+                        <minimum>1</minimum>
+                     </cardinality>
+                     <sdc:section_title>
+                        <label>TUMOR</label>
+                        <style>Section</style>
+                     </sdc:section_title>
+                     <sdc:section_order>5400</sdc:section_order>
+
+                     <sdc:question>
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Histologic Type (Notes C through E)</label>
+                           <style>Question</style>
+                        </sdc:question_prompt>
+                        <sdc:additional_instruction>
+                           <label>Note C</label>
+                        </sdc:additional_instruction>
+                        <sdc:additional_instruction>
+                           <label>Note D</label>
+                        </sdc:additional_instruction>
+                        <sdc:additional_instruction>
+                           <label>Note E</label>
+                        </sdc:additional_instruction>
+                        <sdc:list_field>
+                           <default_value>2117</default_value>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Adrenal cortical carcinoma</label>
+                                 <style>Answer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>5600</sdc:list_item_order>
+                              <sdc:list_item_identifier>2117</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>5500</sdc:question_order>
+                        <sdc:question_identifier>2116</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>17876</sdc:section_identifier>
+                  </sdc:section>
+
+
+
+                  <sdc:section initial_state="disabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <cardinality>
+                        <!-- EXTENT is an optional section  -->
+                        <maximum>0</maximum>
+                        <minimum>1</minimum>
+                     </cardinality>
+                     <sdc:section_title>
+                        <label>EXTENT</label>
+                        <style>Section</style>
+                     </sdc:section_title>
+                     <sdc:section_order>5700</sdc:section_order>
+                     <sdc:question>
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Microscopic Tumor Extension</label>
+                           <style>Question</style>
+                        </sdc:question_prompt>
+                        <sdc:text_field>
+                           <sdc:datatype>
+                              <sdc:string/>
+                           </sdc:datatype>
+                        </sdc:text_field>
+                        <sdc:text_after_question>
+                           <label>Specify</label>
+                        </sdc:text_after_question>
+                        <sdc:question_order>5800</sdc:question_order>
+                        <sdc:question_identifier>20873</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>17877</sdc:section_identifier>
+                  </sdc:section>
+
+
+                  <sdc:section initial_state="enabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <cardinality>
+                        <!-- MARGINS is a required section  -->
+                        <maximum>1</maximum>
+                        <minimum>1</minimum>
+                     </cardinality>
+                     <sdc:section_title>
+                        <label>MARGINS</label>
+                        <style>Section</style>
+                     </sdc:section_title>
+                     <sdc:section_order>5900</sdc:section_order>
+                     <sdc:question>
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label/>
+                           <style>HiddenQuestion</style>
+                        </sdc:question_prompt>
+                        <sdc:question_instruction>
+                           <label>This is a hidden question</label>
+                        </sdc:question_instruction>
+                        <sdc:additional_instruction>
+                           <label>Margin Status</label>
+                        </sdc:additional_instruction>
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:ordered>true</sdc:ordered>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Margins uninvolved by tumor</label>
+                                 <style>Answer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:guard>
+                                 <sdc:value>show</sdc:value>
+                                 <sdc:guarded_element>
+                                    <sdc:question initial_state="enabled">
+                                       <cardinality>
+                                          <!-- optional question -->
+                                          <maximum>1</maximum>
+                                          <minimum>0</minimum>
+                                       </cardinality>
+                                       <sdc:question_prompt>
+                                          <label>Distance from Closest Margin</label>
+                                          <style>question</style>
+                                       </sdc:question_prompt>
+                                       <sdc:list_field>
+                                          <multiselect>false</multiselect>
+                                          <datatype>decimal</datatype>
+                                          <sdc:fill_in>true</sdc:fill_in>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Specify</label>
+                                                <style>answer</style>
+                                             </item_prompt>
+                                             <additional_instruction>
+                                                <label>mm</label>
+                                             </additional_instruction>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>6300</sdc:list_item_order>
+                                             <sdc:list_item_identifier>26359</sdc:list_item_identifier>
+                                          </sdc:list_item>
+
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Cannot be assessed</label>
+                                                <style>answer</style>
+                                             </item_prompt>
+                                             <additional_instruction>
+                                                <label>explain</label>
+                                             </additional_instruction>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>6400</sdc:list_item_order>
+                                             <sdc:list_item_identifier>26361</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                       </sdc:list_field>
+                                       <sdc:question_order>6200</sdc:question_order>
+                                       <sdc:question_identifier>26358</sdc:question_identifier>
+                                    </sdc:question>
+                                    <sdc:question initial_state="disabled">
+                                       <cardinality>
+                                          <!-- optional question -->
+                                          <maximum>1</maximum>
+                                          <minimum>1</minimum>
+                                       </cardinality>
+                                       <sdc:question_prompt>
+                                          <label>Specify Margin, if possible</label>
+                                          <style>question</style>
+                                       </sdc:question_prompt>
+                                       <sdc:list_field>
+                                          <multiselect>false</multiselect>
+                                          <datatype>string</datatype>
+                                          <sdc:fill_in>true</sdc:fill_in>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Specify margin</label>
+                                                <style>answer</style>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>6600</sdc:list_item_order>
+                                             <sdc:list_item_identifier>26363</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Cannot be determined</label>
+                                                <style>answer</style>
+                                             </item_prompt>
+                                             <additional_instruction>
+                                                <label>explain</label>
+                                             </additional_instruction>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>6700</sdc:list_item_order>
+                                             <sdc:list_item_identifier>26364</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                       </sdc:list_field>
+                                       <sdc:question_order>6500</sdc:question_order>
+                                       <sdc:question_identifier>26362</sdc:question_identifier>
+                                    </sdc:question>
+                                 </sdc:guarded_element>
+                              </sdc:guard>
+                              <sdc:list_item_order>6900</sdc:list_item_order>
+                              <sdc:list_item_identifier>26365</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Cannot be determined</label>
+                                 <style>anwer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>7200</sdc:list_item_order>
+                              <sdc:list_item_identifier>2157</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Not applicable</label>
+                                 <style>anwer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>7300</sdc:list_item_order>
+                              <sdc:list_item_identifier>20852</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>6100</sdc:question_order>
+                        <sdc:question_identifier>2154</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>17878</sdc:section_identifier>
+                  </sdc:section>
+
+
+
+                  <sdc:section initial_state="enabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <cardinality>
+                        <!-- ACCESSORY FINDINGS is a required section  -->
+                        <maximum>1</maximum>
+                        <minimum>1</minimum>
+                     </cardinality>
+                     <sdc:section_title>
+                        <label>ACCESSORY FINDINGS</label>
+                        <style>requiredSection</style>
+                     </sdc:section_title>
+                     <sdc:section_order>7400</sdc:section_order>
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Treatment Effect </label>
+                        </sdc:question_prompt>
+                        <sdc:additional_instruction>
+                           <label>applicable to carcinomas treated with neoadjuvant therapy</label>
+                        </sdc:additional_instruction>
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <datatype>string</datatype>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Not identified</label>
+                                 <style>singleSelectFillinAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>7600</sdc:list_item_order>
+                              <sdc:list_item_identifier>20876</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Present (specify)</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>7700</sdc:list_item_order>
+                              <sdc:list_item_identifier>20877</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Indeterminate</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>7800</sdc:list_item_order>
+                              <sdc:list_item_identifier>20878</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>7500</sdc:question_order>
+                        <sdc:question_identifier>20875</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Tumor Description</label>
+                        </sdc:question_prompt>
+                        <sdc:list_field>
+                           <multiselect>true</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Hemorrhagic</label>
+                                 <style>multiSelectAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>8000</sdc:list_item_order>
+                              <sdc:list_item_identifier>20863</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Necrotic</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>8100</sdc:list_item_order>
+                              <sdc:list_item_identifier>20864</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>Invasion</label>
+                                 <style>multiSelectAnswer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:guard>
+                                 <sdc:value>show</sdc:value>
+                                 <sdc:guarded_element>
+                                    <sdc:question initial_state="disabled">
+                                       <cardinality>
+                                          <maximum>1</maximum>
+                                          <minimum>0</minimum>
+                                       </cardinality>
+                                       <sdc:question_prompt>
+                                          <style>hiddenQuestion</style>
+                                       </sdc:question_prompt>
+                                       <sdc:additional_instruction>
+                                          <label>Extent of Invasion</label>
+                                       </sdc:additional_instruction>
+                                       <sdc:list_field>
+                                          <multiselect>true</multiselect>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Capsule</label>
+                                                <style>multiselectQuestion</style>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>8400</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20870</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Vessels</label>
+                                                <style>multiselectQuestion</style>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>8500</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20871</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Extra-adrenal (specify)</label>
+                                                <style>multiselectFillinQuestion</style>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <fill_in>true</fill_in>
+                                             <sdc:list_item_order>8600</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20872</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                       </sdc:list_field>
+                                       <sdc:question_order>14500</sdc:question_order>
+                                       <sdc:question_identifier>22900</sdc:question_identifier>
+                                    </sdc:question>
+                                 </sdc:guarded_element>
+                              </sdc:guard>
+                              <sdc:list_item_order>8200</sdc:list_item_order>
+                              <sdc:list_item_identifier>17883</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Other (specify)</label>
+                                 <style>multiSelectAnswer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>8700</sdc:list_item_order>
+                              <sdc:list_item_identifier>20865</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>7500</sdc:question_order>
+                        <sdc:question_identifier>20875</sdc:question_identifier>
+                     </sdc:question>
+
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Lymph-Vascular Invasion</label>
+                        </sdc:question_prompt>
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>Not identified</label>
+                                 <style>singleSelectFillinAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>8900</sdc:list_item_order>
+                              <sdc:list_item_identifier>2159</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>Present</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:guard>
+                                 <sdc:value>show</sdc:value>
+                                 <sdc:guarded_element>
+                                    <sdc:question initial_state="disabled">
+                                       <cardinality>
+                                          <maximum>1</maximum>
+                                          <minimum>0</minimum>
+                                       </cardinality>
+                                       <sdc:question_prompt>
+                                          <style>hiddenQuestion</style>
+                                       </sdc:question_prompt>
+                                       <sdc:question_instruction>
+                                          <label>Lymph-Vascular Invasion </label>
+                                       </sdc:question_instruction>
+                                       <sdc:additional_instruction>
+                                          <label>Note F</label>
+                                       </sdc:additional_instruction>
+                                       <sdc:list_field>
+                                          <multiselect>true</multiselect>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Large vessel (venous)</label>
+                                                <style>multiselectAnswer</style>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>9200</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20853</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Small vessel (capillary lymphatic)</label>
+                                                <style>multiselectAnswer</style>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>9300</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20881</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                       </sdc:list_field>
+                                       <sdc:question_order>9100</sdc:question_order>
+                                       <sdc:question_identifier>20861</sdc:question_identifier>
+                                    </sdc:question>
+                                 </sdc:guarded_element>
+                              </sdc:guard>
+                              <sdc:list_item_order>9000</sdc:list_item_order>
+                              <sdc:list_item_identifier>2160</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <!-- New Proposal:- Need way to handle element datatypes -->
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>Indeterminate</label>
+                                 <style>singleSelectFillinAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>9400</sdc:list_item_order>
+                              <sdc:list_item_identifier>2161</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>8800</sdc:question_order>
+                        <sdc:question_identifier>2158</sdc:question_identifier>
+                     </sdc:question>
+
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Perineural Invasion</label>
+                        </sdc:question_prompt>
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Not identified</label>
+                                 <style>singleSelectFillinAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>9600</sdc:list_item_order>
+                              <sdc:list_item_identifier>20879</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Present</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>9700</sdc:list_item_order>
+                              <sdc:list_item_identifier>20884</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Indeterminate</label>
+                                 <style>singleSelectFillinAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>9800</sdc:list_item_order>
+                              <sdc:list_item_identifier>20883</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>9500</sdc:question_order>
+                        <sdc:question_identifier>20882</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>17879</sdc:section_identifier>
+                  </sdc:section>
+
+
+
+
+
+                  <sdc:section initial_state="enabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <cardinality>
+                        <!-- SPECIAL STUDIES Section is optinal -->
+                        <maximum>1</maximum>
+                        <minimum>0</minimum>
+                     </cardinality>
+                     <sdc:section_title>
+                        <label>SPECIAL STUDIES</label>
+                     </sdc:section_title>
+                     <sdc:section_order>9900</sdc:section_order>
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Ancillary Studies</label>
+                        </sdc:question_prompt>
+                        <sdc:additional_instruction>
+                           <label>Note L</label>
+                        </sdc:additional_instruction>
+                        <sdc:list_field>
+                           <multiselect>true</multiselect>
+                           <datatype>string</datatype>
+                           <sdc:fill_in>true</sdc:fill_in>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Specify type (s)</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>10100</sdc:list_item_order>
+                              <sdc:list_item_identifier>20908</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Specify result(s)</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>10200</sdc:list_item_order>
+                              <sdc:list_item_identifier>20909</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>10000</sdc:question_order>
+                        <sdc:question_identifier>6202</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>17880</sdc:section_identifier>
+                  </sdc:section>
+
+
+                  <sdc:section initial_state="enabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <cardinality>
+                        <!-- LYMPH NODES is an optinal Section -->
+                        <maximum>1</maximum>
+                        <minimum>0</minimum>
+                     </cardinality>
+                     <sdc:section_title>
+                        <label>LYMPH NODES</label>
+                        <style>optinalSection</style>
+                     </sdc:section_title>
+                     <sdc:section_order>10300</sdc:section_order>
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Lymph Nodes, Extranodal Extension</label>
+                           <style>optionalQuestion</style>
+                        </sdc:question_prompt>
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <datatype>string</datatype>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>No nodes submitted or found</label>
+                                 <style>fixedAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>false</fill_in>
+                              <sdc:list_item_order>10500</sdc:list_item_order>
+                              <sdc:list_item_identifier>1850</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Specify result(s)</label>
+                                 <style>fillinAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>10600</sdc:list_item_order>
+                              <sdc:list_item_identifier>20886</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Present</label>
+                                 <style>fixedAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>10700</sdc:list_item_order>
+                              <sdc:list_item_identifier>20887</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Indeterminate</label>
+                                 <style>fillinAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>10800</sdc:list_item_order>
+                              <sdc:list_item_identifier>20888</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>10400</sdc:question_order>
+                        <sdc:question_identifier>20885</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>17881</sdc:section_identifier>
+                  </sdc:section>
+
+
+                  <!--  *********** <title>STAGE (pTNM) (Note G)</title> ************* done-->
+                  <sdc:section initial_state="enabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <cardinality>
+                        <!-- STAGE (pTNM) (Note G) is a required section -->
+                        <maximum>1</maximum>
+                        <minimum>1</minimum>
+                     </cardinality>
+                     <sdc:section_title>
+                        <label>STAGE</label>
+                        <style>requiredSection</style>
+                     </sdc:section_title>
+                     <sdc:section_instruction>
+                        <label>pTNM</label>
+                     </sdc:section_instruction>
+                     <!-- Should we use additional_instruction or this one? -->
+                     <sdc:section_instruction>
+                        <label>Note G</label>
+                     </sdc:section_instruction>
+                     <sdc:section_order>10900</sdc:section_order>
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>?TNM Descriptors</label>
+                           <style>optionalQuestion</style>
+                        </sdc:question_prompt>
+
+                        <sdc:list_field>
+                           <multiselect>true</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>?Not applicable</label>
+                                 <style>multiSelectAnswer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <!-- New Proposal: fill_in should have required status then we also need max value or min value , datatypes etc. -->
+                              <sdc:list_item_order>11100</sdc:list_item_order>
+                              <sdc:list_item_identifier>22897</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>m (multiple primary tumors)</label>
+                                 <style>multiSelectAnswer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>11200</sdc:list_item_order>
+                              <sdc:list_item_identifier>20890</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>r (recurrent)</label>
+                                 <style>multiSelectAnswer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>11300</sdc:list_item_order>
+                              <sdc:list_item_identifier>20891</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>y (post-treatment)</label>
+                                 <style>multiSelectAnswer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>11400</sdc:list_item_order>
+                              <sdc:list_item_identifier>20892</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>11000</sdc:question_order>
+                        <sdc:question_identifier>20880</sdc:question_identifier>
+                     </sdc:question>
+
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Primary Tumor (pT)</label>
+                           <style>requiredQuestion</style>
+                        </sdc:question_prompt>
+                        <!-- New proposal : additional_instruction should also support identifiers  -->
+                        <sdc:additional_instruction>
+                           <label>Note: There is no category of carcinoma in situ (pTis) relative to
+                              carcinomas of the adrenal gland.</label>
+                        </sdc:additional_instruction>
+
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>pTX: Cannot be determined</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>11600</sdc:list_item_order>
+                              <sdc:list_item_identifier>2142</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>pT0: No evidence of primary tumor</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>11700</sdc:list_item_order>
+                              <sdc:list_item_identifier>20889</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>pT1: Tumor 5 cm or less in greatest dimension, no
+                                    extra-adrenal invasion</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>11800</sdc:list_item_order>
+                              <sdc:list_item_identifier>2138</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>pT2: Tumor greater than 5 cm, no extra-adrenal
+                                    invasion</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>11900</sdc:list_item_order>
+                              <sdc:list_item_identifier>2139</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <!-- Special handling for notes within this section -->
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <style>fixedlistNote</style>
+                              </item_prompt>
+                              <additional_instruction>
+                                 <label># Adjacent organs include kidney, diaphragm, great vessels,
+                                    pancreas, and liver.</label>
+                              </additional_instruction>
+                              <value_meaning/>
+                              <sdc:list_item_order>12000</sdc:list_item_order>
+                              <sdc:list_item_identifier>20893</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>pT3: Tumor of any size with local invasion, but not invading
+                                    adjacent organs#</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <additional_instruction>
+                                 <label>ref:20893</label>
+                                 <style>tooltipRef</style>
+                              </additional_instruction>
+                              <value_meaning/>
+                              <sdc:list_item_order>12100</sdc:list_item_order>
+                              <sdc:list_item_identifier>2140</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>pT4: Tumor of any size with invasion of adjacent
+                                    organs#</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <additional_instruction>
+                                 <label>ref:20893</label>
+                                 <style>tooltipRef</style>
+                              </additional_instruction>
+                              <value_meaning/>
+                              <sdc:list_item_order>12200</sdc:list_item_order>
+                              <sdc:list_item_identifier>2141</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <!-- We are handling notes applicable for the questions differently hence commented -->
+                           <!--<sdc:list_item>
+                  <value/>
+                  <item_prompt>
+                     <style>fixedlistNote</style>
+                  </item_prompt>
+                  <additional_instruction>
+                     <label>Note: There is no category of carcinoma in situ (pTis) relative to carcinomas of the adrenal gland.</label>
+                  </additional_instruction>
+                  <value_meaning/>
+                  <sdc:list_item_order>12300</sdc:list_item_order>
+                  <sdc:list_item_identifier>20894</sdc:list_item_identifier>
+               </sdc:list_item>-->
+
+                        </sdc:list_field>
+                        <sdc:question_order>11500</sdc:question_order>
+                        <sdc:question_identifier>2137</sdc:question_identifier>
+                     </sdc:question>
+
+
+
+
+
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Distant Metastasis (pM)</label>
+                        </sdc:question_prompt>
+                        <sdc:question_instruction>
+                           <label>Note I</label>
+                        </sdc:question_instruction>
+
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>Not applicable</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>13700</sdc:list_item_order>
+                              <sdc:list_item_identifier>20895</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <label>pM1: Distant metastasis</label>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:guard>
+                                 <sdc:value>show</sdc:value>
+                                 <sdc:guarded_element>
+                                    <sdc:question>
+                                       <cardinality>
+                                          <maximum>1</maximum>
+                                          <minimum>0</minimum>
+                                       </cardinality>
+                                       <sdc:question_prompt>
+                                          <label>Specify Site(s), if known</label>
+                                          <style>fillinQuestion</style>
+                                       </sdc:question_prompt>
+                                       <sdc:text_field>
+                                          <sdc:datatype>
+                                             <sdc:string/>
+                                          </sdc:datatype>
+                                       </sdc:text_field>
+                                       <sdc:question_order>13900</sdc:question_order>
+                                       <sdc:question_identifier>2152</sdc:question_identifier>
+                                    </sdc:question>
+                                 </sdc:guarded_element>
+                              </sdc:guard>
+                              <sdc:list_item_order>13800</sdc:list_item_order>
+                              <sdc:list_item_identifier>2151</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>13600</sdc:question_order>
+                        <sdc:question_identifier>2149</sdc:question_identifier>
+                     </sdc:question>
+
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>1</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Regional Lymph Nodes (pN)</label>
+                           <style>requiredQuestion</style>
+                        </sdc:question_prompt>
+                        <sdc:additional_instruction>
+                           <label>Note H</label>
+                           <style>requiredQuestion</style>
+                        </sdc:additional_instruction>
+
+                        <sdc:list_field>
+                           <multiselect>false</multiselect>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>pNX: Cannot be assessed</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>12500</sdc:list_item_order>
+                              <sdc:list_item_identifier>2144</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>pN0: No regional lymph node metastasis</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>2145</sdc:list_item_order>
+                              <sdc:list_item_identifier>12600</sdc:list_item_identifier>
+                           </sdc:list_item>
+
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>pN1: Regional lymph node metastasis</label>
+                                 <style>singleSelectAnswerChoice</style>
+                              </item_prompt>
+                              <value_meaning/>
+
+
+
+                              <sdc:guard>
+                                 <sdc:value>show</sdc:value>
+                                 <sdc:guarded_element>
+                                    <sdc:question initial_state="disabled">
+                                       <cardinality>
+                                          <maximum>1</maximum>
+                                          <minimum>0</minimum>
+                                       </cardinality>
+                                       <sdc:additional_instruction type="tooltip">
+                                          <label>Status of Regional Lymph Nodes</label>
+                                          <style>hiddenQuestion</style>
+                                       </sdc:additional_instruction>
+                                       <sdc:list_field>
+                                          <multiselect>true</multiselect>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>No nodes submitted or found</label>
+                                                <style>multiselectAnswer</style>
+                                             </item_prompt>
+                                             <value_meaning/>
+
+
+                                             <sdc:guard>
+                                                <sdc:value>show</sdc:value>
+                                                <sdc:guarded_element>
+                                                  <sdc:question initial_state="disabled">
+                                                  <cardinality>
+                                                  <maximum>1</maximum>
+                                                  <minimum>0</minimum>
+                                                  </cardinality>
+                                                  <sdc:question_prompt>
+                                                  <label>Number of Lymph Nodes Examined</label>
+                                                  <style>question</style>
+                                                  </sdc:question_prompt>
+                                                  <sdc:list_field>
+                                                  <multiselect>false</multiselect>
+                                                  <sdc:list_item>
+                                                  <value/>
+                                                  <item_prompt>
+                                                  <label>Specify</label>
+                                                  <style>singleSelectAnswerChoice</style>
+                                                  </item_prompt>
+                                                  <value_meaning/>
+                                                  <sdc:list_item_order>13100</sdc:list_item_order>
+                                                  <sdc:list_item_identifier>1870</sdc:list_item_identifier>
+                                                  </sdc:list_item>
+                                                  <sdc:list_item>
+                                                  <value/>
+                                                  <item_prompt>
+                                                  <label>Number cannot be determined
+                                                  (explain)</label>
+                                                  <style>singleSelectAnswerChoice</style>
+                                                  </item_prompt>
+                                                  <value_meaning/>
+                                                  <sdc:list_item_order>13200</sdc:list_item_order>
+                                                  <sdc:list_item_identifier>1871</sdc:list_item_identifier>
+                                                  </sdc:list_item>
+                                                  </sdc:list_field>
+                                                  <sdc:question_order>12900</sdc:question_order>
+                                                  <sdc:question_identifier>1869</sdc:question_identifier>
+                                                  </sdc:question>
+
+
+
+
+                                                  <sdc:question initial_state="disabled">
+                                                  <cardinality>
+                                                  <maximum>1</maximum>
+                                                  <minimum>0</minimum>
+                                                  </cardinality>
+                                                  <sdc:question_prompt>
+                                                  <label>Number of Lymph Nodes Involved</label>
+                                                  <style>question</style>
+                                                  </sdc:question_prompt>
+                                                  <sdc:list_field>
+                                                  <multiselect>false</multiselect>
+                                                  <sdc:list_item>
+                                                  <value/>
+                                                  <item_prompt>
+                                                  <label>Specify</label>
+                                                  <style>singleSelectAnswerChoice</style>
+                                                  </item_prompt>
+                                                  <value_meaning/>
+                                                  <sdc:list_item_order>13400</sdc:list_item_order>
+                                                  <sdc:list_item_identifier>1873</sdc:list_item_identifier>
+                                                  </sdc:list_item>
+                                                  <sdc:list_item>
+                                                  <value/>
+                                                  <item_prompt>
+                                                  <label>Number cannot be determined
+                                                  (explain)</label>
+                                                  <style>singleSelectAnswerChoice</style>
+                                                  </item_prompt>
+                                                  <value_meaning/>
+                                                  <sdc:list_item_order>13500</sdc:list_item_order>
+                                                  <sdc:list_item_identifier>1874</sdc:list_item_identifier>
+                                                  </sdc:list_item>
+                                                  </sdc:list_field>
+                                                  <sdc:question_order>13300</sdc:question_order>
+                                                  <sdc:question_identifier>1872</sdc:question_identifier>
+                                                  </sdc:question>
+                                                </sdc:guarded_element>
+                                             </sdc:guard>
+                                             <sdc:list_item_order>12900</sdc:list_item_order>
+                                             <sdc:list_item_identifier>1868</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                       </sdc:list_field>
+                                       <sdc:question_order>12800</sdc:question_order>
+                                       <sdc:question_identifier>1867</sdc:question_identifier>
+                                    </sdc:question>
+                                 </sdc:guarded_element>
+                              </sdc:guard>
+                              <sdc:list_item_order>12700</sdc:list_item_order>
+                              <sdc:list_item_identifier>2146</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>12400</sdc:question_order>
+                        <sdc:question_identifier>2143</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>2136</sdc:section_identifier>
+                  </sdc:section>
+
+
+                  <sdc:section initial_state="enabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <cardinality>
+                        <!-- ADDITIONAL NON-TUMOR is an optinal section -->
+                        <maximum>1</maximum>
+                        <minimum>0</minimum>
+                     </cardinality>
+                     <sdc:section_title>
+                        <label>ADDITIONAL NON-TUMOR</label>
+                        <style>optionalSection</style>
+                     </sdc:section_title>
+                     <sdc:section_order>14000</sdc:section_order>
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Additional Pathologic Findings</label>
+                           <style>optionalQuestion</style>
+                        </sdc:question_prompt>
+
+                        <sdc:list_field>
+                           <multiselect>true</multiselect>
+                           <!-- Currently SDC model doesn't support selection-deselects-siblings="true" so won't be able to implement,
+                  New Proposal: In the next iteration ask for selection-deselects-siblings support -->
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>None identified</label>
+                                 <style>multiSelectAnswerSDS</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>14200</sdc:list_item_order>
+                              <sdc:list_item_identifier>2163</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>Tumor necrosis</label>
+                                 <style>multiSelectAnswer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:list_item_order>2164</sdc:list_item_order>
+                              <sdc:list_item_identifier>14300</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>Degenerative changes</label>
+                                 <style>multiSelectAnswer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <sdc:guard>
+                                 <sdc:value>show</sdc:value>
+                                 <sdc:guarded_element>
+                                    <sdc:question initial_state="disabled">
+                                       <cardinality>
+                                          <maximum>1</maximum>
+                                          <minimum>0</minimum>
+                                       </cardinality>
+                                       <sdc:additional_instruction type="tooltip">
+                                          <label>Type of Degenerative Changes</label>
+                                          <style>hiddenQuestion</style>
+                                       </sdc:additional_instruction>
+                                       <sdc:list_field>
+                                          <multiselect>true</multiselect>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Calcifications</label>
+                                                <style>multiselectQuestion</style>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>14600</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20854</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Hemorrhage</label>
+                                                <style>multiselectQuestion</style>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>14700</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20897</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                          <sdc:list_item>
+                                             <value/>
+                                             <item_prompt>
+                                                <label>Cystic change</label>
+                                                <style>multiselectQuestion</style>
+                                             </item_prompt>
+                                             <value_meaning/>
+                                             <sdc:list_item_order>14800</sdc:list_item_order>
+                                             <sdc:list_item_identifier>20898</sdc:list_item_identifier>
+                                          </sdc:list_item>
+                                       </sdc:list_field>
+                                       <sdc:question_order>14500</sdc:question_order>
+                                       <sdc:question_identifier>22900</sdc:question_identifier>
+                                    </sdc:question>
+                                 </sdc:guarded_element>
+                              </sdc:guard>
+                              <sdc:list_item_order>14400</sdc:list_item_order>
+                              <sdc:list_item_identifier>20896</sdc:list_item_identifier>
+                           </sdc:list_item>
+                           <sdc:list_item>
+                              <value/>
+                              <item_prompt>
+                                 <cardinality>
+                                    <maximum>1</maximum>
+                                    <minimum>0</minimum>
+                                 </cardinality>
+                                 <label>Other (specify)</label>
+                                 <style>multiSelectAnswer</style>
+                              </item_prompt>
+                              <value_meaning/>
+                              <fill_in>true</fill_in>
+                              <sdc:list_item_order>14900</sdc:list_item_order>
+                              <sdc:list_item_identifier>2167</sdc:list_item_identifier>
+                           </sdc:list_item>
+                        </sdc:list_field>
+                        <sdc:question_order>14100</sdc:question_order>
+                        <sdc:question_identifier>2162</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>17884</sdc:section_identifier>
+                  </sdc:section>
+
+                  <!-- +(Deprecated Items) section is excludes as a part of eCC-SDC transformation-->
+
+                  <!-- Special section creation for general comment single question present in eCC -->
+                  <sdc:section initial_state="enabled" xmlns="http://www.iso.org/19763/13/2013">
+                     <cardinality>
+                        <!-- Comment Section is an optinal section -->
+                        <maximum>1</maximum>
+                        <minimum>0</minimum>
+                     </cardinality>
+                     <!-- New proposal: SDC should either use title or label not both -->
+                     <sdc:section_title>
+                        <style>optionalCommentSection</style>
+                     </sdc:section_title>
+                     <!-- section_order is string New proposal: it should be integer only -->
+                     <sdc:section_order>last</sdc:section_order>
+
+                     <sdc:question initial_state="enabled">
+                        <cardinality>
+                           <maximum>1</maximum>
+                           <minimum>0</minimum>
+                        </cardinality>
+                        <sdc:question_prompt>
+                           <label>Comment(s)</label>
+                           <style>generalComment</style>
+                        </sdc:question_prompt>
+                        <sdc:text_field>
+                           <sdc:datatype>
+                              <sdc:string/>
+                           </sdc:datatype>
+                        </sdc:text_field>
+                        <sdc:question_order>15000</sdc:question_order>
+                        <sdc:question_identifier>2168</sdc:question_identifier>
+                     </sdc:question>
+                     <sdc:section_identifier>99999</sdc:section_identifier>
+                  </sdc:section>
+
+                  <footer initial_state="enabled">
+                     <sdc:section_instruction xmlns="http://www.iso.org/19763/13/2013">
+                        <label>College of American Pathologist (CAP)</label>
+                     </sdc:section_instruction>
+                     <media>
+                        <image>
+                           <uri>http://cap.org/cap_logo.jpg</uri>
+                        </image>
+                     </media>
+                     <sdc:section_identifier>70199</sdc:section_identifier>
+                  </footer>
+               </form_design>
+            </sdc:form_package>
+         </sdc:sdc_xml_package>
+      </Structured>
+      <!--<instanceID>GUID</instanceID>-->
+   </form>
+   <!-- We could use the official MIME type rather than the text "XML."  However, The RFD Profile does not define contentType. -->
+   <contentType>XML</contentType>
+   
+   <responseCode>Request succeeded</responseCode> <!-- Value is not required for the responseCode but will be useful  -->
+   
+   <!-- Comment: Optionally, insert GUID/UUID to track the RFD RetrieveFormResponse transaction -->
+   <instanceID></instanceID>
+</RetrieveFormResponse>
