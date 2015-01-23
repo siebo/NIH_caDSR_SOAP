@@ -14,8 +14,8 @@ def form_as_XML(request):
 
 dispatcher = SoapDispatcher(
     'cadsr_soap_dispatcher',
-    location = "http://localhost:8080/soap",
-    action = "http://localhost:8080/soap",
+    location = "https://localhost:8080/soap",
+    action = "https://localhost:8080/soap",
     namespace = "http://nlm.nih.gov/sdc/form",
     prefix="ns0",
     ns = "urn:ihe:iti:rfd:2007")
