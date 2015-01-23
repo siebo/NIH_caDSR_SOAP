@@ -12,6 +12,7 @@ urlpatterns = patterns('',
     
     url('^soap.wsdl', views.dispatcher_handler, name='soap'),
     
+    url(r'^form/', 'caDSR_SOAP_agent.views.form_as_XML', name='form_as_XML'),
     
     url(r'^$', 'caDSR_SOAP_agent.views.demo', name='demo'),
     

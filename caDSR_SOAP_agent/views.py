@@ -2,6 +2,15 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from pysimplesoap.server import SoapDispatcher
+from NIH_caDSR_SOAP import settings
+from forms_static import adrenal
+from forms_static import demographic
+from forms_static import FDA
+from forms_static import HERF
+from forms_static import NCI_Demographics
+
+import os
+
  
 def demo(request):
     return HttpResponse('NIH caDSR Web Services')
@@ -10,7 +19,19 @@ def wsdl(request):
     return HttpResponse('NIH caDSR WSDL')
 
 def form_as_XML(request):
-    return HttpResponse('<xml></xml>')
+    formID = request.GET['formID']
+    if formID == 'Adrenal':
+      return HttpResponse(adrenal)
+    if formID == 'Demographic':
+      return HttpResponse(demographic)
+    if formID == 'FDA':
+      return HttpResponse(FDA)
+    if formID == 'HERF':
+      return HttpResponse(HERF)
+    if formID == 'NCI_Demographics':
+      return HttpResponse(NCI_Demographics)
+    else:
+      return HttpResponse('<xml>Error</xml>')
 
 dispatcher = SoapDispatcher(
     'cadsr_soap_dispatcher',
