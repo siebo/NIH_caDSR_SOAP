@@ -22,13 +22,13 @@ def form_as_XML(request):
     formID = request.GET['formID']
     if formID == 'Adrenal':
       return HttpResponse(adrenal)
-    if formID == 'Demographic':
+    elif formID == 'Demographic':
       return HttpResponse(demographic)
-    if formID == 'FDA':
+    elif formID == 'FDA':
       return HttpResponse(FDA)
-    if formID == 'HERF':
+    elif formID == 'HERF':
       return HttpResponse(HERF)
-    if formID == 'NCI_Demographics':
+    elif formID == 'NCI_Demographics':
       return HttpResponse(NCI_Demographics)
     else:
       return HttpResponse('<xml>Error</xml>')
