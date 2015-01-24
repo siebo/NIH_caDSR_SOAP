@@ -8,10 +8,10 @@ from forms_static import demographic
 from forms_static import FDA
 from forms_static import HERF
 from forms_static import NCI_Demographics
+from pysimplesoap.simplexml import SimpleXMLElement
 
 import os
 
- 
 def demo(request):
     return HttpResponse('NIH caDSR Web Services')
 
@@ -19,19 +19,19 @@ def wsdl(request):
     return HttpResponse('NIH caDSR WSDL')
 
 def form_as_XML(request):
-    formID = request.GET['formID']
+    formID = request.RetrieveFormRequest.workflow.formID
     if formID == 'Adrenal':
-      return HttpResponse(adrenal)
+      return SimpleXMLElement(adrenal)
     elif formID == 'Demographic':
-      return HttpResponse(demographic)
+      return SimpleXMLElement(demographic)
     elif formID == 'FDA':
-      return HttpResponse(FDA)
+      return SimpleXMLElement(FDA)
     elif formID == 'HERF':
-      return HttpResponse(HERF)
+      return SimpleXMLElement(HERF)
     elif formID == 'NCI_Demographics':
-      return HttpResponse(NCI_Demographics)
+      return SimpleXMLElement(NCI_Demographics)
     else:
-      return HttpResponse('<xml>Error</xml>')
+      return SimpleXMLElement('<xml>Error</xml>')
 
 dispatcher = SoapDispatcher(
     'cadsr_soap_dispatcher',
@@ -43,7 +43,7 @@ dispatcher = SoapDispatcher(
 
 # register func
 dispatcher.register_function('soap', form_as_XML,
-    returns={'FormResult': str}, 
+    returns={'FormResult': str},
     args={'formID': str})
 
 
@@ -56,6 +56,3 @@ def dispatcher_handler(request):
         response = HttpResponse(dispatcher.wsdl())
     response['Content-length'] = str(len(response.content))
     return response
-
-
-
