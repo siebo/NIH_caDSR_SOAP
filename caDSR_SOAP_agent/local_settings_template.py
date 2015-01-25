@@ -8,4 +8,4 @@ port = "8080"
 # can be host name, IP, or FQDN
 hostname = "45.56.98.59"
 
-server_url = '%s://%s:%s/'
+server_url = '%s://%s:%s/' % (protocol, hostname, port)
