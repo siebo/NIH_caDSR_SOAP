@@ -1,4 +1,6 @@
-# XXX fixme - In the provided files, adrenal had only a 'stub' for HTML.  Should be replaced with full file
+# -*- coding: utf-8 -*-
+
+# # XXX fixme - In the provided files, adrenal had only a 'stub' for HTML.  Should be replaced with full file
 adrenal_html = """
 <?xml version="1.0" encoding="UTF-8"?>
 

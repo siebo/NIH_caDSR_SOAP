@@ -1,9 +1,7 @@
+import os
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from pysimplesoap.server import SoapDispatcher
-from pysimplesoap.simplexml import SimpleXMLElement
-from NIH_caDSR_SOAP import settings
 from forms_static import adrenal
 from forms_static import demographic
 from forms_static import FDA
@@ -14,9 +12,9 @@ from forms_static_html import demographic_html
 from forms_static_html import FDA_html
 from forms_static_html import HERF_html
 from forms_static_html import NCI_Demographics_html
-
-
-import os
+from pysimplesoap.server import SoapDispatcher
+from pysimplesoap.simplexml import SimpleXMLElement
+from NIH_caDSR_SOAP import settings
 
 def demo(request):
     return HttpResponse('NIH caDSR Web Services')
