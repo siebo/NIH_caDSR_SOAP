@@ -1,3 +1,5 @@
+from caDSR_SOAP_agent.local_settings import server_url
+
 wsdl_xml = """
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
              xmlns:ihe="urn:ihe:iti:rfd:2007" 
@@ -10,7 +12,7 @@ wsdl_xml = """
     <types>
         <xsd:schema elementFormDefault="qualified" 
                     targetNamespace="urn:ihe:iti:rfd:2007">
-            <xsd:include schemaLocation="http://li435-82.members.linode.com/????"/>
+            <xsd:include schemaLocation="%s" />
         </xsd:schema>
     </types>
     <!--  Message definitions  -->
@@ -85,4 +87,4 @@ wsdl_xml = """
         </port>
     </service>
 </definitions>
-"""
+""" % (server_url)

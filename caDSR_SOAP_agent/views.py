@@ -15,6 +15,7 @@ from forms_static_html import NCI_Demographics_html
 from pysimplesoap.server import SoapDispatcher
 from pysimplesoap.simplexml import SimpleXMLElement
 from NIH_caDSR_SOAP import settings
+from caDSR_SOAP_agent.local_settings import server_url
 
 forms = { 'Adrenal_xml': adrenal, 
           'Demog_xml': demographic, 
@@ -41,13 +42,19 @@ def form_as_XML(request):
       form_xml = forms[formID]
       return SimpleXMLElement(form_xml)
     else:
-      return SimpleXMLElement('<?xml version="1.0"?><error>There was an error delivering your request</error>')
+      return SimpleXMLElement('<?xml version="1.0"?><error>There was an error \
+                                     delivering your request</error>')
+
+host_location = "%s/soap" ()
+# the location and action values were the same in the example provided
+# but perhaps they might need to be distinct at some point
+host_action = host_location
 
 
 dispatcher = SoapDispatcher(
     'cadsr_soap_dispatcher',
-    location = "https://localhost:8080/soap",
-    action = "https://localhost:8080/soap",
+    location = host_location,
+    action = host_action,
     namespace = "http://nlm.nih.gov/sdc/form",
     prefix="ns0",
     ns = "urn:ihe:iti:rfd:2007")
