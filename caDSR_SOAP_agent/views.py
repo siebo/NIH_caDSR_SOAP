@@ -16,6 +16,7 @@ from pysimplesoap.server import SoapDispatcher
 from pysimplesoap.simplexml import SimpleXMLElement
 from NIH_caDSR_SOAP import settings
 from caDSR_SOAP_agent.local_settings import server_url
+from caDSR_SOAP_agent.wsdl_message import wsdl_xml
 
 forms = { 'Adrenal_xml': adrenal, 
           'Demog_xml': demographic, 
@@ -32,7 +33,7 @@ def demo(request):
     return HttpResponse('NIH caDSR Web Services')
 
 def wsdl(request):
-    return HttpResponse('NIH caDSR WSDL')
+    return SimpleXMLElement(wsdl_xml)
 
 def form_as_XML(request):
     formID = request.RetrieveFormRequest.workflow.formID

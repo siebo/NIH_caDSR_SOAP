@@ -6,7 +6,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^wsdl/', 'caDSR_SOAP_agent.views.wsdl', name='wsdl'),
+    url(r'^wsdl', 'caDSR_SOAP_agent.views.wsdl', name='wsdl'),
     
     url('^soap.wsdl', views.dispatcher_handler, name='soap'),
     
