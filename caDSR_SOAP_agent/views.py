@@ -20,15 +20,15 @@ def wsdl(request):
 
 def form_as_XML(request):
     formID = request.RetrieveFormRequest.workflow.formID
-    if formID == 'Adrenal':
+    if formID == 'Adrenal_xml':
       return SimpleXMLElement(adrenal)
-    elif formID == 'Demographic':
+    elif formID == 'Demog_xml':
       return SimpleXMLElement(demographic)
-    elif formID == 'FDA':
+    elif formID == 'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/4617751v1.0/form_package_identifier#4617751v1.0/1':
       return SimpleXMLElement(FDA)
-    elif formID == 'HERF':
+    elif formID == 'http://nci.nih.gov/xml/owl/cadsr#form_package/99999/1.0':
       return SimpleXMLElement(HERF)
-    elif formID == 'NCI_Demographics':
+    elif formID == 'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/form_package_identifier#2674812v4.0/1':
       return SimpleXMLElement(NCI_Demographics)
     else:
       return SimpleXMLElement('<xml>Error</xml>')
