@@ -16,6 +16,17 @@ from pysimplesoap.server import SoapDispatcher
 from pysimplesoap.simplexml import SimpleXMLElement
 from NIH_caDSR_SOAP import settings
 
+forms = { 'Adrenal_xml': adrenal, 
+          'Demog_xml': demographic, 
+          'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/4617751v1.0/form_package_identifier#4617751v1.0/1': FDA, 
+          'http://nci.nih.gov/xml/owl/cadsr#form_package/99999/1.0': HERF, 
+          'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/form_package_identifier#2674812v4.0/1': NCI_Demographics, 
+          'Adrenal_html': adrenal_html, 
+          'Demog_html': demographic_html, 
+          'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/4617751v1.0/form_package_identifier#4617751v1.0/1/html': FDA_html, 
+          'http://nci.nih.gov/xml/owl/cadsr#form_package/99999/1.0/html': HERF_html, 
+          'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/form_package_identifier#2674812v4.0/1/html': , NCI_Demographics_html};
+
 def demo(request):
     return HttpResponse('NIH caDSR Web Services')
 
@@ -24,28 +35,14 @@ def wsdl(request):
 
 def form_as_XML(request):
     formID = request.RetrieveFormRequest.workflow.formID
-    if formID == 'Adrenal_xml':
-      return SimpleXMLElement(adrenal)
-    elif formID == 'Demog_xml':
-      return SimpleXMLElement(demographic)
-    elif formID == 'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/4617751v1.0/form_package_identifier#4617751v1.0/1':
-      return SimpleXMLElement(FDA)
-    elif formID == 'http://nci.nih.gov/xml/owl/cadsr#form_package/99999/1.0':
-      return SimpleXMLElement(HERF)
-    elif formID == 'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/form_package_identifier#2674812v4.0/1':
-      return SimpleXMLElement(NCI_Demographics)
-    elif formID == 'Adrenal_html':
-      return SimpleXMLElement(adrenal_html)
-    elif formID == 'Demog_html':
-      return SimpleXMLElement(demographic_html)
-    elif formID == 'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/4617751v1.0/form_package_identifier#4617751v1.0/1/html':
-      return SimpleXMLElement(FDA_html)
-    elif formID == 'http://nci.nih.gov/xml/owl/cadsr#form_package/99999/1.0/html':
-      return SimpleXMLElement(HERF_html)
-    elif formID == 'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/form_package_identifier#2674812v4.0/1/html':
-      return SimpleXMLElement(NCI_Demographics_html)
+    valid_forms = forms.keys()
+    
+    if formID in valid_forms:
+      form_xml = forms[formID]
+      return SimpleXMLElement(form_xml)
     else:
-      return SimpleXMLElement('<xml>Error</xml>')
+      return SimpleXMLElement('<?xml version="1.0"?><error>There was an error delivering your request</error>')
+
 
 dispatcher = SoapDispatcher(
     'cadsr_soap_dispatcher',
