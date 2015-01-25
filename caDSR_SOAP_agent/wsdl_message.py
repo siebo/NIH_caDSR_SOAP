@@ -1,6 +1,6 @@
 from caDSR_SOAP_agent.local_settings import server_url
 
-wsdl_xml = """
+wsdl_xml = """<?xml version="1.0" encoding="UTF-8"?>
 <definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
              xmlns:ihe="urn:ihe:iti:rfd:2007" 
              xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
