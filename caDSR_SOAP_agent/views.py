@@ -25,7 +25,7 @@ forms = { 'Adrenal_xml': adrenal,
           'Demog_html': demographic_html, 
           'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/4617751v1.0/form_package_identifier#4617751v1.0/1/html': FDA_html, 
           'http://nci.nih.gov/xml/owl/cadsr#form_package/99999/1.0/html': HERF_html, 
-          'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/form_package_identifier#2674812v4.0/1/html': , NCI_Demographics_html};
+          'http://nci.nih.gov/xml/owl/cadsr/form/form_design_identifier/2674812v4.0/form_package_identifier#2674812v4.0/1/html': NCI_Demographics_html};
 
 def demo(request):
     return HttpResponse('NIH caDSR Web Services')
