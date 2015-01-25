@@ -12,6 +12,8 @@ urlpatterns = patterns('',
     
     url(r'^soap', 'caDSR_SOAP_agent.views.form_as_XML', name='form_as_XML'),
     
+    url(r'^FormManager_RetrieveForm', 'caDSR_SOAP_agent.views.form_as_XML', name='form_as_XML'),
+    
     url(r'^$', 'caDSR_SOAP_agent.views.demo', name='demo'),
     
     
