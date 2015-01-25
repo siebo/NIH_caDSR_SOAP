@@ -33,7 +33,7 @@ def demo(request):
     return HttpResponse('NIH caDSR Web Services')
 
 def wsdl(request):
-    return SimpleXMLElement(wsdl_xml)
+    return HttpResponse(wsdl_xml)
 
 def form_as_XML(request):
     formID = request.RetrieveFormRequest.workflow.formID
