@@ -46,7 +46,7 @@ def form_as_XML(request):
       return SimpleXMLElement('<?xml version="1.0"?><error>There was an error \
                                      delivering your request</error>')
 
-host_location = "%s/soap" ()
+host_location = server_url
 # the location and action values were the same in the example provided
 # but perhaps they might need to be distinct at some point
 host_action = host_location
