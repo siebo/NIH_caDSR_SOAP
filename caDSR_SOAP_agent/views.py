@@ -36,7 +36,9 @@ def wsdl(request):
     return HttpResponse(wsdl_xml)
 
 def form_as_XML(request):
-    formID = request.RetrieveFormRequest.workflow.formID
+    import pdb; pdb.set_trace()
+
+    formID = request.raw_post_data.RetrieveFormRequest.workflow.formID
     valid_forms = forms.keys()
     
     if formID in valid_forms:
