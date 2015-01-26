@@ -83,8 +83,8 @@ wsdl_xml = """<?xml version="1.0" encoding="UTF-8"?>
     <service name="FormManager_Service">
         <port binding="ihe:FormManager_Binding_Soap12" 
               name="FormManager_Port_Soap12">
-            <soap12:address location="http://ushik-stg.dcgroupinc.com:80/FormManager_Service"/>
+            <soap12:address location="%s"/>
         </port>
     </service>
 </definitions>
-""" % (server_url)
+""" % (server_url, server_url)
