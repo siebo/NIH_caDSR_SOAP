@@ -29,3 +29,16 @@ You can now start the server with the folowing command
 
     python manage.py runsslserver --certificate cert.pem --key key.pem  0.0.0.0:8080
 
+## Settings file
+
+We have extracted the settings into a separate file to make it easier to change properties like the protocol, port, and hostname/IP and have them updated in the various places they are used.  The template for the settings file live here:
+
+    NIH_caDSR_SOAP/caDSR_SOAP_agent/local_settings_template.py
+
+You must copy it to create a file at:
+
+    NIH_caDSR_SOAP/caDSR_SOAP_agent/local_settings.py
+
+As this is the location expected by the application.  Do not version this file.  The settings used here will be specific to your machine.  Also, changing the protocol in this file from https to http still requires you to use the apporiate command-line invocation of manage.py runserver/runsslserver to start the server, along with the apprpriate command line arguments.
+
+
