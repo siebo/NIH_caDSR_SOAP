@@ -1,7 +1,3 @@
-from django.test import TestCase
-from django.test.client import Client
-from django.test.client import 
-
 from caDSR_SOAP_agent.local_settings import server_url
 from pysimplesoap.client import SoapClient
 

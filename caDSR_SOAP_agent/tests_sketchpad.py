@@ -1,5 +1,7 @@
 # Partial fragments of earlier tests which might be useful.  Not currently used by the app.
 
+from django.test import TestCase
+from django.test.client import Client
 
 class ServiceTests(TestCase):
     """SOAP service tests."""
