@@ -1,8 +1,10 @@
-from caDSR_SOAP_agent.local_settings import server_url
 from pysimplesoap.client import SoapClient
+from pysimplesoap.simplexml import SimpleXMLElement
+
+server_url = 'https://45.56.98.59:8080/'
 
 client = SoapClient(location=server_url,
-                    namespace=server_url, trace=True)
+                    namespace=server_url)
 
 headers = SimpleXMLElement(""""<?xml version="1.0" encoding="UTF-8"?>
 <RetrieveFormRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
