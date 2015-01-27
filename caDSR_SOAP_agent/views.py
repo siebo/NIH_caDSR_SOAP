@@ -55,9 +55,9 @@ def form_as_XML_HTTP(request):
     
     if formID in valid_forms:
       form_xml = forms[formID]
-      return SimpleXMLElement(form_xml)
+      return HttpResponse(form_xml)
     else:
-      return SimpleXMLElement('<?xml version="1.0"?><error>There was an error \
+      return HttpResponse('<?xml version="1.0"?><error>There was an error \
                                      delivering your request</error>')
 
 
