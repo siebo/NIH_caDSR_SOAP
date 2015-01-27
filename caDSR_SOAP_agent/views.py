@@ -80,6 +80,9 @@ dispatcher.register_function('soap', form_as_XML,
     returns={'FormResult': str},
     args={'formID': str})
 
+dispatcher.register_function('soap2', form_as_XML_HTTP,
+    returns={'FormResult': str},
+    args={'formID': str})
 
 #delete for csrf the POST for this view
 @csrf_exempt
