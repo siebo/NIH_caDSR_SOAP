@@ -36,7 +36,7 @@ def wsdl(request):
     return HttpResponse(wsdl_xml)
 
 def form_as_XML(request):
-    import pdb; pdb.set_trace()
+    #import pdb; pdb.set_trace()
 
     formID = request.raw_post_data.RetrieveFormRequest.workflow.formID
     valid_forms = forms.keys()
@@ -47,6 +47,19 @@ def form_as_XML(request):
     else:
       return SimpleXMLElement('<?xml version="1.0"?><error>There was an error \
                                      delivering your request</error>')
+
+def form_as_XML_HTTP(request):
+
+    formID = request.GET['formID']
+    valid_forms = forms.keys()
+    
+    if formID in valid_forms:
+      form_xml = forms[formID]
+      return SimpleXMLElement(form_xml)
+    else:
+      return SimpleXMLElement('<?xml version="1.0"?><error>There was an error \
+                                     delivering your request</error>')
+
 
 host_location = server_url
 # the location and action values were the same in the example provided
