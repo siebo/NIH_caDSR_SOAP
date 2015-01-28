@@ -19,9 +19,6 @@ urlpatterns = patterns('',
     url(r'^FormManager_RetrieveForm', 'caDSR_SOAP_agent.views.form_as_XML', name='form_as_XML'),
     #url(r'^XXXXX', 'caDSR_SOAP_agent.views.form_as_XML', name='form_as_XML'),
     
-    # Test view for sending vars via HTTP
-    url(r'^soap2', 'caDSR_SOAP_agent.views.form_as_XML_HTTP', name='form_as_XML_HTTP'),
-    
     url(r'^$', 'caDSR_SOAP_agent.views.demo', name='demo'),
     
     

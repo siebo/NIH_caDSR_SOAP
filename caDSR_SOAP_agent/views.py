@@ -72,15 +72,11 @@ dispatcher = SoapDispatcher(
     location = host_location,
     action = host_action,
     namespace = "http://nlm.nih.gov/sdc/form",
-    prefix="ns0",
+    prefix="soap12",
     ns = "urn:ihe:iti:rfd:2007")
 
 # register func
 dispatcher.register_function('soap', form_as_XML,
-    returns={'FormResult': str},
-    args={'formID': str})
-
-dispatcher.register_function('soap2', form_as_XML_HTTP,
     returns={'FormResult': str},
     args={'formID': str})
 
