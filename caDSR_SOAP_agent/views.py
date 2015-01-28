@@ -76,7 +76,7 @@ dispatcher = SoapDispatcher(
     ns = "urn:ihe:iti:rfd:2007")
 
 # register func
-dispatcher.register_function('soap', form_as_XML,
+dispatcher.register_function('RetreiveFormRequest', form_as_XML,
     returns={'FormResult': str},
     args={'formID': str})
 
@@ -84,8 +84,10 @@ dispatcher.register_function('soap', form_as_XML,
 @csrf_exempt
 def dispatcher_handler(request):
     if request.method == "POST":
-        response = HttpResponse(dispatcher.dispatch(request.body))
+        response = HttpResponse(mimetype="application/xml")
+        response.write(dispatcher.dispatch(request.raw_post_data))
     else:
-        response = HttpResponse(dispatcher.wsdl())
+        response = HttpResponse(mimetype="application/xml")
+        response.write(dispatcher.wsdl())
     response['Content-length'] = str(len(response.content))
     return response
