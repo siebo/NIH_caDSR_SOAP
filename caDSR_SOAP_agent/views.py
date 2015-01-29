@@ -37,16 +37,15 @@ def wsdl(request):
 
 def form_as_XML(request):
     #import pdb; pdb.set_trace()
-
-    formID = 0 #request.RetrieveFormRequest.workflow.formID
+    soap_body=request.META['wsgi.input'].read()
+    formID =  SimpleXMLElement(soap_body).RetrieveFormRequest.workflow.formID
     valid_forms = forms.keys()
     
     if formID in valid_forms:
       form_xml = forms[formID]
-      return SimpleXMLElement(form_xml)
+      return form_xml
     else:
-      return SimpleXMLElement('<?xml version="1.0"?><error>There was an error \
-                                     delivering your request</error>')
+      return '<?xml version="1.0"?><error>There was an error delivering your request</error>'
 
 
 host_location = server_url
@@ -83,7 +82,7 @@ dispatcher.register_function('RetreiveFormRequest', form_as_XML,
 def dispatcher_handler(request):
     if request.method == "POST":
         response = HttpResponse()
-        response.write(dispatcher.dispatch(request.raw_post_data))
+        response.write(dispatcher.dispatch(request))
     else:
         response = HttpResponse()
         response.write(dispatcher.wsdl())
