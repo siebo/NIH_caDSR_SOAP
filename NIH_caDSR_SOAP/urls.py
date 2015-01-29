@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     
     # Static WSDL based on provided file
-    url(r'^wsdl', 'caDSR_SOAP_agent.views.wsdl', name='wsdl'),
+    # url(r'^wsdl', 'caDSR_SOAP_agent.views.wsdl', name='wsdl'),
     
     # Dynamically generated WSDL from PySimpleSOAP
     url('^soap.wsdl', views.dispatcher_handler, name='soap'),
