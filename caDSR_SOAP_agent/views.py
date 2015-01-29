@@ -84,10 +84,10 @@ dispatcher.register_function('RetreiveFormRequest', form_as_XML,
 @csrf_exempt
 def dispatcher_handler(request):
     if request.method == "POST":
-        response = HttpResponse(mimetype="application/xml")
+        response = HttpResponse()
         response.write(dispatcher.dispatch(request.raw_post_data))
     else:
-        response = HttpResponse(mimetype="application/xml")
+        response = HttpResponse()
         response.write(dispatcher.wsdl())
     response['Content-length'] = str(len(response.content))
     return response
