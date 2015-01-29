@@ -66,8 +66,11 @@ dispatcher = SoapDispatcher(
 # register func
 dispatcher.register_function('RetreiveFormRequest', form_as_XML,
     returns={'FormResult': str},
-    args={'formID': str,
-          'workflowData': {'formID': str, 'encodedResponse': str, 'archiveURL': str, 'context': str, 'instanceID': str} })
+    args={'encodedResponse': str, 
+          'archiveURL': str, 
+          'context': str, 
+          'instanceID': str
+          'workflowData': {'formID': str,} })
 
 #delete for csrf the POST for this view
 @csrf_exempt
