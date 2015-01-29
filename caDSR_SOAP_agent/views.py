@@ -35,10 +35,10 @@ def demo(request):
 def wsdl(request):
     return HttpResponse(wsdl_xml)
 
-def form_as_XML(request):
+def form_as_XML(prepopData,workflowData):
     #import pdb; pdb.set_trace()
-    soap_body=request.META['wsgi.input'].read()
-    formID =  SimpleXMLElement(soap_body).RetrieveFormRequest.workflow.formID
+    #soap_body=request.META['wsgi.input'].read()
+    formID =  workflowData['formID']
     valid_forms = forms.keys()
     
     if formID in valid_forms:
@@ -82,7 +82,7 @@ dispatcher.register_function('RetreiveFormRequest', form_as_XML,
 def dispatcher_handler(request):
     if request.method == "POST":
         response = HttpResponse()
-        response.write(dispatcher.dispatch(request))
+        response.write(dispatcher.dispatch(request.body))
     else:
         response = HttpResponse()
         response.write(dispatcher.wsdl())
