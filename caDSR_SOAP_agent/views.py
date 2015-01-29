@@ -70,6 +70,7 @@ dispatcher.register_function('RetreiveFormRequest', form_as_XML,
           'archiveURL': str, 
           'context': str, 
           'instanceID': str,
+          'prepopData': str,
           'workflowData': {'formID': str,} })
 
 #delete for csrf the POST for this view
