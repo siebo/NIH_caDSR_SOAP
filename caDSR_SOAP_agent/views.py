@@ -65,7 +65,11 @@ dispatcher = SoapDispatcher(
 
 # register func
 dispatcher.register_function('RetreiveFormRequest', form_as_XML,
-    returns={'FormResult': str},
+    returns={'contentType': str, 
+             'responseCode': str, 
+             'form': {'instanceID': str,
+                      }
+             },
     args={'prepopData': str,
           'workflowData': {'formID': str,
                            'encodedResponse': str, 
