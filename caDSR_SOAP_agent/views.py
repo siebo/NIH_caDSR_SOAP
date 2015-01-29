@@ -48,18 +48,6 @@ def form_as_XML(request):
       return SimpleXMLElement('<?xml version="1.0"?><error>There was an error \
                                      delivering your request</error>')
 
-def form_as_XML_HTTP(request):
-
-    formID = request.GET['formID']
-    valid_forms = forms.keys()
-    
-    if formID in valid_forms:
-      form_xml = forms[formID]
-      return HttpResponse(form_xml)
-    else:
-      return HttpResponse('<?xml version="1.0"?><error>There was an error \
-                                     delivering your request</error>')
-
 
 host_location = server_url
 # the location and action values were the same in the example provided
