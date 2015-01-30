@@ -43,6 +43,7 @@ def form_as_XML(prepopData,workflowData):
     
     if formID in valid_forms:
       form_xml = forms[formID]
+      form_xml = form_xml.replace('http://schemas.xmlsoap.org/soap/envelope/','http://www.w3.org/2003/05/soap-envelope')
       return form_xml
     else:
       return '<?xml version="1.0"?><error>There was an error delivering your request</error>'
