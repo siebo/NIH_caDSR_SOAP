@@ -226,7 +226,7 @@ class SoapDispatcher(object):
             body.marshall("%s:Fault" % soap_ns, fault, ns=False)
         else:
             # return normal value
-            res = body.add_child("%sResponse" % name, ns=prefix)
+            res = body.add_child("%sResponse" % name.replace('Request',''), ns=prefix)
             if not prefix:
                 res['xmlns'] = self.namespace  # add target namespace
 
@@ -271,7 +271,7 @@ class SoapDispatcher(object):
         xml = """
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
 <soap:Body><%(method)sResponse xmlns="%(namespace)s"/></soap:Body>
-</soap:Envelope>""" % {'method': method, 'namespace': self.namespace}
+</soap:Envelope>""" % {'method': method.replace('Request',''), 'namespace': self.namespace}
         response = SimpleXMLElement(xml, namespace=self.namespace, prefix=self.prefix)
         if returns:
             items = returns.items()
@@ -280,7 +280,7 @@ class SoapDispatcher(object):
         else:
             items = []
         for k, v in items:
-            response('%sResponse' % method).marshall(k, v, add_comments=True, ns=False)
+            response('%sResponse' % method.replace('Request','')).marshall(k, v, add_comments=True, ns=False)
 
         return request.as_xml(pretty=True), response.as_xml(pretty=True), doc
 
