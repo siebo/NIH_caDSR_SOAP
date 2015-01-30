@@ -127,7 +127,7 @@ class SoapDispatcher(object):
 
             # detect soap prefix and uri (xmlns attributes of Envelope)
             for k, v in request[:]:
-                if v in ("http://schemas.xmlsoap.org/soap/envelope/",
+                if v in ("http://www.w3.org/2003/05/soap-envelope/",
                          "http://www.w3.org/2003/05/soap-env",):
                     soap_ns = request.attributes()[k].localName
                     soap_uri = request.attributes()[k].value
