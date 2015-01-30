@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 adrenal_html = """<RetrieveFormResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns="urn:ihe:iti:rfd:2007"
    xmlns:sdc="http://nlm.nih.gov/sdc/form"
