@@ -64,7 +64,7 @@ dispatcher = SoapDispatcher(
     ns = "urn:ihe:iti:rfd:2007")
 
 # register func
-dispatcher.register_function('RetreiveForm', form_as_XML,
+dispatcher.register_function('RetreiveFormRequest', form_as_XML,
     returns={'body': str, 
              'contentType': str, 
              'responseCode': str, 
