@@ -1,33 +1,11 @@
-# -*- coding: utf-8 -*-
-
-adrenal = """<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- 
-******************************************************************************
-RFD Retrieve Form Response (ITI-34) containing an XML Form Design Temaplate Response
-
-XML FORM NAME:  Adrenal_xml_response.xml
-PURPOSE:        Responding with an ADRENAL template (eCC based Cancer related form).
-
-REVISIONS: 
-Ver        Date        Author               Description
-1.0        12/01/2014  Varsha Parekh /      Added RFD wrapper and schema validation
-                       Richard Moldwin       
-1.1        12/11/2014  WS/SJ/VP/RM          Instance ID removed, schema location moved
-1.2        01/22/2015  VP/RM                Added submission rule endpoints 
-2.1        01/28/2015  WS/RM                Submission rule endpoints updated  
-2.2        01/29/2015  WS/RM                Submission rule endpoints update
-******************************************************************************/
--->
-
-
-<RetrieveFormResponse 
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd"
-   xmlns="urn:ihe:iti:rfd:2007" 
-   xmlns:sdc="http://nlm.nih.gov/sdc/form">
-
-  
+adrenal = """<RetrieveFormResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns="urn:ihe:iti:rfd:2007"
+   xmlns:sdc="http://nlm.nih.gov/sdc/form"
+   xmlns:mfi13="http://www.iso.org/19763/13/2013"
+   xmlns:dex="urn:ihe:qrph:dex:2013"
+   xmlns:mfi6="http://www.iso.org/19763/6/2013"
+   xmlns:mdr3="http://www.iso.org/11179/3/2013"
+   >
    <form>
       <Structured>
          
@@ -130,7 +108,7 @@ Ver        Date        Author               Description
 
                   <sdc:submission_rule  form_identifier="Adrenal_xml" >                     
                      <sdc:destination>
-                        <sdc:endpoint>http://10.242.63.36/emarcreceiver</sdc:endpoint>
+                        <sdc:endpoint>http://cdc8/emarcreceiver2/Service.asmx</sdc:endpoint>
                         <sdc:description>Form Filler submits to the Form Receiver using the above endpoint.</sdc:description>
                         <sdc:organization>
                            <sdc:name>CDC</sdc:name>
@@ -2488,46 +2466,25 @@ Ver        Date        Author               Description
    
    <!-- We could use the official MIME type rather than the text "XML."  However, The RFD Profile does not define contentType. -->
    <contentType>XML</contentType>
-   
-   <responseCode>Request succeeded</responseCode> <!-- Value is not required for the responseCode but will be useful  -->
-   
- 
+   <responseCode>Request succeeded</responseCode>
 </RetrieveFormResponse>
 """
 
 
 
-demographic = """<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- 
-******************************************************************************
-RFD Retrieve Form Response (ITI-34) containing an XML Form Design Temaplate Response
-
-NAME:       Demog_xml_response.xml
-PURPOSE:    Demographic Template XML Stub.
-VERSION:    V1.1
-
-REVISIONS: 
-Ver        Date        Author               Description
-1.0        12/01/2014  Varsha Parekh /      SDC Demographic Template Stubs
-                       Richard Moldwin
-1.1        12/11/2014  WS/SJ/VP/RM          Instance ID removed, schema location moved
-1.2        01/22/2015  VP/RM                Added submission rule endpoints 
-2.1        01/28/2015  WS/RM                Submission rule endpoints update
-2.2        01/29/2015  WS/RM                Submission rule endpoints update
-******************************************************************************/
--->
-
-<RetrieveFormResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd" xmlns="urn:ihe:iti:rfd:2007"
-   xmlns:sdc="http://nlm.nih.gov/sdc/form">
-
+demographic = """<RetrieveFormResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns="urn:ihe:iti:rfd:2007"
+   xmlns:sdc="http://nlm.nih.gov/sdc/form"
+   xmlns:mfi13="http://www.iso.org/19763/13/2013"
+   xmlns:dex="urn:ihe:qrph:dex:2013"
+   xmlns:mfi6="http://www.iso.org/19763/6/2013"
+   xmlns:mdr3="http://www.iso.org/11179/3/2013"
+   >
    <form>
       <Structured>
          <sdc_xml_package>
             <sdc:supplemental_data>
-               <!-- Contains supplemental data related to the form instance e.g., form generation date, specific instruction, pre-pop data, etc. -->
-            </sdc:supplemental_data>
+               </sdc:supplemental_data>
             <sdc:form_package xmlns="http://www.iso.org/19763/13/2013"
                xmlns:sdc="http://nlm.nih.gov/sdc/form"
                xmlns:mfi13="http://www.iso.org/19763/13/2013"
@@ -2565,7 +2522,8 @@ Ver        Date        Author               Description
                         <!-- Gender -->
                      </question_element_data_element_association>
 
-                  </mdr_mapping>cdc </mapping_package>
+                  </mdr_mapping>
+               </mapping_package>
 
                <sdc:administrative_package>
 
@@ -2791,7 +2749,7 @@ Ver        Date        Author               Description
 
                   <!-- Template Name -->
                   <sdc:designation>
-                     <sdc:context>Physician Reporting to a Public Health Repository – Cancer Registry (PRPH-Ca)</sdc:context>
+                     <sdc:context>Physician Reporting to a Public Health Repository - Cancer Registry (PRPH-Ca)</sdc:context>
                      <sdc:sign acceptability="preferred">Administration and Demographic Data for
                         Public Health Reporting</sdc:sign>
                   </sdc:designation>
@@ -4521,46 +4479,23 @@ Ver        Date        Author               Description
       <!-- Comment: Optionally, insert GUID/UUID to track the RFD RetrieveFormResponse transaction -->
       <instanceID/>
    </form>
-   <contentType>XML</contentType>
-   <!--Please note the use of constrained value “XML” above-->
-
-   <responseCode>Request succeeded</responseCode>
-   <!-- Value is not required for the responseCode but will be useful  -->
-
-
-
+<contentType>XML</contentType>
+<responseCode>Request succeeded</responseCode>
 </RetrieveFormResponse>
 """
 
 
 
-FDA = """<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- 
-******************************************************************************
-RFD Retrieve Form Response (ITI-34) containing an XML Form Design Temaplate Response
-
-XML FORM NAME:  MedWatch 3500
-PURPOSE:        Responding with a MedWatch 3500 form in SDC XML template.
-
-
-REVISIONS: 
-Ver        Date         Author              Description
-1.0        12/01/2014   Varsha Parekh/      Added RFD wrapper and schema validation 
-                        Richard Moldwin     Fixed RFD schema to add <instanceID> for SDC
-1.2        12/11/2014   DW/WS/SJ/VP/RM      Instance ID removed, schema location moved
-1.3        01/22/2015   VP/RM               Added submission rule endpoints 
-2.1        01/28/2015  WS/RM                Submission rule endpoints updated 
-2.2        01/29/2015  WS/RM                Submission rule endpoints update
-******************************************************************************/
--->
-
-<RetrieveFormResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd" xmlns="urn:ihe:iti:rfd:2007"
-   xmlns:sdc="http://nlm.nih.gov/sdc/form">
-
+FDA = """<RetrieveFormResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns="urn:ihe:iti:rfd:2007"
+   xmlns:sdc="http://nlm.nih.gov/sdc/form"
+   xmlns:mfi13="http://www.iso.org/19763/13/2013"
+   xmlns:dex="urn:ihe:qrph:dex:2013"
+   xmlns:mfi6="http://www.iso.org/19763/6/2013"
+   xmlns:mdr3="http://www.iso.org/11179/3/2013"
+   >
    <form>
-      <Structured>
+   <Structured>
          <sdc_xml_package>
             <sdc:supplemental_data>
                <!-- Contains supplemental data related to the form instance e.g., form generation date, specific instruction, pre-pop data, etc. -->
@@ -14530,41 +14465,21 @@ Ver        Date         Author              Description
    </form>
 
    <contentType>XML</contentType>
-   <responseCode/>
-
+<responseCode>Request succeeded</responseCode>
 </RetrieveFormResponse>
+
 """
 
 
 
-HERF = """<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- 
-******************************************************************************
-RFD Retrieve Form Response (ITI-34) containing an XML Form Design Template Response
-
-XML FORM NAME:  Healthcare Event Reporting Form (HERF) Hospital Version 1.2
-PURPOSE:        HERF template in SDC XML format.
-
-
-
-REVISIONS: 
-Ver        Date         Author              Description
-1.0        12/01/2014   Varsha Parekh/      Added RFD wrapper and schema validation 
-                        Richard Moldwin     Fixed RFD schema to add <instanceID> for SDC
-1.2        12/11/2014   DW/WS/SJ/VP/RM      Instance ID removed, schema location moved
-1.3        01/22/2015   VP/RM               Added submission rule endpoints 
-2.1        01/28/2015   WS/RM               Submission rule endpoints updated 
-2.2        01/29/2015   WS/RM               Submission rule endpoints update
-******************************************************************************/
--->
-
-<RetrieveFormResponse 
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd"
-   xmlns="urn:ihe:iti:rfd:2007" 
-   xmlns:sdc="http://nlm.nih.gov/sdc/form">
-  
+HERF = """<RetrieveFormResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns="urn:ihe:iti:rfd:2007"
+   xmlns:sdc="http://nlm.nih.gov/sdc/form"
+   xmlns:mfi13="http://www.iso.org/19763/13/2013"
+   xmlns:dex="urn:ihe:qrph:dex:2013"
+   xmlns:mfi6="http://www.iso.org/19763/6/2013"
+   xmlns:mdr3="http://www.iso.org/11179/3/2013"
+   >
    <form>
       <Structured>
          <sdc_xml_package>
@@ -15924,40 +15839,20 @@ Ver        Date         Author              Description
    
    <contentType>XML</contentType>
    <responseCode/>
-
 </RetrieveFormResponse>
 """
 
 
 
-NCI_Demographics = """<?xml version="1.0" encoding="UTF-8"?>
-
-<!-- 
-******************************************************************************
-RFD Retrieve Form Response (ITI-34) containing an XML Form Design Temaplate Response
-
-XML FORM NAME:  NCI Demography
-PURPOSE:        Responding with the NCI Demography form in SDC XML format
-
-
-REVISIONS: 
-Ver        Date         Author              Description
-1.0        12/01/2014   Varsha Parekh/      Added RFD wrapper and schema validation 
-                        Richard Moldwin     Fixed RFD schema to add <instanceID> for SDC
-1.2        12/11/2014   DW/WS/SJ/VP/RM      Instance ID removed, schema location moved
-1.3        01/22/2015   VP/RM               Added submission rule endpoints 
-2.1        01/28/2015  WS/RM                Submission rule endpoints updated 
-2.2        01/29/2015  WS/RM                Submission rule endpoints updated 
-******************************************************************************/
--->
-
-<RetrieveFormResponse 
-   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="urn:ihe:iti:rfd:2007 ../../../Schemas/RFD.xsd"
-   xmlns="urn:ihe:iti:rfd:2007" 
-   xmlns:sdc="http://nlm.nih.gov/sdc/form">
-   <form>
-      <Structured>
+NCI_Demographics = """<RetrieveFormResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns="urn:ihe:iti:rfd:2007"
+   xmlns:sdc="http://nlm.nih.gov/sdc/form"
+   xmlns:mfi13="http://www.iso.org/19763/13/2013"
+   xmlns:dex="urn:ihe:qrph:dex:2013"
+   xmlns:mfi6="http://www.iso.org/19763/6/2013"
+   xmlns:mdr3="http://www.iso.org/11179/3/2013"
+   >
+   <form> <Structured>
          <sdc_xml_package>
             <sdc:supplemental_data>
                <!-- Contains supplemental data related to the form instance e.g., form generation date, specific instruction, pre-pop data, etc. -->
@@ -18793,8 +18688,7 @@ Ver        Date         Author              Description
    </form>
    
    <contentType>XML</contentType>   
-   <responseCode/>
-
+<responseCode>Request succeeded</responseCode>
 </RetrieveFormResponse>
 """
 
