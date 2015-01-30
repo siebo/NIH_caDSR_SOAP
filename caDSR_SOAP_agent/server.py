@@ -38,7 +38,7 @@ class SoapDispatcher(object):
 
     def __init__(self, name, documentation='', action='', location='',
                  namespace=None, prefix=False,
-                 soap_uri="http://schemas.xmlsoap.org/soap/envelope/",
+                 soap_uri="http://www.w3.org/2003/05/soap-envelope",
                  soap_ns='soap',
                  namespaces={},
                  pretty=False,
@@ -255,7 +255,7 @@ class SoapDispatcher(object):
         """Generate sample request and response messages"""
         (function, returns, args, doc) = self.methods[method]
         xml = """
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
 <soap:Body><%(method)s xmlns="%(namespace)s"/></soap:Body>
 </soap:Envelope>""" % {'method': method, 'namespace': self.namespace}
         request = SimpleXMLElement(xml, namespace=self.namespace, prefix=self.prefix)
@@ -269,7 +269,7 @@ class SoapDispatcher(object):
             request(method).marshall(k, v, add_comments=True, ns=False)
 
         xml = """
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
 <soap:Body><%(method)sResponse xmlns="%(namespace)s"/></soap:Body>
 </soap:Envelope>""" % {'method': method, 'namespace': self.namespace}
         response = SimpleXMLElement(xml, namespace=self.namespace, prefix=self.prefix)
