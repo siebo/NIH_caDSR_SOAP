@@ -2,6 +2,7 @@ import os
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from error_static import error_html
 from forms_static import adrenal
 from forms_static import demographic
 from forms_static import FDA
@@ -12,7 +13,7 @@ from forms_static_html import demographic_html
 from forms_static_html import FDA_html
 from forms_static_html import HERF_html
 from forms_static_html import NCI_Demographics_html
-from pysimplesoap.server import SoapDispatcher
+from caDSR_SOAP_agent.server import SoapDispatcher
 from pysimplesoap.simplexml import SimpleXMLElement
 from NIH_caDSR_SOAP import settings
 from caDSR_SOAP_agent.local_settings import server_url
@@ -46,7 +47,7 @@ def form_as_XML(prepopData,workflowData):
       form_xml = form_xml.replace('http://schemas.xmlsoap.org/soap/envelope/','http://www.w3.org/2003/05/soap-envelope')
       return form_xml
     else:
-      return '<?xml version="1.0"?><error>There was an error delivering your request</error>'
+      return error_html
 
 
 host_location = server_url
